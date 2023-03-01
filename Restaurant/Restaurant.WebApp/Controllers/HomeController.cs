@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using RestuarantWebApp.Models;
+using Restaurant.WebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RestuarantWebApp.Controllers
+namespace Restaurant.WebApp.Controllers
 {
     public class HomeController : Controller
     {
