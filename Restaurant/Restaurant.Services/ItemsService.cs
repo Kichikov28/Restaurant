@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace Restaurant.Services
+﻿namespace Restaurant.Services
 {
     using Restaurant.Data;
     using Models;
@@ -8,6 +6,7 @@ namespace Restaurant.Services
     using System.Collections.Generic;
     using System.Text;
     using System.Linq;
+    using System.Reflection;
 
     public class ItemsService
     {
@@ -88,6 +87,13 @@ namespace Restaurant.Services
                 context.Items.Remove(item);
                 context.SaveChanges();
                 return $"{nameof(item)} {item.Name} was deleted!";
+            }
+        }
+        public List<Item> SortItemByPrice(List<Item> items)
+        {
+            using (context = new AppDbContext())
+            {
+                return context.Items.OrderByDescending(x => x.Price).ToList();
             }
         }
     }

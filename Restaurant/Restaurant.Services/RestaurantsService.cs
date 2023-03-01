@@ -96,6 +96,41 @@
                 return $"{nameof(Restaurant)} {restaurant.Name} in {restaurant.Location} was deleted!";
             }
         }
+        public Restaurant GetRestaurantByType()
+        {
+            string input = Console.ReadLine();
 
+            if (!Enum.TryParse(input, true, out CuisineType type))
+            {
+                throw new ArgumentException("Invalid Restaurant type!");
+            }
+            using (context = new AppDbContext())
+            {
+                Restaurant t = context.Restaurants.FirstOrDefault(x => x.Type == type);
+                context.SaveChanges();
+                return t;
+            }
+        }
+        public Restaurant GetRestaurantByLocation(string location)
+        {
+            if (string.IsNullOrWhiteSpace(location))
+            {
+                throw new ArgumentException("Invalid location!");
+            }
+            using (context = new AppDbContext())
+            {
+                Restaurant r = context.Restaurants.FirstOrDefault(x => x.Location == location);
+                context.SaveChanges();
+                return r;
+            }
+        }
+
+        public List<Restaurant> SortRestaurantsByRating(List<Restaurant> restaurants)
+        {
+            using (context = new AppDbContext())
+            {
+                return context.Restaurants.OrderByDescending(x => x.Rating).ToList();
+            }
+        }
     }
 }

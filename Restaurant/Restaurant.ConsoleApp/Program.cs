@@ -1,10 +1,9 @@
-﻿using System;
-
-namespace Restaurant.ConsoleApp
+﻿namespace Restaurant.ConsoleApp
 {
-    internal class Program
+    using System;
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             
         }
