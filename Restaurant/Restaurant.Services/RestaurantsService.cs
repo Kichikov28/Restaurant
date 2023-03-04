@@ -5,13 +5,12 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using Restaurant.Models.Enums;
     using System.Linq;
 
     public class RestaurantsService
     {
         private AppDbContext context;
-        public string AddRestaurant(string name, string location)
+        public string AddRestaurant(string name,double rating, string location,string type)
         {
             StringBuilder sb = new StringBuilder();
             bool isValid = true;
@@ -26,12 +25,24 @@
                 sb.AppendLine($"Invalid {nameof(location)}!");
                 isValid = false;
             }
+            if (string.IsNullOrWhiteSpace(type))
+            {
+                sb.AppendLine($"Invalid {nameof(type)}!");
+                isValid = false;
+            }
+            if (rating<2)
+            {
+                sb.AppendLine($"Invalid {nameof(rating)}!");
+                isValid = false;
+            }
             if (isValid)
             {
                 Restaurant restaurant = new Restaurant()
                 {
                     Name = name,
-                    Location = location
+                    Rating = rating,
+                    Location = location,
+                    Type= type
                 };
                 using (context = new AppDbContext())
                 {
@@ -62,28 +73,26 @@
                 return context.Restaurants.Find(id);
             }
         }
-        public string GetRestaurantInfo()
+        public List<string> GetRestaurantsBasicInfo(int page = 1, int count = 10)
         {
-            Restaurant r = null;
+            List<string> list = null;
             using (context = new AppDbContext())
             {
-                r = context.Restaurants.Find(r);
+                list = context.Restaurants
+                    .Skip((page - 1) * count)
+                    .Take(count)
+                    .Select(x => $"{x.Id} - {x.Name} {x.Rating} - {x.Location}")
+                    .ToList();
             }
-            if (r != null)
-            {
-                StringBuilder msg = new StringBuilder();
-                msg.AppendLine($"{nameof(Restaurant)} info: ");
-                msg.AppendLine($"\tId: {r.Id}");
-                msg.AppendLine($"\tName: {r.Name}");
-                msg.AppendLine($"\tLocation: {r.Location}");
-                msg.AppendLine($"\tType: {r.Type}");
-                return msg.ToString().TrimEnd();
-            }
-            else
-            {
-                return $"{nameof(Restaurant)} not found!";
-            }
+            return list;
+        }
 
+        public int GetRestaurantPagesCount(int count = 10)
+        {
+            using (context = new AppDbContext())
+            {
+                return (int)Math.Ceiling(context.Restaurants.Count() / (double)count);
+            }
         }
         public string DeleteRestaurantById(int id)
         {
@@ -96,21 +105,21 @@
                 return $"{nameof(Restaurant)} {restaurant.Name} in {restaurant.Location} was deleted!";
             }
         }
-        public Restaurant GetRestaurantByType()
-        {
-            string input = Console.ReadLine();
+        //public Restaurant GetRestaurantByType()
+        //{
+        //    string input = Console.ReadLine();
 
-            if (!Enum.TryParse(input, true, out CuisineType type))
-            {
-                throw new ArgumentException("Invalid Restaurant type!");
-            }
-            using (context = new AppDbContext())
-            {
-                Restaurant t = context.Restaurants.FirstOrDefault(x => x.Type == type);
-                context.SaveChanges();
-                return t;
-            }
-        }
+        //    if (!Enum.TryParse(input, true, out CuisineType type))
+        //    {
+        //        throw new ArgumentException("Invalid Restaurant type!");
+        //    }
+        //    using (context = new AppDbContext())
+        //    {
+        //        Restaurant t = context.Restaurants.FirstOrDefault(x => x.Type == type);
+        //        context.SaveChanges();
+        //        return t;
+        //    }
+        //}
         public Restaurant GetRestaurantByLocation(string location)
         {
             if (string.IsNullOrWhiteSpace(location))

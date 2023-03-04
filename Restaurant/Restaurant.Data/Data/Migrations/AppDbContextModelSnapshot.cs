@@ -87,8 +87,9 @@ namespace Restaurant.Data.Data.Migrations
                     b.Property<int>("RestaurantId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int")
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nchar(50)")
                         .IsFixedLength(true)
                         .HasMaxLength(50);
 
@@ -187,8 +188,8 @@ namespace Restaurant.Data.Data.Migrations
                     b.Property<double>("Rating")
                         .HasColumnType("float");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Restaurant.Services\Restaurant.Services.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,5 @@
 ﻿namespace Restaurant.Models
 {
-    using global::Restaurant.Models.Enums;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     public class Restaurant
@@ -12,7 +11,7 @@
         [Required]
         public string Location { get; set; }
         public double Rating { get; set; }
-        public CuisineType Type { get; set; }
+        public string Type { get; set; }
         public virtual ICollection<Menu> Menus { get; set; } = new List<Menu>();
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
     }

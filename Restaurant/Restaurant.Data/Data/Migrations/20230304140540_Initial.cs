@@ -46,7 +46,7 @@ namespace Restaurant.Data.Data.Migrations
                     Name = table.Column<string>(fixedLength: true, maxLength: 100, nullable: false),
                     Location = table.Column<string>(nullable: false),
                     Rating = table.Column<double>(nullable: false),
-                    Type = table.Column<int>(nullable: false)
+                    Type = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -59,7 +59,7 @@ namespace Restaurant.Data.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<int>(fixedLength: true, maxLength: 50, nullable: false),
+                    Type = table.Column<string>(fixedLength: true, maxLength: 50, nullable: false),
                     RestaurantId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
