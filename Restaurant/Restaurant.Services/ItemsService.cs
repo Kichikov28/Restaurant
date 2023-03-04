@@ -96,5 +96,12 @@
                 return context.Items.OrderByDescending(x => x.Price).ToList();
             }
         }
+        public List<Item> SortItemByName(List<Item> items)
+        {
+            using (context = new AppDbContext())
+            {
+                return context.Items.OrderByDescending(x => x.Name).ToList();
+            }
+        }
     }
 }
