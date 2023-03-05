@@ -175,6 +175,7 @@
             this.listBoxRestaurants.Name = "listBoxRestaurants";
             this.listBoxRestaurants.Size = new System.Drawing.Size(388, 324);
             this.listBoxRestaurants.TabIndex = 1;
+            this.listBoxRestaurants.SelectedIndexChanged += new System.EventHandler(this.listBoxRestaurants_SelectedIndexChanged);
             // 
             // btnPrevious
             // 

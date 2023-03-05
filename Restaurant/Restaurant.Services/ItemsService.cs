@@ -93,15 +93,29 @@
         {
             using (context = new AppDbContext())
             {
-                return context.Items.OrderByDescending(x => x.Price).ToList();
+                return context.Items.OrderBy(x => x.Price).ToList();
             }
         }
         public List<Item> SortItemByName(List<Item> items)
         {
             using (context = new AppDbContext())
             {
+                return context.Items.OrderBy(x => x.Name).ToList();
+            }
+        }
+        public List<Item> ReverseSortItemByName(List<Item> items)
+        {
+            using (context=new AppDbContext())
+            {
                 return context.Items.OrderByDescending(x => x.Name).ToList();
             }
+        }
+        public List<Item> ReverseSortItemByPrice(List<Item> items)
+        {
+            using (context=new AppDbContext())
+            {
+                return context.Items.OrderByDescending(x => x.Price).ToList();
+            } 
         }
     }
 }

@@ -86,5 +86,10 @@ namespace Restaurant.FormApp
             list.ForEach(p => listBoxRestaurants.Items.Add(p));
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
+
+        private void listBoxRestaurants_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

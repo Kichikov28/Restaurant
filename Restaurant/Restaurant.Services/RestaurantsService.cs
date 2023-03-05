@@ -105,21 +105,19 @@
                 return $"{nameof(Restaurant)} {restaurant.Name} in {restaurant.Location} was deleted!";
             }
         }
-        //public Restaurant GetRestaurantByType()
-        //{
-        //    string input = Console.ReadLine();
-
-        //    if (!Enum.TryParse(input, true, out CuisineType type))
-        //    {
-        //        throw new ArgumentException("Invalid Restaurant type!");
-        //    }
-        //    using (context = new AppDbContext())
-        //    {
-        //        Restaurant t = context.Restaurants.FirstOrDefault(x => x.Type == type);
-        //        context.SaveChanges();
-        //        return t;
-        //    }
-        //}
+        public Restaurant GetRestaurantByType(string type)
+        {
+            if (string.IsNullOrWhiteSpace(type))
+            {
+                throw new ArgumentException("Invalid Restaurant type!");
+            }
+            using (context = new AppDbContext())
+            {
+                Restaurant t = context.Restaurants.FirstOrDefault(x => x.Type == type);
+                context.SaveChanges();
+                return t;
+            }
+        }
         public Restaurant GetRestaurantByLocation(string location)
         {
             if (string.IsNullOrWhiteSpace(location))
@@ -135,6 +133,13 @@
         }
 
         public List<Restaurant> SortRestaurantsByRating(List<Restaurant> restaurants)
+        {
+            using (context = new AppDbContext())
+            {
+                return context.Restaurants.OrderBy(x => x.Rating).ToList();
+            }
+        }
+        public List<Restaurant> ReverseSortRestaurantsByRating(List<Restaurant> restaurants)
         {
             using (context = new AppDbContext())
             {
