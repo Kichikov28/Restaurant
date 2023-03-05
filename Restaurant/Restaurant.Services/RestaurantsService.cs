@@ -10,7 +10,7 @@
     public class RestaurantsService
     {
         private AppDbContext context;
-        public string AddRestaurant(string name,double rating, string location,string type)
+        public string AddRestaurant(string name, double rating, string location, string type)
         {
             StringBuilder sb = new StringBuilder();
             bool isValid = true;
@@ -30,7 +30,7 @@
                 sb.AppendLine($"Invalid {nameof(type)}!");
                 isValid = false;
             }
-            if (rating<2)
+            if (rating < 2)
             {
                 sb.AppendLine($"Invalid {nameof(rating)}!");
                 isValid = false;
@@ -42,7 +42,7 @@
                     Name = name,
                     Rating = rating,
                     Location = location,
-                    Type= type
+                    Type = type
                 };
                 using (context = new AppDbContext())
                 {
@@ -62,7 +62,6 @@
             using (context = new AppDbContext())
             {
                 Restaurant r = context.Restaurants.FirstOrDefault(x => x.Name == name);
-                context.SaveChanges();
                 return r;
             }
         }
@@ -73,6 +72,19 @@
                 return context.Restaurants.Find(id);
             }
         }
+        public string UpdateRestaurantRating(int id, double newRating)
+        {
+            using (context = new AppDbContext())
+            {
+                Restaurant restaurant = context.Restaurants.Find(id);
+                if (restaurant == null) { return $"{nameof(Restaurant)} not found!"; }
+                if (newRating < 2 || newRating > 10) { return "Invalid new rating!"; }
+                restaurant.Rating = newRating;
+                context.Restaurants.Update(restaurant);
+                context.SaveChanges();
+                return $"{nameof(Restaurant)} {restaurant.Name} has new rating: {newRating}";
+            }
+        }
         public List<string> GetRestaurantsBasicInfo(int page = 1, int count = 10)
         {
             List<string> list = null;
@@ -81,7 +93,7 @@
                 list = context.Restaurants
                     .Skip((page - 1) * count)
                     .Take(count)
-                    .Select(x => $"{x.Id} - {x.Name} {x.Rating} - {x.Location}")
+                    .Select(x => $"{x.Id} - {x.Name} has {x.Rating} rating")
                     .ToList();
             }
             return list;
@@ -105,16 +117,27 @@
                 return $"{nameof(Restaurant)} {restaurant.Name} in {restaurant.Location} was deleted!";
             }
         }
-        public Restaurant GetRestaurantByType(string type)
+        public string GetRestaurantByTypeConsole(string type)
         {
             if (string.IsNullOrWhiteSpace(type))
             {
-                throw new ArgumentException("Invalid Restaurant type!");
+                throw new ArgumentException("Invalid restaurant type!");
             }
             using (context = new AppDbContext())
             {
                 Restaurant t = context.Restaurants.FirstOrDefault(x => x.Type == type);
-                context.SaveChanges();
+                return t.Name;
+            }
+        }
+        public Restaurant GetRestaurantByType(string type)
+        {
+            if (string.IsNullOrWhiteSpace(type))
+            {
+                throw new ArgumentException("Invalid restaurant type!");
+            }
+            using (context = new AppDbContext())
+            {
+                Restaurant t = context.Restaurants.FirstOrDefault(x => x.Type == type);
                 return t;
             }
         }
@@ -122,12 +145,11 @@
         {
             if (string.IsNullOrWhiteSpace(location))
             {
-                throw new ArgumentException("Invalid location!");
+                throw new ArgumentException("Invalid restaurant location!");
             }
             using (context = new AppDbContext())
             {
-                Restaurant r = context.Restaurants.FirstOrDefault(x => x.Location == location);
-                context.SaveChanges();
+               Restaurant r = context.Restaurants.FirstOrDefault(x => x.Location == location);
                 return r;
             }
         }

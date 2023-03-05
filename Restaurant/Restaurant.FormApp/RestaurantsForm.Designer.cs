@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBoxRestaurant = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDelete = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAddRestaurant = new System.Windows.Forms.Button();
             this.comboRating = new System.Windows.Forms.ComboBox();
@@ -49,6 +52,9 @@
             // 
             // groupBoxRestaurant
             // 
+            this.groupBoxRestaurant.Controls.Add(this.label5);
+            this.groupBoxRestaurant.Controls.Add(this.txtDelete);
+            this.groupBoxRestaurant.Controls.Add(this.btnDelete);
             this.groupBoxRestaurant.Controls.Add(this.btnClear);
             this.groupBoxRestaurant.Controls.Add(this.btnAddRestaurant);
             this.groupBoxRestaurant.Controls.Add(this.comboRating);
@@ -61,17 +67,43 @@
             this.groupBoxRestaurant.Controls.Add(this.label1);
             this.groupBoxRestaurant.Location = new System.Drawing.Point(72, 32);
             this.groupBoxRestaurant.Name = "groupBoxRestaurant";
-            this.groupBoxRestaurant.Size = new System.Drawing.Size(355, 381);
+            this.groupBoxRestaurant.Size = new System.Drawing.Size(345, 396);
             this.groupBoxRestaurant.TabIndex = 0;
             this.groupBoxRestaurant.TabStop = false;
             this.groupBoxRestaurant.Text = "Create";
             this.groupBoxRestaurant.Enter += new System.EventHandler(this.groupBoxRestaurant_Enter);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 297);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(197, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Enter Id to delete restaurant:";
+            // 
+            // txtDelete
+            // 
+            this.txtDelete.Location = new System.Drawing.Point(208, 297);
+            this.txtDelete.Name = "txtDelete";
+            this.txtDelete.Size = new System.Drawing.Size(96, 27);
+            this.txtDelete.TabIndex = 11;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(209, 335);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(96, 54);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(203, 245);
+            this.btnClear.Location = new System.Drawing.Point(190, 225);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(101, 48);
+            this.btnClear.Size = new System.Drawing.Size(115, 48);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -79,7 +111,7 @@
             // 
             // btnAddRestaurant
             // 
-            this.btnAddRestaurant.Location = new System.Drawing.Point(47, 245);
+            this.btnAddRestaurant.Location = new System.Drawing.Point(46, 225);
             this.btnAddRestaurant.Name = "btnAddRestaurant";
             this.btnAddRestaurant.Size = new System.Drawing.Size(107, 48);
             this.btnAddRestaurant.TabIndex = 8;
@@ -200,6 +232,11 @@
             // comboItemsPerPage
             // 
             this.comboItemsPerPage.FormattingEnabled = true;
+            this.comboItemsPerPage.Items.AddRange(new object[] {
+            "5",
+            "10",
+            "15",
+            "20"});
             this.comboItemsPerPage.Location = new System.Drawing.Point(785, 393);
             this.comboItemsPerPage.Name = "comboItemsPerPage";
             this.comboItemsPerPage.Size = new System.Drawing.Size(114, 28);
@@ -255,5 +292,8 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.ComboBox comboItemsPerPage;
         private System.Windows.Forms.Label labelPages;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDelete;
     }
 }

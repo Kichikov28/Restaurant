@@ -19,7 +19,7 @@ namespace Restaurant.FormApp
         public RestaurantsForm()
         {
             InitializeComponent();
-            service=new RestaurantsService();   
+            service = new RestaurantsService();
         }
 
         private void groupBoxRestaurant_Enter(object sender, EventArgs e)
@@ -33,28 +33,38 @@ namespace Restaurant.FormApp
             {
                 comboRating.Items.Add($"{i:f1}");
             }
-            comboRating.SelectedIndex= 0;
+            comboRating.SelectedIndex = 0;
             //comboItemsPerPage.SelectedIndex = 0;
             labelPages.Text = $"{currentPage} / {totalPages}";
+
+         
         }
-
-        private void btnAddRestaurant_Click(object sender, EventArgs e)
-        {
-            string name = textBoxName.Text;
-            string location=comboBoxLocation.Text;
-            double rating = double.Parse(comboRating.SelectedItem.ToString());
-            string type = comboType.Text;
-
-            string result = service.AddRestaurant(name, rating, location,type);
-            MessageBox.Show(result);
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
+        private void ClearAddGroupBox()
         {
             textBoxName.Text = string.Empty;
             comboRating.SelectedIndex = 0;
             comboBoxLocation.SelectedIndex = 0;
             comboType.SelectedIndex = 0;
+            txtDelete.Text = string.Empty;
+        }
+
+        private void btnAddRestaurant_Click(object sender, EventArgs e)
+        {
+            string name = textBoxName.Text;
+            string location = comboBoxLocation.Text;
+            double rating = double.Parse(comboRating.SelectedItem.ToString());
+            string type = comboType.Text;
+
+            string result = service.AddRestaurant(name, rating, location, type);
+            MessageBox.Show(result);
+            ClearAddGroupBox();
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+            ClearAddGroupBox();
 
         }
 
@@ -90,6 +100,14 @@ namespace Restaurant.FormApp
         private void listBoxRestaurants_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtDelete.Text);
+            string result = service.DeleteRestaurantById(id);
+            MessageBox.Show(result);
+            ClearAddGroupBox();
         }
     }
 }

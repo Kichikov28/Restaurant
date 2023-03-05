@@ -44,7 +44,7 @@
             // 
             // btnItemForm
             // 
-            this.btnItemForm.Font = new System.Drawing.Font("Lemon", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnItemForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnItemForm.Location = new System.Drawing.Point(12, 473);
             this.btnItemForm.Name = "btnItemForm";
             this.btnItemForm.Size = new System.Drawing.Size(193, 43);
@@ -55,8 +55,8 @@
             // 
             // CreateOrder
             // 
-            this.CreateOrder.Font = new System.Drawing.Font("Lemon", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CreateOrder.Location = new System.Drawing.Point(12, 421);
+            this.CreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CreateOrder.Location = new System.Drawing.Point(12, 424);
             this.CreateOrder.Name = "CreateOrder";
             this.CreateOrder.Size = new System.Drawing.Size(193, 43);
             this.CreateOrder.TabIndex = 2;
@@ -70,18 +70,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lemon", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Brown;
             this.label1.Location = new System.Drawing.Point(50, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(852, 56);
+            this.label1.Size = new System.Drawing.Size(680, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "Welcome to DiKy\'s Delicious Food";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Lemon", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(779, 429);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 87);
@@ -100,7 +100,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(273, 269);
+            this.pictureBox2.Location = new System.Drawing.Point(276, 265);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(125, 62);
             this.pictureBox2.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(551, 149);
+            this.pictureBox3.Location = new System.Drawing.Point(566, 159);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(125, 62);
             this.pictureBox3.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(798, 269);
+            this.pictureBox4.Location = new System.Drawing.Point(779, 238);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(125, 62);
             this.pictureBox4.TabIndex = 8;
