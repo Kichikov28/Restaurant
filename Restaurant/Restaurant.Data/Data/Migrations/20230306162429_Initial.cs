@@ -13,8 +13,8 @@ namespace Restaurant.Data.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(fixedLength: true, maxLength: 50, nullable: false),
-                    PhoneNumber = table.Column<string>(fixedLength: true, maxLength: 10, nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    PhoneNumber = table.Column<string>(nullable: false),
                     Address = table.Column<string>(nullable: false),
                     OrderId = table.Column<int>(nullable: false)
                 },
@@ -29,7 +29,7 @@ namespace Restaurant.Data.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(fixedLength: true, maxLength: 30, nullable: false),
+                    Name = table.Column<string>(nullable: false),
                     Price = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
@@ -43,7 +43,7 @@ namespace Restaurant.Data.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(fixedLength: true, maxLength: 100, nullable: false),
+                    Name = table.Column<string>(nullable: false),
                     Location = table.Column<string>(nullable: false),
                     Rating = table.Column<double>(nullable: false),
                     Type = table.Column<string>(nullable: true)
@@ -59,7 +59,7 @@ namespace Restaurant.Data.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<string>(fixedLength: true, maxLength: 50, nullable: false),
+                    Type = table.Column<string>(nullable: false),
                     RestaurantId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

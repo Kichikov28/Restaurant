@@ -1,21 +1,22 @@
-﻿
-using Restaurant.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-
-namespace Restaurant.FormApp
+﻿namespace Restaurant.FormApp
 {
+    using Models;
+    using Restaurant.Services;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
     public partial class RestaurantsForm : Form
     {
         private RestaurantsService service;
         private int currentPage = 1;
         private int itemsPerPage = 10;
         private int totalPages = 0;
+        private int currentRestaurantId = 0;
         public RestaurantsForm()
         {
             InitializeComponent();
@@ -34,10 +35,11 @@ namespace Restaurant.FormApp
                 comboRating.Items.Add($"{i:f1}");
             }
             comboRating.SelectedIndex = 0;
+            comboItemsPerPage.SelectedIndex = 0;
             //comboItemsPerPage.SelectedIndex = 0;
             labelPages.Text = $"{currentPage} / {totalPages}";
 
-         
+
         }
         private void ClearAddGroupBox()
         {
@@ -108,6 +110,21 @@ namespace Restaurant.FormApp
             string result = service.DeleteRestaurantById(id);
             MessageBox.Show(result);
             ClearAddGroupBox();
+        }
+
+        private void listBoxRestaurants_DoubleClick(object sender, EventArgs e)
+        {
+            string restaurantInfo = listBoxRestaurants.Text;
+            currentRestaurantId = int.Parse(restaurantInfo.Split(' ').First());
+            Restaurant restaurant = service.GetRestaurantById(currentRestaurantId);
+            if (restaurant != null)
+            {
+                textBoxName.Text = restaurant.Name;
+                comboBoxLocation.Text = restaurant.Location.ToString();
+                comboRating.Text = restaurant.Rating.ToString();
+                comboType.Text=restaurant.Type.ToString();
+            }
+
         }
     }
 }

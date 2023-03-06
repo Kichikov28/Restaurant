@@ -14,11 +14,6 @@ namespace Restaurant.FormApp
         {
             InitializeComponent();
         }
-
-        private void btnItemForm_Click(object sender, EventArgs e)
-        {
-            
-        }
         
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -30,15 +25,31 @@ namespace Restaurant.FormApp
 
         }
 
-        private void CreateOrder_Click_RestaurantForm(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RestaurantForm_Click(object sender, EventArgs e)
         {
             RestaurantsForm restaurantsForm = new RestaurantsForm();
             restaurantsForm.ShowDialog();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void MainForm_Load_2(object sender, EventArgs e)
         {
 
+        }
+
+        private void ItemsForm_Click(object sender, EventArgs e)
+        {
+            ItemsForm itemsForm=new ItemsForm();
+            itemsForm.ShowDialog();
         }
     }
 }

@@ -31,8 +31,7 @@
             modelBuilder.Entity<Restaurant>(option =>
             {
                 option.Property(x => x.Name)
-                    .IsRequired()
-                    .IsFixedLength(true);
+                    .IsRequired();
 
                 option.Property(x => x.Location)
                     .IsRequired();
@@ -40,20 +39,15 @@
             modelBuilder.Entity<Customer>(option =>
             {
                 option.Property(x => x.Name)
-                   .IsRequired()
-                   .IsFixedLength(true);
+                   .IsRequired();
 
                 option.HasIndex(x => x.PhoneNumber)
                 .IsUnique(true);
-
-                option.Property(x => x.PhoneNumber)
-                .IsFixedLength(true);
             });
             modelBuilder.Entity<Menu>(option =>
             {
                 option.Property(x => x.Type)
-                    .IsRequired()
-                    .IsFixedLength(true);
+                    .IsRequired();
 
                 option.HasOne(x => x.Restaurant)
                     .WithMany(x => x.Menus)
@@ -63,7 +57,6 @@
             modelBuilder.Entity<Item>(option =>
             {
                 option.HasIndex(x => x.Name).IsUnique(true);
-                option.Property(x => x.Name).IsFixedLength(true);
             });
         }
     }

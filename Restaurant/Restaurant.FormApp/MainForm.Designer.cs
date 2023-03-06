@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnItemForm = new System.Windows.Forms.Button();
-            this.CreateOrder = new System.Windows.Forms.Button();
+            this.ItemsForm = new System.Windows.Forms.Button();
+            this.RestaurantForm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,27 +42,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnItemForm
+            // ItemsForm
             // 
-            this.btnItemForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnItemForm.Location = new System.Drawing.Point(12, 473);
-            this.btnItemForm.Name = "btnItemForm";
-            this.btnItemForm.Size = new System.Drawing.Size(193, 43);
-            this.btnItemForm.TabIndex = 1;
-            this.btnItemForm.Text = "Items";
-            this.btnItemForm.UseVisualStyleBackColor = true;
-            this.btnItemForm.Click += new System.EventHandler(this.btnItemForm_Click);
+            this.ItemsForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ItemsForm.Location = new System.Drawing.Point(12, 473);
+            this.ItemsForm.Name = "ItemsForm";
+            this.ItemsForm.Size = new System.Drawing.Size(193, 43);
+            this.ItemsForm.TabIndex = 1;
+            this.ItemsForm.Text = "Items";
+            this.ItemsForm.UseVisualStyleBackColor = true;
+            this.ItemsForm.Click += new System.EventHandler(this.ItemsForm_Click);
             // 
-            // CreateOrder
+            // RestaurantForm
             // 
-            this.CreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CreateOrder.Location = new System.Drawing.Point(12, 424);
-            this.CreateOrder.Name = "CreateOrder";
-            this.CreateOrder.Size = new System.Drawing.Size(193, 43);
-            this.CreateOrder.TabIndex = 2;
-            this.CreateOrder.Text = "Restaurants";
-            this.CreateOrder.UseVisualStyleBackColor = true;
-            this.CreateOrder.Click += new System.EventHandler(this.CreateOrder_Click_RestaurantForm);
+            this.RestaurantForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RestaurantForm.Location = new System.Drawing.Point(12, 424);
+            this.RestaurantForm.Name = "RestaurantForm";
+            this.RestaurantForm.Size = new System.Drawing.Size(193, 43);
+            this.RestaurantForm.TabIndex = 2;
+            this.RestaurantForm.Text = "Restaurants";
+            this.RestaurantForm.UseVisualStyleBackColor = true;
+            this.RestaurantForm.Click += new System.EventHandler(this.RestaurantForm_Click);
             // 
             // label1
             // 
@@ -134,8 +134,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CreateOrder);
-            this.Controls.Add(this.btnItemForm);
+            this.Controls.Add(this.RestaurantForm);
+            this.Controls.Add(this.ItemsForm);
             this.Name = "MainForm";
             this.Text = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -148,8 +148,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnItemForm;
-        private System.Windows.Forms.Button CreateOrder;
+        private System.Windows.Forms.Button ItemsForm;
+        private System.Windows.Forms.Button RestaurantForm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;

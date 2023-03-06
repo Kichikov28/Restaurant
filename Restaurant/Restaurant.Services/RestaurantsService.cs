@@ -93,7 +93,7 @@
                 list = context.Restaurants
                     .Skip((page - 1) * count)
                     .Take(count)
-                    .Select(x => $"{x.Id} - {x.Name} has {x.Rating} rating")
+                    .Select(x => $"{x.Id} - {x.Name} located in {x.Location} has {x.Rating} rating")
                     .ToList();
             }
             return list;
@@ -117,18 +117,6 @@
                 return $"{nameof(Restaurant)} {restaurant.Name} in {restaurant.Location} was deleted!";
             }
         }
-        public string GetRestaurantByTypeConsole(string type)
-        {
-            if (string.IsNullOrWhiteSpace(type))
-            {
-                throw new ArgumentException("Invalid restaurant type!");
-            }
-            using (context = new AppDbContext())
-            {
-                Restaurant t = context.Restaurants.FirstOrDefault(x => x.Type == type);
-                return t.Name;
-            }
-        }
         public Restaurant GetRestaurantByType(string type)
         {
             if (string.IsNullOrWhiteSpace(type))
@@ -149,19 +137,45 @@
             }
             using (context = new AppDbContext())
             {
-               Restaurant r = context.Restaurants.FirstOrDefault(x => x.Location == location);
+                Restaurant r = context.Restaurants.FirstOrDefault(x => x.Location == location);
                 return r;
             }
         }
+        public string GetAllRestaurantsInfo(int page = 1, int count = 10)
+        {
+            StringBuilder msg = new StringBuilder();
+            string firstRow = $"| {"Id",-4} | {"Name",-12} | {"Type",-10} | {"Rating",-3} | {"Location",-12}|";
 
-        public List<Restaurant> SortRestaurantsByRating(List<Restaurant> restaurants)
+            string line = $"|{new string('-', firstRow.Length - 2)}|";
+
+            using (context = new AppDbContext())
+            {
+                List<Restaurant> restaurants = context.Restaurants
+                    .Skip((page - 1) * count)
+                    .Take(count)
+                    .ToList();
+                msg.AppendLine(firstRow);
+                msg.AppendLine(line);
+                foreach (var r in restaurants)
+                {
+                    string info = $"| {r.Id,-4} | {r.Name,-12} | {r.Type,-10} | {r.Rating,-3} | {r.Location,-12}|";
+                   msg.AppendLine(info);
+                    msg.AppendLine(line);
+                }
+                int pageCount = (int)Math.Ceiling(context.Restaurants.Count() / (decimal)count);
+                msg.AppendLine($"Page: {page} / {pageCount}");
+            }
+            return msg.ToString().TrimEnd();
+        }
+
+        public List<Restaurant> SortRestaurantsByRating()
         {
             using (context = new AppDbContext())
             {
                 return context.Restaurants.OrderBy(x => x.Rating).ToList();
             }
         }
-        public List<Restaurant> ReverseSortRestaurantsByRating(List<Restaurant> restaurants)
+        public List<Restaurant> ReverseSortRestaurantsByRating()
         {
             using (context = new AppDbContext())
             {

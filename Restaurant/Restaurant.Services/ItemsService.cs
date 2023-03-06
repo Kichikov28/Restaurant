@@ -6,23 +6,17 @@
     using System.Collections.Generic;
     using System.Text;
     using System.Linq;
-    using System.Reflection;
 
     public class ItemsService
     {
         private AppDbContext context;
-        public string AddItem(int id, string name, decimal price)
+        public string AddItem( string name, decimal price)
         {
             StringBuilder message = new StringBuilder();
             bool isValid = true;
-            if (id < 0)
-            {
-                message.AppendLine($"Invalid {nameof(id)}!");
-                isValid = false;
-            }
             if (string.IsNullOrWhiteSpace(name))
             {
-                message.AppendLine($"Invalid {nameof(id)}!");
+                message.AppendLine($"Invalid {nameof(name)}!");
                 isValid = false;
             }
             if (price < 0)
@@ -30,21 +24,18 @@
                 message.AppendLine($"Invalid {nameof(price)}!");
                 isValid = false;
             }
-
             if (isValid)
             {
                 Item item = new Item()
                 {
-                    Id = id,
                     Name = name,
                     Price = price
                 };
-
                 using (context = new AppDbContext())
                 {
                     context.Items.Add(item);
                     context.SaveChanges();
-                    message.AppendLine($"Item {id} - {name} is added!");
+                    message.AppendLine($"Item {name} which costs: {price} is added!");
                 }
             }
             return message.ToString().TrimEnd();
@@ -54,6 +45,18 @@
             using (context = new AppDbContext())
             {
                 return context.Items.Find(id);
+            }
+        }
+        public Item GetItemByName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException("Invalid Restaurant name!");
+            }
+            using (context = new AppDbContext())
+            {
+                Item item = context.Items.FirstOrDefault(x => x.Name == name);
+                return item;
             }
         }
         public string UpdateItemPrice(int id, decimal newPrice)
@@ -89,6 +92,54 @@
                 return $"{nameof(item)} {item.Name} was deleted!";
             }
         }
+        public string GetItemInfoById(int id)
+        {
+            Item item = null;
+            using (context = new AppDbContext()) 
+            {
+            item =context.Items.Find(id);
+                if (item!=null)
+                {
+                    StringBuilder message = new StringBuilder();
+                    message.AppendLine($"{nameof(Item)} info: ");
+                    message.AppendLine($"\tId: {item.Id}");
+                    message.AppendLine($"\tName: {item.Name}");
+                    message.AppendLine($"\tPrice: {item.Price}");
+                    return message.ToString().TrimEnd();
+                }
+                else
+                {
+                    return $"{nameof(Item)} not found!";
+                }
+            }
+        }
+        public string GetAllItemsInfo(int page = 1, int count = 10)
+        {
+            StringBuilder msg = new StringBuilder();
+            string firstRow = $"| {"Id",-4} | {"Name",-20} | {"Price",-3}|";
+
+            string line = $"|{new string('-', firstRow.Length - 2)}|";
+
+            using (context = new AppDbContext())
+            {
+                List<Item> items = context.Items
+                    .Skip((page - 1) * count)
+                    .Take(count)
+                    .ToList();
+                msg.AppendLine(firstRow);
+                msg.AppendLine(line);
+                foreach (var i in items)
+                {
+                    string info = $"| {i.Id,-4} | {i.Name,-20} | {i.Price,-3}|";
+                    msg.AppendLine(info);
+                    msg.AppendLine(line);
+                }
+                int pageCount = (int)Math.Ceiling(context.Items.Count() / (decimal)count);
+                msg.AppendLine($"Page: {page} / {pageCount}");
+            }
+
+            return msg.ToString().TrimEnd();
+        }
         public List<Item> SortItemByPrice(List<Item> items)
         {
             using (context = new AppDbContext())
@@ -96,21 +147,21 @@
                 return context.Items.OrderBy(x => x.Price).ToList();
             }
         }
-        public List<Item> SortItemByName(List<Item> items)
+        public List<Item> SortItemsByName()
         {
             using (context = new AppDbContext())
             {
                 return context.Items.OrderBy(x => x.Name).ToList();
             }
         }
-        public List<Item> ReverseSortItemByName(List<Item> items)
+        public List<Item> ReverseSortItemByName()
         {
             using (context=new AppDbContext())
             {
                 return context.Items.OrderByDescending(x => x.Name).ToList();
             }
         }
-        public List<Item> ReverseSortItemByPrice(List<Item> items)
+        public List<Item> ReverseSortItemByPrice()
         {
             using (context=new AppDbContext())
             {

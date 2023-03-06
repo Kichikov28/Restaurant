@@ -10,7 +10,7 @@ using Restaurant.Data;
 namespace Restaurant.Data.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230305141757_Initial")]
+    [Migration("20230306162429_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,18 +34,14 @@ namespace Restaurant.Data.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nchar(50)")
-                        .IsFixedLength(true)
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nchar(10)")
-                        .IsFixedLength(true)
-                        .HasMaxLength(10);
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -64,9 +60,7 @@ namespace Restaurant.Data.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nchar(30)")
-                        .IsFixedLength(true)
-                        .HasMaxLength(30);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -91,9 +85,7 @@ namespace Restaurant.Data.Data.Migrations
 
                     b.Property<string>("Type")
                         .IsRequired()
-                        .HasColumnType("nchar(50)")
-                        .IsFixedLength(true)
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -183,9 +175,7 @@ namespace Restaurant.Data.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nchar(100)")
-                        .IsFixedLength(true)
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Rating")
                         .HasColumnType("float");

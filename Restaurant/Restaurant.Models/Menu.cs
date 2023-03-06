@@ -7,7 +7,6 @@
     {
         public int Id { get; set; }
         [Required]
-        [MaxLength(50)]
         public string Type { get; set; }
         public int RestaurantId { get; set; }
         public virtual Restaurant Restaurant { get; set; }
