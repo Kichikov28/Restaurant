@@ -72,7 +72,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(50, 9);
+            this.label1.Location = new System.Drawing.Point(133, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(680, 51);
             this.label1.TabIndex = 3;
