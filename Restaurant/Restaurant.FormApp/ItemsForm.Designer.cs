@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBoxCreateItem = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Clear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -38,11 +43,19 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.labelPages = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBoxCreateItem.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxCreateItem
             // 
+            this.groupBoxCreateItem.Controls.Add(this.button1);
+            this.groupBoxCreateItem.Controls.Add(this.textBox1);
+            this.groupBoxCreateItem.Controls.Add(this.label5);
+            this.groupBoxCreateItem.Controls.Add(this.label3);
+            this.groupBoxCreateItem.Controls.Add(this.Clear);
             this.groupBoxCreateItem.Controls.Add(this.btnAdd);
             this.groupBoxCreateItem.Controls.Add(this.txtPrice);
             this.groupBoxCreateItem.Controls.Add(this.txtName);
@@ -51,10 +64,56 @@
             this.groupBoxCreateItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBoxCreateItem.Location = new System.Drawing.Point(43, 46);
             this.groupBoxCreateItem.Name = "groupBoxCreateItem";
-            this.groupBoxCreateItem.Size = new System.Drawing.Size(344, 294);
+            this.groupBoxCreateItem.Size = new System.Drawing.Size(344, 304);
             this.groupBoxCreateItem.TabIndex = 0;
             this.groupBoxCreateItem.TabStop = false;
             this.groupBoxCreateItem.Text = "Create Item";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(199, 249);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 49);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(199, 213);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 30);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 216);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(187, 23);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Enter Id to delete item!";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 216);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 23);
+            this.label3.TabIndex = 6;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(175, 156);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(108, 42);
+            this.Clear.TabIndex = 5;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAdd
             // 
@@ -64,6 +123,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtPrice
             // 
@@ -71,6 +131,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(125, 30);
             this.txtPrice.TabIndex = 3;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // txtName
             // 
@@ -78,6 +139,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(125, 30);
             this.txtName.TabIndex = 2;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // labelPrice
             // 
@@ -112,9 +174,9 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(632, 377);
+            this.btnNext.Location = new System.Drawing.Point(643, 377);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(94, 44);
+            this.btnNext.Size = new System.Drawing.Size(96, 44);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -122,7 +184,7 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(500, 377);
+            this.btnPrevious.Location = new System.Drawing.Point(522, 377);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(94, 44);
             this.btnPrevious.TabIndex = 3;
@@ -133,17 +195,47 @@
             // labelPages
             // 
             this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(611, 356);
+            this.labelPages.Location = new System.Drawing.Point(622, 389);
             this.labelPages.Name = "labelPages";
             this.labelPages.Size = new System.Drawing.Size(15, 20);
             this.labelPages.TabIndex = 4;
             this.labelPages.Text = "-";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "label4";
             // 
             // ItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 465);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelPages);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
@@ -171,5 +263,13 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Label labelPages;
+        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

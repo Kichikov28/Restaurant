@@ -126,5 +126,10 @@
             }
 
         }
+
+        private void comboRating_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

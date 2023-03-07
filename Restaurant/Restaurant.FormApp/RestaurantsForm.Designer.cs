@@ -126,6 +126,7 @@
             this.comboRating.Name = "comboRating";
             this.comboRating.Size = new System.Drawing.Size(209, 28);
             this.comboRating.TabIndex = 7;
+            this.comboRating.SelectedIndexChanged += new System.EventHandler(this.comboRating_SelectedIndexChanged);
             // 
             // comboType
             // 

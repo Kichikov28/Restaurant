@@ -31,6 +31,7 @@
         {
             txtName.Text = string.Empty;
             txtPrice.Text = string.Empty;
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -65,7 +66,48 @@
             {
                 txtName.Text = item.Name;
                 txtPrice.Text =item.Price.ToString();
+                
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClearAddGroupBox();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text;
+            //decimal price = decimal.Parse(txtPrice.SelectedItem.ToString());
+
+            //var result = service.AddItem(name, price);
+           // MessageBox.Show(result);
+            ClearAddGroupBox();
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
