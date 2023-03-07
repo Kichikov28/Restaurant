@@ -9,7 +9,6 @@
     public class MenuService
     {
         private AppDbContext context;
-
         public Menu GetMenuByName(string type)
         {
             if (string.IsNullOrWhiteSpace(type))
@@ -19,7 +18,6 @@
             using (context = new AppDbContext())
             {
                 Menu m = context.Menus.FirstOrDefault(x => x.Type == type);
-                context.SaveChanges();
                 return m;
             }
         }

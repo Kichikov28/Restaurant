@@ -29,19 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBoxCreateItem = new System.Windows.Forms.GroupBox();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelPrice = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.labelPrice = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.Items = new System.Windows.Forms.ListBox();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.labelPages = new System.Windows.Forms.Label();
             this.groupBoxCreateItem.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxCreateItem
             // 
             this.groupBoxCreateItem.Controls.Add(this.btnAdd);
-            this.groupBoxCreateItem.Controls.Add(this.textBox2);
-            this.groupBoxCreateItem.Controls.Add(this.textBox1);
+            this.groupBoxCreateItem.Controls.Add(this.txtPrice);
+            this.groupBoxCreateItem.Controls.Add(this.txtName);
             this.groupBoxCreateItem.Controls.Add(this.labelPrice);
             this.groupBoxCreateItem.Controls.Add(this.labelName);
             this.groupBoxCreateItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -52,15 +56,28 @@
             this.groupBoxCreateItem.TabStop = false;
             this.groupBoxCreateItem.Text = "Create Item";
             // 
-            // labelName
+            // btnAdd
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName.Location = new System.Drawing.Point(24, 57);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(56, 23);
-            this.labelName.TabIndex = 0;
-            this.labelName.Text = "Name";
+            this.btnAdd.Location = new System.Drawing.Point(47, 156);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(98, 42);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(108, 96);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(125, 30);
+            this.txtPrice.TabIndex = 3;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(108, 54);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(125, 30);
+            this.txtName.TabIndex = 2;
             // 
             // labelPrice
             // 
@@ -73,34 +90,64 @@
             this.labelPrice.Text = "Price";
             this.labelPrice.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox1
+            // labelName
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 30);
-            this.textBox1.TabIndex = 2;
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelName.Location = new System.Drawing.Point(24, 57);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(56, 23);
+            this.labelName.TabIndex = 0;
+            this.labelName.Text = "Name";
             // 
-            // textBox2
+            // Items
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 30);
-            this.textBox2.TabIndex = 3;
+            this.Items.FormattingEnabled = true;
+            this.Items.ItemHeight = 20;
+            this.Items.Location = new System.Drawing.Point(470, 46);
+            this.Items.Name = "Items";
+            this.Items.Size = new System.Drawing.Size(323, 304);
+            this.Items.TabIndex = 1;
+            this.Items.DoubleClick += new System.EventHandler(this.Items_DoubleClick);
             // 
-            // btnAdd
+            // btnNext
             // 
-            this.btnAdd.Location = new System.Drawing.Point(47, 156);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(98, 42);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnNext.Location = new System.Drawing.Point(632, 377);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(94, 44);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Location = new System.Drawing.Point(500, 377);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(94, 44);
+            this.btnPrevious.TabIndex = 3;
+            this.btnPrevious.Text = "Previous";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // labelPages
+            // 
+            this.labelPages.AutoSize = true;
+            this.labelPages.Location = new System.Drawing.Point(611, 356);
+            this.labelPages.Name = "labelPages";
+            this.labelPages.Size = new System.Drawing.Size(15, 20);
+            this.labelPages.TabIndex = 4;
+            this.labelPages.Text = "-";
             // 
             // ItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 491);
+            this.ClientSize = new System.Drawing.Size(874, 465);
+            this.Controls.Add(this.labelPages);
+            this.Controls.Add(this.btnPrevious);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.Items);
             this.Controls.Add(this.groupBoxCreateItem);
             this.Name = "ItemsForm";
             this.Text = "ItemsForm";
@@ -108,16 +155,21 @@
             this.groupBoxCreateItem.ResumeLayout(false);
             this.groupBoxCreateItem.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxCreateItem;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ListBox Items;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Label labelPages;
     }
 }

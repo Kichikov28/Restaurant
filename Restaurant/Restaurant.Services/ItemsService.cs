@@ -92,6 +92,19 @@
                 return $"{nameof(item)} {item.Name} was deleted!";
             }
         }
+        public List<string> GetItemsBasicInfo(int page = 1, int count = 10)
+        {
+            List<string> list = null;
+            using (context = new AppDbContext())
+            {
+                list = context.Items
+                    .Skip((page - 1) * count)
+                    .Take(count)
+                    .Select(x => $"{x.Id} - {x.Name} has price: {x.Price}")
+                    .ToList();
+            }
+            return list;
+        }
         public string GetItemInfoById(int id)
         {
             Item item = null;

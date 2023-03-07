@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBoxRestaurants = new System.Windows.Forms.ListBox();
+            this.Restaurants = new System.Windows.Forms.ListBox();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.comboItemsPerPage = new System.Windows.Forms.ComboBox();
@@ -199,16 +199,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // listBoxRestaurants
+            // Restaurants
             // 
-            this.listBoxRestaurants.FormattingEnabled = true;
-            this.listBoxRestaurants.ItemHeight = 20;
-            this.listBoxRestaurants.Location = new System.Drawing.Point(511, 32);
-            this.listBoxRestaurants.Name = "listBoxRestaurants";
-            this.listBoxRestaurants.Size = new System.Drawing.Size(388, 324);
-            this.listBoxRestaurants.TabIndex = 1;
-            this.listBoxRestaurants.SelectedIndexChanged += new System.EventHandler(this.listBoxRestaurants_SelectedIndexChanged);
-            this.listBoxRestaurants.DoubleClick += new System.EventHandler(this.listBoxRestaurants_DoubleClick);
+            this.Restaurants.FormattingEnabled = true;
+            this.Restaurants.ItemHeight = 20;
+            this.Restaurants.Location = new System.Drawing.Point(511, 32);
+            this.Restaurants.Name = "Restaurants";
+            this.Restaurants.Size = new System.Drawing.Size(388, 324);
+            this.Restaurants.TabIndex = 1;
+            this.Restaurants.SelectedIndexChanged += new System.EventHandler(this.listBoxRestaurants_SelectedIndexChanged);
+            this.Restaurants.DoubleClick += new System.EventHandler(this.listBoxRestaurants_DoubleClick);
             // 
             // btnPrevious
             // 
@@ -263,7 +263,7 @@
             this.Controls.Add(this.comboItemsPerPage);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
-            this.Controls.Add(this.listBoxRestaurants);
+            this.Controls.Add(this.Restaurants);
             this.Controls.Add(this.groupBoxRestaurant);
             this.Name = "RestaurantsForm";
             this.Text = "RestaurantsForm";
@@ -288,7 +288,7 @@
         private System.Windows.Forms.ComboBox comboRating;
         private System.Windows.Forms.Button btnAddRestaurant;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.ListBox listBoxRestaurants;
+        private System.Windows.Forms.ListBox Restaurants;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.ComboBox comboItemsPerPage;

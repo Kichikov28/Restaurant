@@ -73,18 +73,18 @@
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (currentPage >= totalPages) { return; }
-            listBoxRestaurants.Items.Clear();
+            Restaurants.Items.Clear();
             List<string> list = service.GetRestaurantsBasicInfo(++currentPage, itemsPerPage);
-            list.ForEach(p => listBoxRestaurants.Items.Add(p));
+            list.ForEach(p => Restaurants.Items.Add(p));
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (currentPage <= 1) { return; }
-            listBoxRestaurants.Items.Clear();
+            Restaurants.Items.Clear();
             List<string> list = service.GetRestaurantsBasicInfo(--currentPage, itemsPerPage);
-            list.ForEach(p => listBoxRestaurants.Items.Add(p));
+            list.ForEach(p => Restaurants.Items.Add(p));
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
 
@@ -93,9 +93,9 @@
             itemsPerPage = int.Parse(comboItemsPerPage.Text);
             totalPages = service.GetRestaurantPagesCount(itemsPerPage);
 
-            listBoxRestaurants.Items.Clear();
+            Restaurants.Items.Clear();
             List<string> list = service.GetRestaurantsBasicInfo(1, itemsPerPage);
-            list.ForEach(p => listBoxRestaurants.Items.Add(p));
+            list.ForEach(p => Restaurants.Items.Add(p));
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
 
@@ -114,7 +114,7 @@
 
         private void listBoxRestaurants_DoubleClick(object sender, EventArgs e)
         {
-            string restaurantInfo = listBoxRestaurants.Text;
+            string restaurantInfo = Restaurants.Text;
             currentRestaurantId = int.Parse(restaurantInfo.Split(' ').First());
             Restaurant restaurant = service.GetRestaurantById(currentRestaurantId);
             if (restaurant != null)
