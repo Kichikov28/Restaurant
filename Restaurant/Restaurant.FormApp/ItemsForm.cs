@@ -65,7 +65,6 @@
             {
                 txtName.Text = item.Name;
                 txtPrice.Text =item.Price.ToString();
-                
             }
         }
 
@@ -86,7 +85,7 @@
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            int id = int.Parse(Delete.Text);
+            int id = int.Parse(btnDelete.Text);
             string result = service.RemoveItemById(id);
             MessageBox.Show(result);
             ClearAddGroupBox();
@@ -94,9 +93,8 @@
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
-            //decimal price = decimal.Parse(txtPrice.SelectedItem.ToString());
-
+            //string name = txtName.Text;
+            //decimal price = decimal.Parse(txtPrice.SelectedIndex.ToString());
             //var result = service.AddItem(name, price);
             //MessageBox.Show(result);
             ClearAddGroupBox();

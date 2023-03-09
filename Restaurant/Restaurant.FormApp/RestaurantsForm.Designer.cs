@@ -206,14 +206,14 @@
             this.Restaurants.ItemHeight = 20;
             this.Restaurants.Location = new System.Drawing.Point(511, 32);
             this.Restaurants.Name = "Restaurants";
-            this.Restaurants.Size = new System.Drawing.Size(388, 324);
+            this.Restaurants.Size = new System.Drawing.Size(442, 324);
             this.Restaurants.TabIndex = 1;
             this.Restaurants.SelectedIndexChanged += new System.EventHandler(this.listBoxRestaurants_SelectedIndexChanged);
             this.Restaurants.DoubleClick += new System.EventHandler(this.listBoxRestaurants_DoubleClick);
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(543, 384);
+            this.btnPrevious.Location = new System.Drawing.Point(559, 384);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(94, 44);
             this.btnPrevious.TabIndex = 2;
@@ -223,7 +223,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(667, 384);
+            this.btnNext.Location = new System.Drawing.Point(698, 384);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(94, 44);
             this.btnNext.TabIndex = 3;
@@ -239,7 +239,7 @@
             "10",
             "15",
             "20"});
-            this.comboItemsPerPage.Location = new System.Drawing.Point(785, 393);
+            this.comboItemsPerPage.Location = new System.Drawing.Point(817, 393);
             this.comboItemsPerPage.Name = "comboItemsPerPage";
             this.comboItemsPerPage.Size = new System.Drawing.Size(114, 28);
             this.comboItemsPerPage.TabIndex = 4;
@@ -248,7 +248,7 @@
             // labelPages
             // 
             this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(630, 361);
+            this.labelPages.Location = new System.Drawing.Point(653, 359);
             this.labelPages.Name = "labelPages";
             this.labelPages.Size = new System.Drawing.Size(15, 20);
             this.labelPages.TabIndex = 5;

@@ -30,7 +30,7 @@
                 sb.AppendLine($"Invalid {nameof(type)}!");
                 isValid = false;
             }
-            if (rating < 2)
+            if (rating < 2 && rating > 10)
             {
                 sb.AppendLine($"Invalid {nameof(rating)}!");
                 isValid = false;
@@ -159,7 +159,7 @@
                 foreach (var r in restaurants)
                 {
                     string info = $"| {r.Id,-4} | {r.Name,-12} | {r.Type,-10} | {r.Rating,-3} | {r.Location,-12}|";
-                   msg.AppendLine(info);
+                    msg.AppendLine(info);
                     msg.AppendLine(line);
                 }
                 int pageCount = (int)Math.Ceiling(context.Restaurants.Count() / (decimal)count);

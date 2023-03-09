@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxCreateItem = new System.Windows.Forms.GroupBox();
-            this.Delete = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             // 
             // groupBoxCreateItem
             // 
-            this.groupBoxCreateItem.Controls.Add(this.Delete);
+            this.groupBoxCreateItem.Controls.Add(this.btnDelete);
             this.groupBoxCreateItem.Controls.Add(this.textBox1);
             this.groupBoxCreateItem.Controls.Add(this.label5);
             this.groupBoxCreateItem.Controls.Add(this.label3);
@@ -69,15 +69,15 @@
             this.groupBoxCreateItem.TabStop = false;
             this.groupBoxCreateItem.Text = "Create Item";
             // 
-            // Delete
+            // btnDelete
             // 
-            this.Delete.Location = new System.Drawing.Point(199, 249);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(125, 49);
-            this.Delete.TabIndex = 9;
-            this.Delete.Text = "Delete";
-            this.Delete.UseVisualStyleBackColor = true;
-            this.Delete.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnDelete.Location = new System.Drawing.Point(199, 249);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(125, 49);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox1
             // 
@@ -270,6 +270,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

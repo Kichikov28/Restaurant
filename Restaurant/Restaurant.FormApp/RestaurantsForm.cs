@@ -30,7 +30,7 @@
 
         private void RestaurantsForm_Load(object sender, EventArgs e)
         {
-            for (double i = 2.0; i <= 10.0; i += 0.2)
+            for (double i = 2.0; i < 10.0; i += 0.1)
             {
                 comboRating.Items.Add($"{i:f1}");
             }
