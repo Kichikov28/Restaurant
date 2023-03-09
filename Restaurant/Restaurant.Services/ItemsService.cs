@@ -181,5 +181,16 @@
                 return context.Items.OrderByDescending(x => x.Price).ToList();
             } 
         }
+        public string RemoveItemById(int id)
+        {
+            using (context = new AppDbContext())
+            {
+                Item item = context.Items.Find(id);
+                if (item == null) { return $"{nameof(Item)} not found!"; }
+                context.Items.Remove(item);
+                context.SaveChanges();
+                return $"{nameof(Restaurant)} {item.Name} was deleted!";
+            }
+        }
     }
 }

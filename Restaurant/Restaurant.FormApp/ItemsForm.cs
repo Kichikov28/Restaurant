@@ -31,7 +31,6 @@
         {
             txtName.Text = string.Empty;
             txtPrice.Text = string.Empty;
-            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -87,7 +86,10 @@
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            int id = int.Parse(Delete.Text);
+            string result = service.RemoveItemById(id);
+            MessageBox.Show(result);
+            ClearAddGroupBox();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -96,7 +98,7 @@
             //decimal price = decimal.Parse(txtPrice.SelectedItem.ToString());
 
             //var result = service.AddItem(name, price);
-           // MessageBox.Show(result);
+            //MessageBox.Show(result);
             ClearAddGroupBox();
         }
 
