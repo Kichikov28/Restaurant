@@ -1,9 +1,9 @@
-﻿using Restaurant.Services;
-using System;
-using System.Collections.Generic;
-
-namespace Restaurant.Seeder
+﻿namespace Restaurant.Seeder
 {
+    using Restaurant.Services;
+    using System;
+    using System.Collections.Generic;
+
     public class Program
     {
         private static RestaurantsService restaurantsService = new RestaurantsService();
@@ -14,8 +14,8 @@ namespace Restaurant.Seeder
         public static void SeedRestaurants()
         {
             List<string> name = new List<string>() { "Spice Palace", "Seafood Haven", "The Burger Joint", "Noodle Bar", "Tandoori Flames", "La Pizzeria", "The Steakhouse", "Sushi Spot", "The Brasserie", "The Green Garden", "Thai Terrace", "The Pasta House", "The Rustic Kitchen", "BBQ Pit" };
-            List<string> location = new List<string>() { "Velingrad", "Sofia", "Plovdiv", "Varna", "Burgas", "Veliko Tarnovo", "Haskovo","Ruse","Stara Zagora","Vidin"};
-            List<string> type = new List<string>() { "Italian", "Bulgarian", "Chinese", "Japanese", "Greek","Spanish" };
+            List<string> location = new List<string>() { "Velingrad", "Sofia", "Plovdiv", "Varna", "Burgas", "Veliko Tarnovo", "Haskovo","Ruse","Stara Zagora","Vidin", "Pazardjik", "Bansko", "Asenovgrad", "Dobrich", "Shumen", "Pernik", "Yambol", "Gabrovo", "Vratsa", "Kyustendil", "Montana", "Lovech", "Dimitrovgrad", "Gorna Oryahovitsa", "Smolyan", "Petrich", "Karlovo", "Svishtov", "Sandanski", "Asparuhovo", "Lom", "Sevlievo", "Nova Zagora", "Troyan", "Aytos", "Panagyurishte" };
+            List<string> type = new List<string>() { "Italian", "Bulgarian", "Chinese", "Japanese", "Greek","Spanish", "French", "Lebanese", "Turkey", "Indian", "Thai", "Mexican", "American", "Moroccan" };
             Random random = new Random();
             for (int i = 0; i < 30; i++)
             {
