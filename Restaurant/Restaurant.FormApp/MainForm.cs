@@ -51,5 +51,11 @@ namespace Restaurant.FormApp
             ItemsForm itemsForm=new ItemsForm();
             itemsForm.ShowDialog();
         }
+
+        private void btnCreateOrder_Click(object sender, EventArgs e)
+        {
+            CreateOrderForm createOrder = new CreateOrderForm();
+            createOrder.ShowDialog();
+        }
     }
 }
