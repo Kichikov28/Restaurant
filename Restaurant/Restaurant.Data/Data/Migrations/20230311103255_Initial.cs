@@ -159,12 +159,6 @@ namespace Restaurant.Data.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Items_Name",
-                table: "Items",
-                column: "Name",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_MenuItems_ItemId",
                 table: "MenuItems",
                 column: "ItemId");

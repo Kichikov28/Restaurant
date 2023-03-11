@@ -56,7 +56,8 @@
             });
             modelBuilder.Entity<Item>(option =>
             {
-                option.HasIndex(x => x.Name).IsUnique(true);
+                option.Property(x => x.Name)
+                .IsRequired();
             });
         }
     }

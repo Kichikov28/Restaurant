@@ -12,7 +12,7 @@
     using System.Windows.Forms;
     public partial class ItemsForm : Form
     {
-        private ItemsService service; 
+        private ItemsService service;
         private int currentPage = 1;
         private int itemsPerPage = 10;
         private int totalPages = 0;
@@ -20,11 +20,12 @@
         public ItemsForm()
         {
             InitializeComponent();
-            service=new ItemsService();
+            service = new ItemsService();
         }
 
         private void ItemsForm_Load(object sender, EventArgs e)
         {
+            comboBoxItems.SelectedIndex = 0;
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
         private void ClearAddGroupBox()
@@ -64,14 +65,11 @@
             if (item != null)
             {
                 txtName.Text = item.Name;
-                txtPrice.Text =item.Price.ToString();
+                txtPrice.Text = item.Price.ToString();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ClearAddGroupBox();
-        }
+      
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -93,10 +91,10 @@
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //string name = txtName.Text;
-            //decimal price = decimal.Parse(txtPrice.SelectedIndex.ToString());
-            //var result = service.AddItem(name, price);
-            //MessageBox.Show(result);
+            string name = txtName.Text;
+            decimal price = decimal.Parse(txtPrice.Text);
+            var result = service.AddItem(name, price);
+            MessageBox.Show(result);
             ClearAddGroupBox();
         }
 
@@ -108,6 +106,32 @@
         private void txtPrice_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ItemsForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            itemsPerPage = int.Parse(comboBoxItems.Text);
+            totalPages = service.GetItemsPagesCount(itemsPerPage);
+
+            Items.Items.Clear();
+            List<string> list = service.GetItemsBasicInfo(1, itemsPerPage);
+            list.ForEach(i => Items.Items.Add(i));
+            labelPages.Text = $"{currentPage} / {totalPages}";
+        }
+
+        private void Items_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearAddGroupBox();
         }
     }
 }

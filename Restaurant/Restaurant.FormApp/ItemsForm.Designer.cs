@@ -33,7 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Clear = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxItems = new System.Windows.Forms.ComboBox();
             this.groupBoxCreateItem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             this.groupBoxCreateItem.Controls.Add(this.textBox1);
             this.groupBoxCreateItem.Controls.Add(this.label5);
             this.groupBoxCreateItem.Controls.Add(this.label3);
-            this.groupBoxCreateItem.Controls.Add(this.Clear);
+            this.groupBoxCreateItem.Controls.Add(this.btnClear);
             this.groupBoxCreateItem.Controls.Add(this.btnAdd);
             this.groupBoxCreateItem.Controls.Add(this.txtPrice);
             this.groupBoxCreateItem.Controls.Add(this.txtName);
@@ -92,9 +93,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 216);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(187, 23);
+            this.label5.Size = new System.Drawing.Size(186, 23);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Enter Id to delete item!";
+            this.label5.Text = "Enter Id to delete item:";
             // 
             // label3
             // 
@@ -105,15 +106,15 @@
             this.label3.TabIndex = 6;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // Clear
+            // btnClear
             // 
-            this.Clear.Location = new System.Drawing.Point(175, 156);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(108, 42);
-            this.Clear.TabIndex = 5;
-            this.Clear.Text = "Clear";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.button1_Click);
+            this.btnClear.Location = new System.Drawing.Point(175, 156);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(108, 42);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAdd
             // 
@@ -170,11 +171,12 @@
             this.Items.Name = "Items";
             this.Items.Size = new System.Drawing.Size(323, 304);
             this.Items.TabIndex = 1;
+            this.Items.SelectedIndexChanged += new System.EventHandler(this.Items_SelectedIndexChanged);
             this.Items.DoubleClick += new System.EventHandler(this.Items_DoubleClick);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(643, 377);
+            this.btnNext.Location = new System.Drawing.Point(606, 377);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(96, 44);
             this.btnNext.TabIndex = 2;
@@ -184,7 +186,7 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(522, 377);
+            this.btnPrevious.Location = new System.Drawing.Point(470, 377);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(94, 44);
             this.btnPrevious.TabIndex = 3;
@@ -195,7 +197,7 @@
             // labelPages
             // 
             this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(622, 389);
+            this.labelPages.Location = new System.Drawing.Point(581, 353);
             this.labelPages.Name = "labelPages";
             this.labelPages.Size = new System.Drawing.Size(15, 20);
             this.labelPages.TabIndex = 4;
@@ -228,11 +230,27 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "label4";
             // 
+            // comboBoxItems
+            // 
+            this.comboBoxItems.FormattingEnabled = true;
+            this.comboBoxItems.Items.AddRange(new object[] {
+            "5",
+            "10",
+            "15",
+            "20",
+            "25"});
+            this.comboBoxItems.Location = new System.Drawing.Point(720, 377);
+            this.comboBoxItems.Name = "comboBoxItems";
+            this.comboBoxItems.Size = new System.Drawing.Size(92, 28);
+            this.comboBoxItems.TabIndex = 8;
+            this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBoxItems_SelectedIndexChanged);
+            // 
             // ItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 465);
+            this.Controls.Add(this.comboBoxItems);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -263,7 +281,7 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Label labelPages;
-        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -271,5 +289,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ComboBox comboBoxItems;
     }
 }

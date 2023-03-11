@@ -36,7 +36,6 @@
             }
             comboRating.SelectedIndex = 0;
             comboItemsPerPage.SelectedIndex = 0;
-            //comboItemsPerPage.SelectedIndex = 0;
             labelPages.Text = $"{currentPage} / {totalPages}";
 
 

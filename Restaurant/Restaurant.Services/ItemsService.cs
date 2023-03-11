@@ -10,7 +10,7 @@
     public class ItemsService
     {
         private AppDbContext context;
-        public string AddItem( string name, decimal price)
+        public string AddItem(string name, decimal price)
         {
             StringBuilder message = new StringBuilder();
             bool isValid = true;
@@ -35,7 +35,7 @@
                 {
                     context.Items.Add(item);
                     context.SaveChanges();
-                    message.AppendLine($"Item {name} which costs: {price} is added!");
+                    message.AppendLine($"Item {name} which costs {price} leva is added!");
                 }
             }
             return message.ToString().TrimEnd();
@@ -152,6 +152,13 @@
             }
 
             return msg.ToString().TrimEnd();
+        }
+        public int GetItemsPagesCount(int count = 10)
+        {
+            using (context = new AppDbContext())
+            {
+                return (int)Math.Ceiling(context.Items.Count() / (double)count);
+            }
         }
         public List<Item> SortItemByPrice(List<Item> items)
         {
