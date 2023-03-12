@@ -51,7 +51,7 @@
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentException("Invalid Restaurant name!");
+                throw new ArgumentException("Invalid Item name!");
             }
             using (context = new AppDbContext())
             {
