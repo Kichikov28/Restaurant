@@ -35,7 +35,6 @@
                     Console.WriteLine("12. Exit");
 
                     Console.Write("\nEnter your choice: ");
-
                     string command = Console.ReadLine();
 
                     switch (command)
@@ -43,19 +42,22 @@
                         case "1":
                             Console.Write("Enter restaurant name: ");
                             string name = Console.ReadLine();
-                            restaurantService.GetRestaurantByName(name);
+                            var nameToFind = restaurantService.GetRestaurantByName(name);
+                            Console.WriteLine(nameToFind.Name);
                             break;
 
                         case "2":
                             Console.Write("Enter restaurant ID: ");
                             int id = int.Parse(Console.ReadLine());
-                            restaurantService.GetRestaurantById(id);
+                            var item = restaurantService.GetRestaurantById(id);
+                            Console.WriteLine($"Restaurant with Id {item.Id} is {item.Name}");
                             break;
 
                         case "3":
                             Console.Write("Enter restaurant location: ");
                             string location = Console.ReadLine();
-                            restaurantService.GetRestaurantByLocation(location);
+                            var restaurantByLocation = restaurantService.GetRestaurantByLocation(location);
+
                             break;
 
                         case "4":
@@ -67,14 +69,14 @@
                             string restaurantLocation = Console.ReadLine();
                             Console.Write("Enter restaurant type: ");
                             string restaurantType = Console.ReadLine();
-                            restaurantService.AddRestaurant(restaurantName, rating, restaurantLocation, restaurantType);
+                            Console.WriteLine(restaurantService.AddRestaurant(restaurantName, rating, restaurantLocation, restaurantType));
                             break;
 
                         case "5":
-                            restaurantService.GetAllRestaurantsInfo();
+                            Console.WriteLine(restaurantService.GetAllRestaurantsInfo());
                             break;
                         case "6":
-                            itemsService.GetAllItemsInfo(); 
+                            Console.WriteLine(itemsService.GetAllItemsInfo());
                             break;
 
                         case "7":
@@ -82,7 +84,7 @@
                             string itemName = Console.ReadLine();
                             Console.Write("Enter item price: ");
                             decimal itemPrice = decimal.Parse(Console.ReadLine());
-                            itemsService.AddItem(itemName, itemPrice);
+                            Console.WriteLine(itemsService.AddItem(itemName, itemPrice));
                             break;
 
                         case "8":
@@ -98,17 +100,17 @@
                             break;
 
                         case "10":
-                            Console.Write("Enter item name: ");
+                            Console.Write("Enter item id: ");
                             int itemId = int.Parse(Console.ReadLine());
                             Console.Write("Enter new price: ");
                             decimal newPrice = decimal.Parse(Console.ReadLine());
-                            itemsService.UpdateItemPrice(itemId, newPrice);
+                            Console.WriteLine(itemsService.UpdateItemPrice(itemId, newPrice));
                             break;
 
                         case "11":
                             Console.Write("Enter item name to remove: ");
                             string itemNameToRemove = Console.ReadLine();
-                            itemsService.RemoveItemByName(itemNameToRemove);
+                            Console.WriteLine(itemsService.RemoveItemByName(itemNameToRemove));
                             break;
 
                         case "12":
@@ -124,7 +126,7 @@
                 {
                     Console.WriteLine(ex.Message);
                 }
-                
+
             }
         }
     }

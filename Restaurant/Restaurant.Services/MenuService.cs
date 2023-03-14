@@ -3,9 +3,7 @@
     using Restaurant.Data;
     using Restaurant.Models;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     public class MenuService
     {
         private AppDbContext context;
