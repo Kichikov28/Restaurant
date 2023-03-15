@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Restaurant.FormApp
 {
@@ -31,44 +33,13 @@ namespace Restaurant.FormApp
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Next(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Previous(object sender, EventArgs e)
-        {
-            if (currentPage <= 1) { return; }
-            Order.Items.Clear();
-            List<string> list = service1.GetItemsBasicInfo(--currentPage, itemsPerPage);
-            list.ForEach(p => Order.Items.Add(p));
-            labelPages.Text = $"{currentPage} / {totalPages}";
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-           
-        }
+        
+        
 
         private void Order_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            if (currentPage >= totalPages) { return; }
-            Order.Items.Clear();
-            List<string> list = service1.GetItemsBasicInfo(++currentPage, itemsPerPage);
-            list.ForEach(p => Order.Items.Add(p));
-            labelPages.Text = $"{currentPage} / {totalPages}";
-        }
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -87,6 +58,41 @@ namespace Restaurant.FormApp
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void PreviousBtn_Click(object sender, EventArgs e)
+        {
+            if (currentPage >= totalPages) { return; }
+            Order.Items.Clear();
+            List<string> list = service1.GetItemsBasicInfo(++currentPage, itemsPerPage);
+            list.ForEach(p => Order.Items.Add(p));
+            labelPages.Text = $"{currentPage} / {totalPages}";
+        }
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            if (currentPage >= totalPages) { return; }
+            Order.Items.Clear();
+            List<string> list = service1.GetItemsBasicInfo(++currentPage, itemsPerPage);
+            list.ForEach(p => Order.Items.Add(p));
+            labelPages.Text = $"{currentPage} / {totalPages}";
+        }
+        private void ClearAddGroupBox()
+        {
+            cuisineTxt.Text = string.Empty;
+            townTxt.Text = string.Empty;
+            restaurantTxt.Text = string.Empty;
+            itemTxt.Text = string.Empty;
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ClearAddGroupBox();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //string item=itemTxt.Text;
+            //var result = service1.AddItem(item);
+            //MessageBox.Show(result);
+            //ClearAddGroupBox();
         }
     }
 }
