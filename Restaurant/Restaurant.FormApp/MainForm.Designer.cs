@@ -44,26 +44,28 @@
             // 
             // ItemsForm
             // 
-            ItemsForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            ItemsForm.Location = new System.Drawing.Point(10, 355);
+            ItemsForm.BackColor = System.Drawing.Color.FloralWhite;
+            ItemsForm.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ItemsForm.Location = new System.Drawing.Point(12, 346);
             ItemsForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             ItemsForm.Name = "ItemsForm";
-            ItemsForm.Size = new System.Drawing.Size(169, 32);
+            ItemsForm.Size = new System.Drawing.Size(169, 41);
             ItemsForm.TabIndex = 1;
             ItemsForm.Text = "Items";
-            ItemsForm.UseVisualStyleBackColor = true;
+            ItemsForm.UseVisualStyleBackColor = false;
             ItemsForm.Click += ItemsForm_Click;
             // 
             // RestaurantForm
             // 
+            RestaurantForm.BackColor = System.Drawing.Color.FloralWhite;
             RestaurantForm.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            RestaurantForm.Location = new System.Drawing.Point(10, 309);
+            RestaurantForm.Location = new System.Drawing.Point(12, 301);
             RestaurantForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             RestaurantForm.Name = "RestaurantForm";
             RestaurantForm.Size = new System.Drawing.Size(169, 41);
             RestaurantForm.TabIndex = 2;
             RestaurantForm.Text = "Restaurants";
-            RestaurantForm.UseVisualStyleBackColor = true;
+            RestaurantForm.UseVisualStyleBackColor = false;
             RestaurantForm.Click += RestaurantForm_Click;
             // 
             // label1
@@ -81,14 +83,15 @@
             // 
             // btnCreateOrder
             // 
-            btnCreateOrder.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCreateOrder.BackColor = System.Drawing.Color.FloralWhite;
+            btnCreateOrder.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnCreateOrder.Location = new System.Drawing.Point(682, 322);
             btnCreateOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnCreateOrder.Name = "btnCreateOrder";
             btnCreateOrder.Size = new System.Drawing.Size(135, 65);
             btnCreateOrder.TabIndex = 4;
             btnCreateOrder.Text = "Order";
-            btnCreateOrder.UseVisualStyleBackColor = true;
+            btnCreateOrder.UseVisualStyleBackColor = false;
             btnCreateOrder.Click += btnCreateOrder_Click;
             // 
             // pictureBox1

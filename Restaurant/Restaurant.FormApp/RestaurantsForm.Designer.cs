@@ -88,24 +88,28 @@
             // 
             // btnClear
             // 
+            btnClear.BackColor = System.Drawing.Color.FloralWhite;
+            btnClear.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnClear.Location = new System.Drawing.Point(165, 190);
             btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnClear.Name = "btnClear";
             btnClear.Size = new System.Drawing.Size(101, 36);
             btnClear.TabIndex = 9;
             btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
+            btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
             // 
             // btnAddRestaurant
             // 
-            btnAddRestaurant.Location = new System.Drawing.Point(32, 190);
+            btnAddRestaurant.BackColor = System.Drawing.Color.FloralWhite;
+            btnAddRestaurant.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnAddRestaurant.Location = new System.Drawing.Point(35, 190);
             btnAddRestaurant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnAddRestaurant.Name = "btnAddRestaurant";
             btnAddRestaurant.Size = new System.Drawing.Size(94, 36);
             btnAddRestaurant.TabIndex = 8;
             btnAddRestaurant.Text = "Add";
-            btnAddRestaurant.UseVisualStyleBackColor = true;
+            btnAddRestaurant.UseVisualStyleBackColor = false;
             btnAddRestaurant.Click += btnAddRestaurant_Click;
             // 
             // comboRating
@@ -122,7 +126,7 @@
             // 
             comboType.FormattingEnabled = true;
             comboType.Items.AddRange(new object[] { "Italian", "Japanese", "Bulgarian", "Chinese", "Greek" });
-            comboType.Location = new System.Drawing.Point(83, 92);
+            comboType.Location = new System.Drawing.Point(83, 95);
             comboType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             comboType.Name = "comboType";
             comboType.Size = new System.Drawing.Size(183, 23);
@@ -132,7 +136,7 @@
             // 
             comboBoxLocation.FormattingEnabled = true;
             comboBoxLocation.Items.AddRange(new object[] { "Sofia", "Velingrad", "Plovdiv", "Blagoevgrad", "Varna", "Burgas" });
-            comboBoxLocation.Location = new System.Drawing.Point(83, 58);
+            comboBoxLocation.Location = new System.Drawing.Point(83, 64);
             comboBoxLocation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             comboBoxLocation.Name = "comboBoxLocation";
             comboBoxLocation.Size = new System.Drawing.Size(183, 23);
@@ -149,36 +153,40 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label4.Location = new System.Drawing.Point(13, 134);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(41, 15);
+            label4.Size = new System.Drawing.Size(43, 15);
             label4.TabIndex = 3;
             label4.Text = "Rating";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label3.Location = new System.Drawing.Point(13, 95);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(31, 15);
+            label3.Size = new System.Drawing.Size(33, 15);
             label3.TabIndex = 2;
             label3.Text = "Type";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label2.Location = new System.Drawing.Point(12, 64);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(53, 15);
+            label2.Size = new System.Drawing.Size(54, 15);
             label2.TabIndex = 1;
             label2.Text = "Location";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label1.Location = new System.Drawing.Point(13, 34);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(39, 15);
+            label1.Size = new System.Drawing.Size(40, 15);
             label1.TabIndex = 0;
             label1.Text = "Name";
             // 
@@ -196,24 +204,28 @@
             // 
             // btnPrevious
             // 
-            btnPrevious.Location = new System.Drawing.Point(489, 288);
+            btnPrevious.BackColor = System.Drawing.Color.FloralWhite;
+            btnPrevious.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnPrevious.Location = new System.Drawing.Point(478, 288);
             btnPrevious.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnPrevious.Name = "btnPrevious";
-            btnPrevious.Size = new System.Drawing.Size(82, 33);
+            btnPrevious.Size = new System.Drawing.Size(93, 40);
             btnPrevious.TabIndex = 2;
             btnPrevious.Text = "Previous";
-            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.UseVisualStyleBackColor = false;
             btnPrevious.Click += btnPrevious_Click;
             // 
             // btnNext
             // 
-            btnNext.Location = new System.Drawing.Point(611, 288);
+            btnNext.BackColor = System.Drawing.Color.FloralWhite;
+            btnNext.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnNext.Location = new System.Drawing.Point(599, 288);
             btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnNext.Name = "btnNext";
-            btnNext.Size = new System.Drawing.Size(82, 33);
+            btnNext.Size = new System.Drawing.Size(94, 40);
             btnNext.TabIndex = 3;
             btnNext.Text = "Next";
-            btnNext.UseVisualStyleBackColor = true;
+            btnNext.UseVisualStyleBackColor = false;
             btnNext.Click += btnNext_Click;
             // 
             // comboItemsPerPage

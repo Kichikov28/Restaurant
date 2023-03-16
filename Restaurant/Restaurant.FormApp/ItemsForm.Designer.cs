@@ -71,13 +71,15 @@
             // 
             // btnDelete
             // 
+            btnDelete.BackColor = System.Drawing.Color.FloralWhite;
+            btnDelete.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnDelete.Location = new System.Drawing.Point(174, 187);
             btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new System.Drawing.Size(109, 37);
             btnDelete.TabIndex = 9;
             btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += button1_Click_1;
             // 
             // textBox1
@@ -92,9 +94,10 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label5.Location = new System.Drawing.Point(5, 162);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(149, 19);
+            label5.Size = new System.Drawing.Size(170, 20);
             label5.TabIndex = 7;
             label5.Text = "Enter Id to delete item:";
             // 
@@ -109,24 +112,28 @@
             // 
             // btnClear
             // 
+            btnClear.BackColor = System.Drawing.Color.FloralWhite;
+            btnClear.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnClear.Location = new System.Drawing.Point(153, 117);
             btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnClear.Name = "btnClear";
             btnClear.Size = new System.Drawing.Size(94, 32);
             btnClear.TabIndex = 5;
             btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
+            btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
             // 
             // btnAdd
             // 
+            btnAdd.BackColor = System.Drawing.Color.FloralWhite;
+            btnAdd.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnAdd.Location = new System.Drawing.Point(41, 117);
             btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new System.Drawing.Size(86, 32);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // txtPrice
@@ -150,10 +157,10 @@
             // labelPrice
             // 
             labelPrice.AutoSize = true;
-            labelPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            labelPrice.Location = new System.Drawing.Point(21, 72);
+            labelPrice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            labelPrice.Location = new System.Drawing.Point(22, 72);
             labelPrice.Name = "labelPrice";
-            labelPrice.Size = new System.Drawing.Size(38, 19);
+            labelPrice.Size = new System.Drawing.Size(43, 20);
             labelPrice.TabIndex = 1;
             labelPrice.Text = "Price";
             labelPrice.Click += label2_Click;
@@ -161,10 +168,10 @@
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            labelName.Location = new System.Drawing.Point(21, 43);
+            labelName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            labelName.Location = new System.Drawing.Point(22, 40);
             labelName.Name = "labelName";
-            labelName.Size = new System.Drawing.Size(45, 19);
+            labelName.Size = new System.Drawing.Size(51, 20);
             labelName.TabIndex = 0;
             labelName.Text = "Name";
             // 
@@ -182,24 +189,28 @@
             // 
             // btnNext
             // 
+            btnNext.BackColor = System.Drawing.Color.FloralWhite;
+            btnNext.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnNext.Location = new System.Drawing.Point(526, 283);
             btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnNext.Name = "btnNext";
             btnNext.Size = new System.Drawing.Size(84, 33);
             btnNext.TabIndex = 2;
             btnNext.Text = "Next";
-            btnNext.UseVisualStyleBackColor = true;
+            btnNext.UseVisualStyleBackColor = false;
             btnNext.Click += btnNext_Click;
             // 
             // btnPrevious
             // 
+            btnPrevious.BackColor = System.Drawing.Color.FloralWhite;
+            btnPrevious.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnPrevious.Location = new System.Drawing.Point(411, 283);
             btnPrevious.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnPrevious.Name = "btnPrevious";
             btnPrevious.Size = new System.Drawing.Size(82, 33);
             btnPrevious.TabIndex = 3;
             btnPrevious.Text = "Previous";
-            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.UseVisualStyleBackColor = false;
             btnPrevious.Click += btnPrevious_Click;
             // 
             // labelPages
@@ -226,6 +237,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.LightSteelBlue;
             ClientSize = new System.Drawing.Size(765, 349);
             Controls.Add(comboBoxItems);
             Controls.Add(labelPages);
