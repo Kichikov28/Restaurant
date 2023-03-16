@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxRestaurant = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDelete = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.checkBoxDeleteRestaurant = new System.Windows.Forms.CheckBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAddRestaurant = new System.Windows.Forms.Button();
             this.comboRating = new System.Windows.Forms.ComboBox();
@@ -42,19 +40,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Restaurants = new System.Windows.Forms.ListBox();
+            this.listBoxRestaurants = new System.Windows.Forms.ListBox();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.comboItemsPerPage = new System.Windows.Forms.ComboBox();
             this.labelPages = new System.Windows.Forms.Label();
+            this.groupBoxOptions = new System.Windows.Forms.GroupBox();
+            this.radioBtnEdit = new System.Windows.Forms.RadioButton();
+            this.radioBtnAdd = new System.Windows.Forms.RadioButton();
             this.groupBoxRestaurant.SuspendLayout();
+            this.groupBoxOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxRestaurant
             // 
-            this.groupBoxRestaurant.Controls.Add(this.label5);
-            this.groupBoxRestaurant.Controls.Add(this.txtDelete);
-            this.groupBoxRestaurant.Controls.Add(this.btnDelete);
+            this.groupBoxRestaurant.Controls.Add(this.checkBoxDeleteRestaurant);
             this.groupBoxRestaurant.Controls.Add(this.btnClear);
             this.groupBoxRestaurant.Controls.Add(this.btnAddRestaurant);
             this.groupBoxRestaurant.Controls.Add(this.comboRating);
@@ -67,41 +67,25 @@
             this.groupBoxRestaurant.Controls.Add(this.label1);
             this.groupBoxRestaurant.Location = new System.Drawing.Point(72, 32);
             this.groupBoxRestaurant.Name = "groupBoxRestaurant";
-            this.groupBoxRestaurant.Size = new System.Drawing.Size(345, 396);
+            this.groupBoxRestaurant.Size = new System.Drawing.Size(345, 324);
             this.groupBoxRestaurant.TabIndex = 0;
             this.groupBoxRestaurant.TabStop = false;
             this.groupBoxRestaurant.Text = "Create";
             this.groupBoxRestaurant.Enter += new System.EventHandler(this.groupBoxRestaurant_Enter);
             // 
-            // label5
+            // checkBoxDeleteRestaurant
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 297);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(197, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Enter Id to delete restaurant:";
-            // 
-            // txtDelete
-            // 
-            this.txtDelete.Location = new System.Drawing.Point(208, 297);
-            this.txtDelete.Name = "txtDelete";
-            this.txtDelete.Size = new System.Drawing.Size(96, 27);
-            this.txtDelete.TabIndex = 11;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(208, 330);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(96, 54);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.checkBoxDeleteRestaurant.AutoSize = true;
+            this.checkBoxDeleteRestaurant.Location = new System.Drawing.Point(16, 213);
+            this.checkBoxDeleteRestaurant.Name = "checkBoxDeleteRestaurant";
+            this.checkBoxDeleteRestaurant.Size = new System.Drawing.Size(145, 24);
+            this.checkBoxDeleteRestaurant.TabIndex = 10;
+            this.checkBoxDeleteRestaurant.Text = "DeleteRestaurant";
+            this.checkBoxDeleteRestaurant.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(190, 225);
+            this.btnClear.Location = new System.Drawing.Point(189, 253);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(115, 48);
             this.btnClear.TabIndex = 9;
@@ -111,7 +95,7 @@
             // 
             // btnAddRestaurant
             // 
-            this.btnAddRestaurant.Location = new System.Drawing.Point(46, 225);
+            this.btnAddRestaurant.Location = new System.Drawing.Point(37, 253);
             this.btnAddRestaurant.Name = "btnAddRestaurant";
             this.btnAddRestaurant.Size = new System.Drawing.Size(107, 48);
             this.btnAddRestaurant.TabIndex = 8;
@@ -200,16 +184,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // Restaurants
+            // listBoxRestaurants
             // 
-            this.Restaurants.FormattingEnabled = true;
-            this.Restaurants.ItemHeight = 20;
-            this.Restaurants.Location = new System.Drawing.Point(511, 32);
-            this.Restaurants.Name = "Restaurants";
-            this.Restaurants.Size = new System.Drawing.Size(442, 324);
-            this.Restaurants.TabIndex = 1;
-            this.Restaurants.SelectedIndexChanged += new System.EventHandler(this.listBoxRestaurants_SelectedIndexChanged);
-            this.Restaurants.DoubleClick += new System.EventHandler(this.listBoxRestaurants_DoubleClick);
+            this.listBoxRestaurants.FormattingEnabled = true;
+            this.listBoxRestaurants.ItemHeight = 20;
+            this.listBoxRestaurants.Location = new System.Drawing.Point(511, 32);
+            this.listBoxRestaurants.Name = "listBoxRestaurants";
+            this.listBoxRestaurants.Size = new System.Drawing.Size(442, 324);
+            this.listBoxRestaurants.TabIndex = 1;
+            this.listBoxRestaurants.SelectedIndexChanged += new System.EventHandler(this.listBoxRestaurants_SelectedIndexChanged);
+            this.listBoxRestaurants.DoubleClick += new System.EventHandler(this.listBoxRestaurants_DoubleClick);
             // 
             // btnPrevious
             // 
@@ -254,23 +238,60 @@
             this.labelPages.TabIndex = 5;
             this.labelPages.Text = "-";
             // 
+            // groupBoxOptions
+            // 
+            this.groupBoxOptions.Controls.Add(this.radioBtnEdit);
+            this.groupBoxOptions.Controls.Add(this.radioBtnAdd);
+            this.groupBoxOptions.Location = new System.Drawing.Point(88, 374);
+            this.groupBoxOptions.Name = "groupBoxOptions";
+            this.groupBoxOptions.Size = new System.Drawing.Size(253, 64);
+            this.groupBoxOptions.TabIndex = 6;
+            this.groupBoxOptions.TabStop = false;
+            this.groupBoxOptions.Text = "Options";
+            // 
+            // radioBtnEdit
+            // 
+            this.radioBtnEdit.AutoSize = true;
+            this.radioBtnEdit.Location = new System.Drawing.Point(156, 26);
+            this.radioBtnEdit.Name = "radioBtnEdit";
+            this.radioBtnEdit.Size = new System.Drawing.Size(56, 24);
+            this.radioBtnEdit.TabIndex = 1;
+            this.radioBtnEdit.TabStop = true;
+            this.radioBtnEdit.Text = "Edit";
+            this.radioBtnEdit.UseVisualStyleBackColor = true;
+            // 
+            // radioBtnAdd
+            // 
+            this.radioBtnAdd.AutoSize = true;
+            this.radioBtnAdd.Location = new System.Drawing.Point(35, 26);
+            this.radioBtnAdd.Name = "radioBtnAdd";
+            this.radioBtnAdd.Size = new System.Drawing.Size(58, 24);
+            this.radioBtnAdd.TabIndex = 0;
+            this.radioBtnAdd.TabStop = true;
+            this.radioBtnAdd.Text = "Add";
+            this.radioBtnAdd.UseVisualStyleBackColor = true;
+            this.radioBtnAdd.CheckedChanged += new System.EventHandler(this.radioBtnAdd_CheckedChanged);
+            // 
             // RestaurantsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(985, 479);
+            this.Controls.Add(this.groupBoxOptions);
             this.Controls.Add(this.labelPages);
             this.Controls.Add(this.comboItemsPerPage);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
-            this.Controls.Add(this.Restaurants);
+            this.Controls.Add(this.listBoxRestaurants);
             this.Controls.Add(this.groupBoxRestaurant);
             this.Name = "RestaurantsForm";
             this.Text = "RestaurantsForm";
             this.Load += new System.EventHandler(this.RestaurantsForm_Load);
             this.groupBoxRestaurant.ResumeLayout(false);
             this.groupBoxRestaurant.PerformLayout();
+            this.groupBoxOptions.ResumeLayout(false);
+            this.groupBoxOptions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,13 +310,14 @@
         private System.Windows.Forms.ComboBox comboRating;
         private System.Windows.Forms.Button btnAddRestaurant;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.ListBox Restaurants;
+        private System.Windows.Forms.ListBox listBoxRestaurants;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.ComboBox comboItemsPerPage;
         private System.Windows.Forms.Label labelPages;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDelete;
+        private System.Windows.Forms.CheckBox checkBoxDeleteRestaurant;
+        private System.Windows.Forms.GroupBox groupBoxOptions;
+        private System.Windows.Forms.RadioButton radioBtnEdit;
+        private System.Windows.Forms.RadioButton radioBtnAdd;
     }
 }

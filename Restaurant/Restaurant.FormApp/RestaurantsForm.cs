@@ -37,7 +37,8 @@
             comboRating.SelectedIndex = 0;
             comboItemsPerPage.SelectedIndex = 0;
             labelPages.Text = $"{currentPage} / {totalPages}";
-
+            radioBtnAdd.Checked = true;
+            checkBoxDeleteRestaurant.Visible = false;
 
         }
         private void ClearAddGroupBox()
@@ -46,19 +47,35 @@
             comboRating.SelectedIndex = 0;
             comboBoxLocation.SelectedIndex = 0;
             comboType.SelectedIndex = 0;
-            txtDelete.Text = string.Empty;
         }
 
         private void btnAddRestaurant_Click(object sender, EventArgs e)
         {
-            string name = textBoxName.Text;
-            string location = comboBoxLocation.Text;
-            double rating = double.Parse(comboRating.SelectedItem.ToString());
-            string type = comboType.Text;
+            if (btnAddRestaurant.Text == "Add")
+            {
+                string name = textBoxName.Text;
+                string location = comboBoxLocation.Text;
+                double rating = double.Parse(comboRating.SelectedItem.ToString());
+                string type = comboType.Text;
 
-            string result = service.AddRestaurant(name, rating, location, type);
-            MessageBox.Show(result);
-            ClearAddGroupBox();
+                string result = service.AddRestaurant(name, rating, location, type);
+                MessageBox.Show(result);
+                ClearAddGroupBox();
+            }
+            else if (btnAddRestaurant.Text == "Update")
+            {
+                if (checkBoxDeleteRestaurant.Checked)
+                {
+                    MessageBox.Show(service.DeleteRestaurantById(currentRestaurantId));
+                }
+                else
+                {
+                    double rating = double.Parse(comboRating.Text);
+                    MessageBox.Show(service.UpdateRestaurantRating(currentRestaurantId,rating));
+                }
+                ClearAddGroupBox();
+            }
+            
 
         }
 
@@ -72,18 +89,18 @@
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (currentPage >= totalPages) { return; }
-            Restaurants.Items.Clear();
+            listBoxRestaurants.Items.Clear();
             List<string> list = service.GetRestaurantsBasicInfo(++currentPage, itemsPerPage);
-            list.ForEach(p => Restaurants.Items.Add(p));
+            list.ForEach(p => listBoxRestaurants.Items.Add(p));
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (currentPage <= 1) { return; }
-            Restaurants.Items.Clear();
+            listBoxRestaurants.Items.Clear();
             List<string> list = service.GetRestaurantsBasicInfo(--currentPage, itemsPerPage);
-            list.ForEach(p => Restaurants.Items.Add(p));
+            list.ForEach(p => listBoxRestaurants.Items.Add(p));
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
 
@@ -92,9 +109,9 @@
             itemsPerPage = int.Parse(comboItemsPerPage.Text);
             totalPages = service.GetRestaurantPagesCount(itemsPerPage);
 
-            Restaurants.Items.Clear();
+            listBoxRestaurants.Items.Clear();
             List<string> list = service.GetRestaurantsBasicInfo(1, itemsPerPage);
-            list.ForEach(p => Restaurants.Items.Add(p));
+            list.ForEach(p => listBoxRestaurants.Items.Add(p));
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
 
@@ -102,18 +119,9 @@
         {
 
         }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(txtDelete.Text);
-            string result = service.DeleteRestaurantById(id);
-            MessageBox.Show(result);
-            ClearAddGroupBox();
-        }
-
         private void listBoxRestaurants_DoubleClick(object sender, EventArgs e)
         {
-            string restaurantInfo = Restaurants.Text;
+            string restaurantInfo = listBoxRestaurants.Text;
             currentRestaurantId = int.Parse(restaurantInfo.Split(' ').First());
             Restaurant restaurant = service.GetRestaurantById(currentRestaurantId);
             if (restaurant != null)
@@ -121,7 +129,7 @@
                 textBoxName.Text = restaurant.Name;
                 comboBoxLocation.Text = restaurant.Location.ToString();
                 comboRating.Text = restaurant.Rating.ToString();
-                comboType.Text=restaurant.Type.ToString();
+                comboType.Text = restaurant.Type.ToString();
             }
 
         }
@@ -129,6 +137,35 @@
         private void comboRating_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioBtnAdd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioBtnAdd.Checked)
+            {
+                btnAddRestaurant.Text = "Add";
+                listBoxRestaurants.Enabled = false;
+                textBoxName.Enabled = !false;
+                comboBoxLocation.Enabled = !false;
+                comboRating.Enabled = !false;
+                checkBoxDeleteRestaurant.Visible = false;
+                ClearAddGroupBox();
+                AddInputOnOff(true);
+            }
+            else
+            {
+                btnAddRestaurant.Text = "Update";
+                checkBoxDeleteRestaurant.Visible = true;
+                listBoxRestaurants.Enabled = true;
+                AddInputOnOff(false);
+            }
+
+        }
+        private void AddInputOnOff(bool isActive)
+        {
+            textBoxName.Enabled = isActive;
+            comboBoxLocation.Enabled = isActive;
+            comboType.Enabled = isActive;
         }
     }
 }

@@ -43,9 +43,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.labelPages = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.comboBoxItems = new System.Windows.Forms.ComboBox();
             this.groupBoxCreateItem.SuspendLayout();
             this.SuspendLayout();
@@ -176,7 +173,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(606, 377);
+            this.btnNext.Location = new System.Drawing.Point(602, 361);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(96, 44);
             this.btnNext.TabIndex = 2;
@@ -203,33 +200,6 @@
             this.labelPages.TabIndex = 4;
             this.labelPages.Text = "-";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "label2";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "label4";
-            // 
             // comboBoxItems
             // 
             this.comboBoxItems.FormattingEnabled = true;
@@ -238,7 +208,8 @@
             "10",
             "15",
             "20",
-            "25"});
+            "25",
+            "30"});
             this.comboBoxItems.Location = new System.Drawing.Point(720, 377);
             this.comboBoxItems.Name = "comboBoxItems";
             this.comboBoxItems.Size = new System.Drawing.Size(92, 28);
@@ -251,9 +222,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 465);
             this.Controls.Add(this.comboBoxItems);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelPages);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
@@ -283,11 +251,8 @@
         private System.Windows.Forms.Label labelPages;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox comboBoxItems;
     }

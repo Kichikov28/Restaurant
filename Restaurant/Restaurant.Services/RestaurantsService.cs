@@ -167,20 +167,5 @@
             }
             return msg.ToString().TrimEnd();
         }
-
-        public List<Restaurant> SortRestaurantsByRating()
-        {
-            using (context = new AppDbContext())
-            {
-                return context.Restaurants.OrderBy(x => x.Rating).ToList();
-            }
-        }
-        public List<Restaurant> ReverseSortRestaurantsByRating()
-        {
-            using (context = new AppDbContext())
-            {
-                return context.Restaurants.OrderByDescending(x => x.Rating).ToList();
-            }
-        }
     }
 }
