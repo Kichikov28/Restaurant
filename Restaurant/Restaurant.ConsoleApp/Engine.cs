@@ -22,7 +22,7 @@
                 {
                     Console.Clear();
                     Menu();
-                    Console.Write("\nEnter your choice: ");
+                    Console.Write("Enter your choice: ");
                     string command = Console.ReadLine();
                     switch (command)
                     {

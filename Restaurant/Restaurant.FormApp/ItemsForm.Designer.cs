@@ -28,213 +28,219 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxCreateItem = new System.Windows.Forms.GroupBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.labelPrice = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
-            this.Items = new System.Windows.Forms.ListBox();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.labelPages = new System.Windows.Forms.Label();
-            this.comboBoxItems = new System.Windows.Forms.ComboBox();
-            this.groupBoxCreateItem.SuspendLayout();
-            this.SuspendLayout();
+            groupBoxCreateItem = new System.Windows.Forms.GroupBox();
+            btnDelete = new System.Windows.Forms.Button();
+            textBox1 = new System.Windows.Forms.TextBox();
+            label5 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            btnClear = new System.Windows.Forms.Button();
+            btnAdd = new System.Windows.Forms.Button();
+            txtPrice = new System.Windows.Forms.TextBox();
+            txtName = new System.Windows.Forms.TextBox();
+            labelPrice = new System.Windows.Forms.Label();
+            labelName = new System.Windows.Forms.Label();
+            Items = new System.Windows.Forms.ListBox();
+            btnNext = new System.Windows.Forms.Button();
+            btnPrevious = new System.Windows.Forms.Button();
+            labelPages = new System.Windows.Forms.Label();
+            comboBoxItems = new System.Windows.Forms.ComboBox();
+            groupBoxCreateItem.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBoxCreateItem
             // 
-            this.groupBoxCreateItem.Controls.Add(this.btnDelete);
-            this.groupBoxCreateItem.Controls.Add(this.textBox1);
-            this.groupBoxCreateItem.Controls.Add(this.label5);
-            this.groupBoxCreateItem.Controls.Add(this.label3);
-            this.groupBoxCreateItem.Controls.Add(this.btnClear);
-            this.groupBoxCreateItem.Controls.Add(this.btnAdd);
-            this.groupBoxCreateItem.Controls.Add(this.txtPrice);
-            this.groupBoxCreateItem.Controls.Add(this.txtName);
-            this.groupBoxCreateItem.Controls.Add(this.labelPrice);
-            this.groupBoxCreateItem.Controls.Add(this.labelName);
-            this.groupBoxCreateItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBoxCreateItem.Location = new System.Drawing.Point(43, 46);
-            this.groupBoxCreateItem.Name = "groupBoxCreateItem";
-            this.groupBoxCreateItem.Size = new System.Drawing.Size(344, 304);
-            this.groupBoxCreateItem.TabIndex = 0;
-            this.groupBoxCreateItem.TabStop = false;
-            this.groupBoxCreateItem.Text = "Create Item";
+            groupBoxCreateItem.Controls.Add(btnDelete);
+            groupBoxCreateItem.Controls.Add(textBox1);
+            groupBoxCreateItem.Controls.Add(label5);
+            groupBoxCreateItem.Controls.Add(label3);
+            groupBoxCreateItem.Controls.Add(btnClear);
+            groupBoxCreateItem.Controls.Add(btnAdd);
+            groupBoxCreateItem.Controls.Add(txtPrice);
+            groupBoxCreateItem.Controls.Add(txtName);
+            groupBoxCreateItem.Controls.Add(labelPrice);
+            groupBoxCreateItem.Controls.Add(labelName);
+            groupBoxCreateItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            groupBoxCreateItem.Location = new System.Drawing.Point(38, 34);
+            groupBoxCreateItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBoxCreateItem.Name = "groupBoxCreateItem";
+            groupBoxCreateItem.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBoxCreateItem.Size = new System.Drawing.Size(301, 228);
+            groupBoxCreateItem.TabIndex = 0;
+            groupBoxCreateItem.TabStop = false;
+            groupBoxCreateItem.Text = "Create Item";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(199, 249);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(125, 49);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.button1_Click_1);
+            btnDelete.Location = new System.Drawing.Point(174, 187);
+            btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new System.Drawing.Size(109, 37);
+            btnDelete.TabIndex = 9;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += button1_Click_1;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 213);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 30);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            textBox1.Location = new System.Drawing.Point(174, 160);
+            textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new System.Drawing.Size(110, 26);
+            textBox1.TabIndex = 8;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 216);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(186, 23);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Enter Id to delete item:";
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(5, 162);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(149, 19);
+            label5.TabIndex = 7;
+            label5.Text = "Enter Id to delete item:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 216);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 23);
-            this.label3.TabIndex = 6;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(22, 162);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(0, 19);
+            label3.TabIndex = 6;
+            label3.Click += label3_Click;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(175, 156);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(108, 42);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            btnClear.Location = new System.Drawing.Point(153, 117);
+            btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new System.Drawing.Size(94, 32);
+            btnClear.TabIndex = 5;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(47, 156);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(98, 42);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.Location = new System.Drawing.Point(41, 117);
+            btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new System.Drawing.Size(86, 32);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(108, 96);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(125, 30);
-            this.txtPrice.TabIndex = 3;
-            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            txtPrice.Location = new System.Drawing.Point(94, 72);
+            txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new System.Drawing.Size(110, 26);
+            txtPrice.TabIndex = 3;
+            txtPrice.TextChanged += txtPrice_TextChanged;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(108, 54);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(125, 30);
-            this.txtName.TabIndex = 2;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+            txtName.Location = new System.Drawing.Point(94, 40);
+            txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtName.Name = "txtName";
+            txtName.Size = new System.Drawing.Size(110, 26);
+            txtName.TabIndex = 2;
+            txtName.TextChanged += txtName_TextChanged;
             // 
             // labelPrice
             // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPrice.Location = new System.Drawing.Point(24, 96);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(47, 23);
-            this.labelPrice.TabIndex = 1;
-            this.labelPrice.Text = "Price";
-            this.labelPrice.Click += new System.EventHandler(this.label2_Click);
+            labelPrice.AutoSize = true;
+            labelPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelPrice.Location = new System.Drawing.Point(21, 72);
+            labelPrice.Name = "labelPrice";
+            labelPrice.Size = new System.Drawing.Size(38, 19);
+            labelPrice.TabIndex = 1;
+            labelPrice.Text = "Price";
+            labelPrice.Click += label2_Click;
             // 
             // labelName
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName.Location = new System.Drawing.Point(24, 57);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(56, 23);
-            this.labelName.TabIndex = 0;
-            this.labelName.Text = "Name";
+            labelName.AutoSize = true;
+            labelName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelName.Location = new System.Drawing.Point(21, 43);
+            labelName.Name = "labelName";
+            labelName.Size = new System.Drawing.Size(45, 19);
+            labelName.TabIndex = 0;
+            labelName.Text = "Name";
             // 
             // Items
             // 
-            this.Items.FormattingEnabled = true;
-            this.Items.ItemHeight = 20;
-            this.Items.Location = new System.Drawing.Point(470, 46);
-            this.Items.Name = "Items";
-            this.Items.Size = new System.Drawing.Size(323, 304);
-            this.Items.TabIndex = 1;
-            this.Items.SelectedIndexChanged += new System.EventHandler(this.Items_SelectedIndexChanged);
-            this.Items.DoubleClick += new System.EventHandler(this.Items_DoubleClick);
+            Items.FormattingEnabled = true;
+            Items.ItemHeight = 15;
+            Items.Location = new System.Drawing.Point(411, 34);
+            Items.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            Items.Name = "Items";
+            Items.Size = new System.Drawing.Size(283, 229);
+            Items.TabIndex = 1;
+            Items.SelectedIndexChanged += Items_SelectedIndexChanged;
+            Items.DoubleClick += Items_DoubleClick;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(602, 361);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(96, 44);
-            this.btnNext.TabIndex = 2;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            btnNext.Location = new System.Drawing.Point(526, 283);
+            btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new System.Drawing.Size(84, 33);
+            btnNext.TabIndex = 2;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(470, 377);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(94, 44);
-            this.btnPrevious.TabIndex = 3;
-            this.btnPrevious.Text = "Previous";
-            this.btnPrevious.UseVisualStyleBackColor = true;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            btnPrevious.Location = new System.Drawing.Point(411, 283);
+            btnPrevious.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new System.Drawing.Size(82, 33);
+            btnPrevious.TabIndex = 3;
+            btnPrevious.Text = "Previous";
+            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += btnPrevious_Click;
             // 
             // labelPages
             // 
-            this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(581, 353);
-            this.labelPages.Name = "labelPages";
-            this.labelPages.Size = new System.Drawing.Size(15, 20);
-            this.labelPages.TabIndex = 4;
-            this.labelPages.Text = "-";
+            labelPages.AutoSize = true;
+            labelPages.Location = new System.Drawing.Point(508, 265);
+            labelPages.Name = "labelPages";
+            labelPages.Size = new System.Drawing.Size(12, 15);
+            labelPages.TabIndex = 4;
+            labelPages.Text = "-";
             // 
             // comboBoxItems
             // 
-            this.comboBoxItems.FormattingEnabled = true;
-            this.comboBoxItems.Items.AddRange(new object[] {
-            "5",
-            "10",
-            "15",
-            "20",
-            "25",
-            "30"});
-            this.comboBoxItems.Location = new System.Drawing.Point(720, 377);
-            this.comboBoxItems.Name = "comboBoxItems";
-            this.comboBoxItems.Size = new System.Drawing.Size(92, 28);
-            this.comboBoxItems.TabIndex = 8;
-            this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBoxItems_SelectedIndexChanged);
+            comboBoxItems.FormattingEnabled = true;
+            comboBoxItems.Items.AddRange(new object[] { "5", "10", "15", "20", "25", "30" });
+            comboBoxItems.Location = new System.Drawing.Point(630, 293);
+            comboBoxItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            comboBoxItems.Name = "comboBoxItems";
+            comboBoxItems.Size = new System.Drawing.Size(81, 23);
+            comboBoxItems.TabIndex = 8;
+            comboBoxItems.SelectedIndexChanged += comboBoxItems_SelectedIndexChanged;
             // 
             // ItemsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 465);
-            this.Controls.Add(this.comboBoxItems);
-            this.Controls.Add(this.labelPages);
-            this.Controls.Add(this.btnPrevious);
-            this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.Items);
-            this.Controls.Add(this.groupBoxCreateItem);
-            this.Name = "ItemsForm";
-            this.Text = "ItemsForm";
-            this.Load += new System.EventHandler(this.ItemsForm_Load);
-            this.groupBoxCreateItem.ResumeLayout(false);
-            this.groupBoxCreateItem.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(765, 349);
+            Controls.Add(comboBoxItems);
+            Controls.Add(labelPages);
+            Controls.Add(btnPrevious);
+            Controls.Add(btnNext);
+            Controls.Add(Items);
+            Controls.Add(groupBoxCreateItem);
+            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            Name = "ItemsForm";
+            Text = "ItemsForm";
+            Load += ItemsForm_Load;
+            groupBoxCreateItem.ResumeLayout(false);
+            groupBoxCreateItem.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

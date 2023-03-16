@@ -28,273 +28,275 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxRestaurant = new System.Windows.Forms.GroupBox();
-            this.checkBoxDeleteRestaurant = new System.Windows.Forms.CheckBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnAddRestaurant = new System.Windows.Forms.Button();
-            this.comboRating = new System.Windows.Forms.ComboBox();
-            this.comboType = new System.Windows.Forms.ComboBox();
-            this.comboBoxLocation = new System.Windows.Forms.ComboBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBoxRestaurants = new System.Windows.Forms.ListBox();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.comboItemsPerPage = new System.Windows.Forms.ComboBox();
-            this.labelPages = new System.Windows.Forms.Label();
-            this.groupBoxOptions = new System.Windows.Forms.GroupBox();
-            this.radioBtnEdit = new System.Windows.Forms.RadioButton();
-            this.radioBtnAdd = new System.Windows.Forms.RadioButton();
-            this.groupBoxRestaurant.SuspendLayout();
-            this.groupBoxOptions.SuspendLayout();
-            this.SuspendLayout();
+            groupBoxRestaurant = new System.Windows.Forms.GroupBox();
+            checkBoxDeleteRestaurant = new System.Windows.Forms.CheckBox();
+            btnClear = new System.Windows.Forms.Button();
+            btnAddRestaurant = new System.Windows.Forms.Button();
+            comboRating = new System.Windows.Forms.ComboBox();
+            comboType = new System.Windows.Forms.ComboBox();
+            comboBoxLocation = new System.Windows.Forms.ComboBox();
+            textBoxName = new System.Windows.Forms.TextBox();
+            label4 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            listBoxRestaurants = new System.Windows.Forms.ListBox();
+            btnPrevious = new System.Windows.Forms.Button();
+            btnNext = new System.Windows.Forms.Button();
+            comboItemsPerPage = new System.Windows.Forms.ComboBox();
+            labelPages = new System.Windows.Forms.Label();
+            groupBoxOptions = new System.Windows.Forms.GroupBox();
+            radioBtnEdit = new System.Windows.Forms.RadioButton();
+            radioBtnAdd = new System.Windows.Forms.RadioButton();
+            groupBoxRestaurant.SuspendLayout();
+            groupBoxOptions.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBoxRestaurant
             // 
-            this.groupBoxRestaurant.Controls.Add(this.checkBoxDeleteRestaurant);
-            this.groupBoxRestaurant.Controls.Add(this.btnClear);
-            this.groupBoxRestaurant.Controls.Add(this.btnAddRestaurant);
-            this.groupBoxRestaurant.Controls.Add(this.comboRating);
-            this.groupBoxRestaurant.Controls.Add(this.comboType);
-            this.groupBoxRestaurant.Controls.Add(this.comboBoxLocation);
-            this.groupBoxRestaurant.Controls.Add(this.textBoxName);
-            this.groupBoxRestaurant.Controls.Add(this.label4);
-            this.groupBoxRestaurant.Controls.Add(this.label3);
-            this.groupBoxRestaurant.Controls.Add(this.label2);
-            this.groupBoxRestaurant.Controls.Add(this.label1);
-            this.groupBoxRestaurant.Location = new System.Drawing.Point(72, 32);
-            this.groupBoxRestaurant.Name = "groupBoxRestaurant";
-            this.groupBoxRestaurant.Size = new System.Drawing.Size(345, 324);
-            this.groupBoxRestaurant.TabIndex = 0;
-            this.groupBoxRestaurant.TabStop = false;
-            this.groupBoxRestaurant.Text = "Create";
-            this.groupBoxRestaurant.Enter += new System.EventHandler(this.groupBoxRestaurant_Enter);
+            groupBoxRestaurant.Controls.Add(checkBoxDeleteRestaurant);
+            groupBoxRestaurant.Controls.Add(btnClear);
+            groupBoxRestaurant.Controls.Add(btnAddRestaurant);
+            groupBoxRestaurant.Controls.Add(comboRating);
+            groupBoxRestaurant.Controls.Add(comboType);
+            groupBoxRestaurant.Controls.Add(comboBoxLocation);
+            groupBoxRestaurant.Controls.Add(textBoxName);
+            groupBoxRestaurant.Controls.Add(label4);
+            groupBoxRestaurant.Controls.Add(label3);
+            groupBoxRestaurant.Controls.Add(label2);
+            groupBoxRestaurant.Controls.Add(label1);
+            groupBoxRestaurant.Location = new System.Drawing.Point(63, 24);
+            groupBoxRestaurant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBoxRestaurant.Name = "groupBoxRestaurant";
+            groupBoxRestaurant.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBoxRestaurant.Size = new System.Drawing.Size(302, 243);
+            groupBoxRestaurant.TabIndex = 0;
+            groupBoxRestaurant.TabStop = false;
+            groupBoxRestaurant.Text = "Create";
+            groupBoxRestaurant.Enter += groupBoxRestaurant_Enter;
             // 
             // checkBoxDeleteRestaurant
             // 
-            this.checkBoxDeleteRestaurant.AutoSize = true;
-            this.checkBoxDeleteRestaurant.Location = new System.Drawing.Point(16, 213);
-            this.checkBoxDeleteRestaurant.Name = "checkBoxDeleteRestaurant";
-            this.checkBoxDeleteRestaurant.Size = new System.Drawing.Size(145, 24);
-            this.checkBoxDeleteRestaurant.TabIndex = 10;
-            this.checkBoxDeleteRestaurant.Text = "DeleteRestaurant";
-            this.checkBoxDeleteRestaurant.UseVisualStyleBackColor = true;
+            checkBoxDeleteRestaurant.AutoSize = true;
+            checkBoxDeleteRestaurant.Location = new System.Drawing.Point(14, 160);
+            checkBoxDeleteRestaurant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            checkBoxDeleteRestaurant.Name = "checkBoxDeleteRestaurant";
+            checkBoxDeleteRestaurant.Size = new System.Drawing.Size(115, 19);
+            checkBoxDeleteRestaurant.TabIndex = 10;
+            checkBoxDeleteRestaurant.Text = "DeleteRestaurant";
+            checkBoxDeleteRestaurant.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(189, 253);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(115, 48);
-            this.btnClear.TabIndex = 9;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            btnClear.Location = new System.Drawing.Point(165, 190);
+            btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new System.Drawing.Size(101, 36);
+            btnClear.TabIndex = 9;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnAddRestaurant
             // 
-            this.btnAddRestaurant.Location = new System.Drawing.Point(37, 253);
-            this.btnAddRestaurant.Name = "btnAddRestaurant";
-            this.btnAddRestaurant.Size = new System.Drawing.Size(107, 48);
-            this.btnAddRestaurant.TabIndex = 8;
-            this.btnAddRestaurant.Text = "Add";
-            this.btnAddRestaurant.UseVisualStyleBackColor = true;
-            this.btnAddRestaurant.Click += new System.EventHandler(this.btnAddRestaurant_Click);
+            btnAddRestaurant.Location = new System.Drawing.Point(32, 190);
+            btnAddRestaurant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnAddRestaurant.Name = "btnAddRestaurant";
+            btnAddRestaurant.Size = new System.Drawing.Size(94, 36);
+            btnAddRestaurant.TabIndex = 8;
+            btnAddRestaurant.Text = "Add";
+            btnAddRestaurant.UseVisualStyleBackColor = true;
+            btnAddRestaurant.Click += btnAddRestaurant_Click;
             // 
             // comboRating
             // 
-            this.comboRating.FormattingEnabled = true;
-            this.comboRating.Location = new System.Drawing.Point(95, 170);
-            this.comboRating.Name = "comboRating";
-            this.comboRating.Size = new System.Drawing.Size(209, 28);
-            this.comboRating.TabIndex = 7;
-            this.comboRating.SelectedIndexChanged += new System.EventHandler(this.comboRating_SelectedIndexChanged);
+            comboRating.FormattingEnabled = true;
+            comboRating.Location = new System.Drawing.Point(83, 128);
+            comboRating.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            comboRating.Name = "comboRating";
+            comboRating.Size = new System.Drawing.Size(183, 23);
+            comboRating.TabIndex = 7;
+            comboRating.SelectedIndexChanged += comboRating_SelectedIndexChanged;
             // 
             // comboType
             // 
-            this.comboType.FormattingEnabled = true;
-            this.comboType.Items.AddRange(new object[] {
-            "Italian",
-            "Japanese",
-            "Bulgarian",
-            "Chinese",
-            "Greek"});
-            this.comboType.Location = new System.Drawing.Point(95, 123);
-            this.comboType.Name = "comboType";
-            this.comboType.Size = new System.Drawing.Size(209, 28);
-            this.comboType.TabIndex = 6;
+            comboType.FormattingEnabled = true;
+            comboType.Items.AddRange(new object[] { "Italian", "Japanese", "Bulgarian", "Chinese", "Greek" });
+            comboType.Location = new System.Drawing.Point(83, 92);
+            comboType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            comboType.Name = "comboType";
+            comboType.Size = new System.Drawing.Size(183, 23);
+            comboType.TabIndex = 6;
             // 
             // comboBoxLocation
             // 
-            this.comboBoxLocation.FormattingEnabled = true;
-            this.comboBoxLocation.Items.AddRange(new object[] {
-            "Sofia",
-            "Velingrad",
-            "Plovdiv",
-            "Blagoevgrad",
-            "Varna",
-            "Burgas"});
-            this.comboBoxLocation.Location = new System.Drawing.Point(95, 77);
-            this.comboBoxLocation.Name = "comboBoxLocation";
-            this.comboBoxLocation.Size = new System.Drawing.Size(209, 28);
-            this.comboBoxLocation.TabIndex = 5;
+            comboBoxLocation.FormattingEnabled = true;
+            comboBoxLocation.Items.AddRange(new object[] { "Sofia", "Velingrad", "Plovdiv", "Blagoevgrad", "Varna", "Burgas" });
+            comboBoxLocation.Location = new System.Drawing.Point(83, 58);
+            comboBoxLocation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            comboBoxLocation.Name = "comboBoxLocation";
+            comboBoxLocation.Size = new System.Drawing.Size(183, 23);
+            comboBoxLocation.TabIndex = 5;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(95, 42);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(209, 27);
-            this.textBoxName.TabIndex = 4;
+            textBoxName.Location = new System.Drawing.Point(83, 32);
+            textBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new System.Drawing.Size(183, 23);
+            textBoxName.TabIndex = 4;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 178);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Rating";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(13, 134);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(41, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Rating";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 127);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Type";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(13, 95);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(31, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Type";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Location";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(12, 64);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(53, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Location";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(13, 34);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(39, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Name";
             // 
             // listBoxRestaurants
             // 
-            this.listBoxRestaurants.FormattingEnabled = true;
-            this.listBoxRestaurants.ItemHeight = 20;
-            this.listBoxRestaurants.Location = new System.Drawing.Point(511, 32);
-            this.listBoxRestaurants.Name = "listBoxRestaurants";
-            this.listBoxRestaurants.Size = new System.Drawing.Size(442, 324);
-            this.listBoxRestaurants.TabIndex = 1;
-            this.listBoxRestaurants.SelectedIndexChanged += new System.EventHandler(this.listBoxRestaurants_SelectedIndexChanged);
-            this.listBoxRestaurants.DoubleClick += new System.EventHandler(this.listBoxRestaurants_DoubleClick);
+            listBoxRestaurants.FormattingEnabled = true;
+            listBoxRestaurants.ItemHeight = 15;
+            listBoxRestaurants.Location = new System.Drawing.Point(447, 24);
+            listBoxRestaurants.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            listBoxRestaurants.Name = "listBoxRestaurants";
+            listBoxRestaurants.Size = new System.Drawing.Size(387, 244);
+            listBoxRestaurants.TabIndex = 1;
+            listBoxRestaurants.SelectedIndexChanged += listBoxRestaurants_SelectedIndexChanged;
+            listBoxRestaurants.DoubleClick += listBoxRestaurants_DoubleClick;
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(559, 384);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(94, 44);
-            this.btnPrevious.TabIndex = 2;
-            this.btnPrevious.Text = "Previous";
-            this.btnPrevious.UseVisualStyleBackColor = true;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            btnPrevious.Location = new System.Drawing.Point(489, 288);
+            btnPrevious.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new System.Drawing.Size(82, 33);
+            btnPrevious.TabIndex = 2;
+            btnPrevious.Text = "Previous";
+            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += btnPrevious_Click;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(698, 384);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(94, 44);
-            this.btnNext.TabIndex = 3;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            btnNext.Location = new System.Drawing.Point(611, 288);
+            btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new System.Drawing.Size(82, 33);
+            btnNext.TabIndex = 3;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
             // 
             // comboItemsPerPage
             // 
-            this.comboItemsPerPage.FormattingEnabled = true;
-            this.comboItemsPerPage.Items.AddRange(new object[] {
-            "5",
-            "10",
-            "15",
-            "20"});
-            this.comboItemsPerPage.Location = new System.Drawing.Point(817, 393);
-            this.comboItemsPerPage.Name = "comboItemsPerPage";
-            this.comboItemsPerPage.Size = new System.Drawing.Size(114, 28);
-            this.comboItemsPerPage.TabIndex = 4;
-            this.comboItemsPerPage.SelectedIndexChanged += new System.EventHandler(this.comboItemsPerPage_SelectedIndexChanged);
+            comboItemsPerPage.FormattingEnabled = true;
+            comboItemsPerPage.Items.AddRange(new object[] { "5", "10", "15", "20" });
+            comboItemsPerPage.Location = new System.Drawing.Point(715, 295);
+            comboItemsPerPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            comboItemsPerPage.Name = "comboItemsPerPage";
+            comboItemsPerPage.Size = new System.Drawing.Size(100, 23);
+            comboItemsPerPage.TabIndex = 4;
+            comboItemsPerPage.SelectedIndexChanged += comboItemsPerPage_SelectedIndexChanged;
             // 
             // labelPages
             // 
-            this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(653, 359);
-            this.labelPages.Name = "labelPages";
-            this.labelPages.Size = new System.Drawing.Size(15, 20);
-            this.labelPages.TabIndex = 5;
-            this.labelPages.Text = "-";
+            labelPages.AutoSize = true;
+            labelPages.Location = new System.Drawing.Point(571, 269);
+            labelPages.Name = "labelPages";
+            labelPages.Size = new System.Drawing.Size(12, 15);
+            labelPages.TabIndex = 5;
+            labelPages.Text = "-";
             // 
             // groupBoxOptions
             // 
-            this.groupBoxOptions.Controls.Add(this.radioBtnEdit);
-            this.groupBoxOptions.Controls.Add(this.radioBtnAdd);
-            this.groupBoxOptions.Location = new System.Drawing.Point(88, 374);
-            this.groupBoxOptions.Name = "groupBoxOptions";
-            this.groupBoxOptions.Size = new System.Drawing.Size(253, 64);
-            this.groupBoxOptions.TabIndex = 6;
-            this.groupBoxOptions.TabStop = false;
-            this.groupBoxOptions.Text = "Options";
+            groupBoxOptions.Controls.Add(radioBtnEdit);
+            groupBoxOptions.Controls.Add(radioBtnAdd);
+            groupBoxOptions.Location = new System.Drawing.Point(77, 280);
+            groupBoxOptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBoxOptions.Name = "groupBoxOptions";
+            groupBoxOptions.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBoxOptions.Size = new System.Drawing.Size(221, 48);
+            groupBoxOptions.TabIndex = 6;
+            groupBoxOptions.TabStop = false;
+            groupBoxOptions.Text = "Options";
             // 
             // radioBtnEdit
             // 
-            this.radioBtnEdit.AutoSize = true;
-            this.radioBtnEdit.Location = new System.Drawing.Point(156, 26);
-            this.radioBtnEdit.Name = "radioBtnEdit";
-            this.radioBtnEdit.Size = new System.Drawing.Size(56, 24);
-            this.radioBtnEdit.TabIndex = 1;
-            this.radioBtnEdit.TabStop = true;
-            this.radioBtnEdit.Text = "Edit";
-            this.radioBtnEdit.UseVisualStyleBackColor = true;
+            radioBtnEdit.AutoSize = true;
+            radioBtnEdit.Location = new System.Drawing.Point(136, 20);
+            radioBtnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            radioBtnEdit.Name = "radioBtnEdit";
+            radioBtnEdit.Size = new System.Drawing.Size(45, 19);
+            radioBtnEdit.TabIndex = 1;
+            radioBtnEdit.TabStop = true;
+            radioBtnEdit.Text = "Edit";
+            radioBtnEdit.UseVisualStyleBackColor = true;
             // 
             // radioBtnAdd
             // 
-            this.radioBtnAdd.AutoSize = true;
-            this.radioBtnAdd.Location = new System.Drawing.Point(35, 26);
-            this.radioBtnAdd.Name = "radioBtnAdd";
-            this.radioBtnAdd.Size = new System.Drawing.Size(58, 24);
-            this.radioBtnAdd.TabIndex = 0;
-            this.radioBtnAdd.TabStop = true;
-            this.radioBtnAdd.Text = "Add";
-            this.radioBtnAdd.UseVisualStyleBackColor = true;
-            this.radioBtnAdd.CheckedChanged += new System.EventHandler(this.radioBtnAdd_CheckedChanged);
+            radioBtnAdd.AutoSize = true;
+            radioBtnAdd.Location = new System.Drawing.Point(31, 20);
+            radioBtnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            radioBtnAdd.Name = "radioBtnAdd";
+            radioBtnAdd.Size = new System.Drawing.Size(47, 19);
+            radioBtnAdd.TabIndex = 0;
+            radioBtnAdd.TabStop = true;
+            radioBtnAdd.Text = "Add";
+            radioBtnAdd.UseVisualStyleBackColor = true;
+            radioBtnAdd.CheckedChanged += radioBtnAdd_CheckedChanged;
             // 
             // RestaurantsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(985, 479);
-            this.Controls.Add(this.groupBoxOptions);
-            this.Controls.Add(this.labelPages);
-            this.Controls.Add(this.comboItemsPerPage);
-            this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.btnPrevious);
-            this.Controls.Add(this.listBoxRestaurants);
-            this.Controls.Add(this.groupBoxRestaurant);
-            this.Name = "RestaurantsForm";
-            this.Text = "RestaurantsForm";
-            this.Load += new System.EventHandler(this.RestaurantsForm_Load);
-            this.groupBoxRestaurant.ResumeLayout(false);
-            this.groupBoxRestaurant.PerformLayout();
-            this.groupBoxOptions.ResumeLayout(false);
-            this.groupBoxOptions.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.LightSteelBlue;
+            ClientSize = new System.Drawing.Size(862, 359);
+            Controls.Add(groupBoxOptions);
+            Controls.Add(labelPages);
+            Controls.Add(comboItemsPerPage);
+            Controls.Add(btnNext);
+            Controls.Add(btnPrevious);
+            Controls.Add(listBoxRestaurants);
+            Controls.Add(groupBoxRestaurant);
+            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            Name = "RestaurantsForm";
+            Text = "RestaurantsForm";
+            Load += RestaurantsForm_Load;
+            groupBoxRestaurant.ResumeLayout(false);
+            groupBoxRestaurant.PerformLayout();
+            groupBoxOptions.ResumeLayout(false);
+            groupBoxOptions.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

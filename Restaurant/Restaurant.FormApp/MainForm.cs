@@ -14,7 +14,7 @@ namespace Restaurant.FormApp
         {
             InitializeComponent();
         }
-        
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -48,7 +48,7 @@ namespace Restaurant.FormApp
 
         private void ItemsForm_Click(object sender, EventArgs e)
         {
-            ItemsForm itemsForm=new ItemsForm();
+            ItemsForm itemsForm = new ItemsForm();
             itemsForm.ShowDialog();
         }
 

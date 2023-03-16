@@ -71,11 +71,11 @@
                 else
                 {
                     double rating = double.Parse(comboRating.Text);
-                    MessageBox.Show(service.UpdateRestaurantRating(currentRestaurantId,rating));
+                    MessageBox.Show(service.UpdateRestaurantRating(currentRestaurantId, rating));
                 }
                 ClearAddGroupBox();
             }
-            
+
 
         }
 
