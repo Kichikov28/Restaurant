@@ -28,189 +28,208 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Create = new System.Windows.Forms.GroupBox();
-            this.ClearBtn = new System.Windows.Forms.Button();
-            this.AddBtn = new System.Windows.Forms.Button();
-            this.cuisineTxt = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.itemTxt = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.restaurantTxt = new System.Windows.Forms.ComboBox();
-            this.townTxt = new System.Windows.Forms.ComboBox();
-            this.Order = new System.Windows.Forms.ListBox();
-            this.labelPages = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.PreviousBtn = new System.Windows.Forms.Button();
-            this.Create.SuspendLayout();
-            this.SuspendLayout();
+            Create = new System.Windows.Forms.GroupBox();
+            ClearBtn = new System.Windows.Forms.Button();
+            AddBtn = new System.Windows.Forms.Button();
+            cuisineTxt = new System.Windows.Forms.ComboBox();
+            label4 = new System.Windows.Forms.Label();
+            itemTxt = new System.Windows.Forms.ComboBox();
+            label3 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            restaurantTxt = new System.Windows.Forms.ComboBox();
+            townTxt = new System.Windows.Forms.ComboBox();
+            Order = new System.Windows.Forms.ListBox();
+            labelPages = new System.Windows.Forms.Label();
+            button4 = new System.Windows.Forms.Button();
+            PreviousBtn = new System.Windows.Forms.Button();
+            Create.SuspendLayout();
+            SuspendLayout();
             // 
             // Create
             // 
-            this.Create.Controls.Add(this.ClearBtn);
-            this.Create.Controls.Add(this.AddBtn);
-            this.Create.Controls.Add(this.cuisineTxt);
-            this.Create.Controls.Add(this.label4);
-            this.Create.Controls.Add(this.itemTxt);
-            this.Create.Controls.Add(this.label3);
-            this.Create.Controls.Add(this.label2);
-            this.Create.Controls.Add(this.label1);
-            this.Create.Controls.Add(this.restaurantTxt);
-            this.Create.Controls.Add(this.townTxt);
-            this.Create.Location = new System.Drawing.Point(31, 23);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(360, 344);
-            this.Create.TabIndex = 0;
-            this.Create.TabStop = false;
-            this.Create.Text = "Create order";
+            Create.Controls.Add(ClearBtn);
+            Create.Controls.Add(AddBtn);
+            Create.Controls.Add(cuisineTxt);
+            Create.Controls.Add(label4);
+            Create.Controls.Add(itemTxt);
+            Create.Controls.Add(label3);
+            Create.Controls.Add(label2);
+            Create.Controls.Add(label1);
+            Create.Controls.Add(restaurantTxt);
+            Create.Controls.Add(townTxt);
+            Create.Location = new System.Drawing.Point(27, 17);
+            Create.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            Create.Name = "Create";
+            Create.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            Create.Size = new System.Drawing.Size(315, 258);
+            Create.TabIndex = 0;
+            Create.TabStop = false;
+            Create.Text = "Create order";
             // 
             // ClearBtn
             // 
-            this.ClearBtn.Location = new System.Drawing.Point(207, 227);
-            this.ClearBtn.Name = "ClearBtn";
-            this.ClearBtn.Size = new System.Drawing.Size(104, 52);
-            this.ClearBtn.TabIndex = 9;
-            this.ClearBtn.Text = "Clear";
-            this.ClearBtn.UseVisualStyleBackColor = true;
-            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            ClearBtn.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ClearBtn.Location = new System.Drawing.Point(181, 170);
+            ClearBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            ClearBtn.Name = "ClearBtn";
+            ClearBtn.Size = new System.Drawing.Size(92, 50);
+            ClearBtn.TabIndex = 9;
+            ClearBtn.Text = "Clear";
+            ClearBtn.UseVisualStyleBackColor = true;
+            ClearBtn.Click += ClearBtn_Click;
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(26, 227);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(107, 52);
-            this.AddBtn.TabIndex = 2;
-            this.AddBtn.Text = "Add to the order";
-            this.AddBtn.UseVisualStyleBackColor = true;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            AddBtn.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            AddBtn.Location = new System.Drawing.Point(23, 170);
+            AddBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new System.Drawing.Size(103, 50);
+            AddBtn.TabIndex = 2;
+            AddBtn.Text = "Add to the order";
+            AddBtn.UseVisualStyleBackColor = true;
+            AddBtn.Click += AddBtn_Click;
             // 
             // cuisineTxt
             // 
-            this.cuisineTxt.FormattingEnabled = true;
-            this.cuisineTxt.Location = new System.Drawing.Point(160, 35);
-            this.cuisineTxt.Name = "cuisineTxt";
-            this.cuisineTxt.Size = new System.Drawing.Size(151, 28);
-            this.cuisineTxt.TabIndex = 8;
+            cuisineTxt.FormattingEnabled = true;
+            cuisineTxt.Location = new System.Drawing.Point(140, 26);
+            cuisineTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            cuisineTxt.Name = "cuisineTxt";
+            cuisineTxt.Size = new System.Drawing.Size(133, 23);
+            cuisineTxt.TabIndex = 8;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Choose cuisine";
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(23, 28);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(88, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Choose cuisine";
             // 
             // itemTxt
             // 
-            this.itemTxt.FormattingEnabled = true;
-            this.itemTxt.Location = new System.Drawing.Point(162, 175);
-            this.itemTxt.Name = "itemTxt";
-            this.itemTxt.Size = new System.Drawing.Size(151, 28);
-            this.itemTxt.TabIndex = 6;
+            itemTxt.FormattingEnabled = true;
+            itemTxt.Location = new System.Drawing.Point(142, 131);
+            itemTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            itemTxt.Name = "itemTxt";
+            itemTxt.Size = new System.Drawing.Size(133, 23);
+            itemTxt.TabIndex = 6;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Choose item";
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(23, 134);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(76, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Choose item";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Choose restaurant";
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(23, 98);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(108, 15);
+            label2.TabIndex = 4;
+            label2.Text = "Choose restaurant";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Choose town";
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(23, 61);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(79, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Choose town";
             // 
             // restaurantTxt
             // 
-            this.restaurantTxt.FormattingEnabled = true;
-            this.restaurantTxt.Location = new System.Drawing.Point(160, 127);
-            this.restaurantTxt.Name = "restaurantTxt";
-            this.restaurantTxt.Size = new System.Drawing.Size(151, 28);
-            this.restaurantTxt.TabIndex = 2;
+            restaurantTxt.FormattingEnabled = true;
+            restaurantTxt.Location = new System.Drawing.Point(140, 95);
+            restaurantTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            restaurantTxt.Name = "restaurantTxt";
+            restaurantTxt.Size = new System.Drawing.Size(133, 23);
+            restaurantTxt.TabIndex = 2;
             // 
             // townTxt
             // 
-            this.townTxt.FormattingEnabled = true;
-            this.townTxt.Location = new System.Drawing.Point(160, 77);
-            this.townTxt.Name = "townTxt";
-            this.townTxt.Size = new System.Drawing.Size(151, 28);
-            this.townTxt.TabIndex = 1;
+            townTxt.FormattingEnabled = true;
+            townTxt.Location = new System.Drawing.Point(140, 58);
+            townTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            townTxt.Name = "townTxt";
+            townTxt.Size = new System.Drawing.Size(133, 23);
+            townTxt.TabIndex = 1;
             // 
             // Order
             // 
-            this.Order.FormattingEnabled = true;
-            this.Order.ItemHeight = 20;
-            this.Order.Location = new System.Drawing.Point(475, 43);
-            this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(385, 324);
-            this.Order.TabIndex = 2;
+            Order.FormattingEnabled = true;
+            Order.ItemHeight = 15;
+            Order.Location = new System.Drawing.Point(416, 32);
+            Order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            Order.Name = "Order";
+            Order.Size = new System.Drawing.Size(337, 244);
+            Order.TabIndex = 2;
             // 
             // labelPages
             // 
-            this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(629, 403);
-            this.labelPages.Name = "labelPages";
-            this.labelPages.Size = new System.Drawing.Size(15, 20);
-            this.labelPages.TabIndex = 6;
-            this.labelPages.Text = "-";
+            labelPages.AutoSize = true;
+            labelPages.Location = new System.Drawing.Point(550, 302);
+            labelPages.Name = "labelPages";
+            labelPages.Size = new System.Drawing.Size(12, 15);
+            labelPages.TabIndex = 6;
+            labelPages.Text = "-";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(669, 387);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 55);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Next";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            button4.Location = new System.Drawing.Point(585, 290);
+            button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(105, 41);
+            button4.TabIndex = 7;
+            button4.Text = "Next";
+            button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // PreviousBtn
             // 
-            this.PreviousBtn.Location = new System.Drawing.Point(475, 387);
-            this.PreviousBtn.Name = "PreviousBtn";
-            this.PreviousBtn.Size = new System.Drawing.Size(120, 55);
-            this.PreviousBtn.TabIndex = 8;
-            this.PreviousBtn.Text = "Previous";
-            this.PreviousBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.PreviousBtn.UseVisualStyleBackColor = true;
-            this.PreviousBtn.Click += new System.EventHandler(this.PreviousBtn_Click_1);
+            PreviousBtn.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            PreviousBtn.Location = new System.Drawing.Point(416, 290);
+            PreviousBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            PreviousBtn.Name = "PreviousBtn";
+            PreviousBtn.Size = new System.Drawing.Size(105, 41);
+            PreviousBtn.TabIndex = 8;
+            PreviousBtn.Text = "Previous";
+            PreviousBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            PreviousBtn.UseVisualStyleBackColor = true;
+            PreviousBtn.Click += PreviousBtn_Click_1;
             // 
             // CreateOrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(909, 465);
-            this.Controls.Add(this.PreviousBtn);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.labelPages);
-            this.Controls.Add(this.Order);
-            this.Controls.Add(this.Create);
-            this.Name = "CreateOrderForm";
-            this.Text = "CreateOrderForm";
-            this.Create.ResumeLayout(false);
-            this.Create.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.LightSteelBlue;
+            ClientSize = new System.Drawing.Size(795, 349);
+            Controls.Add(PreviousBtn);
+            Controls.Add(button4);
+            Controls.Add(labelPages);
+            Controls.Add(Order);
+            Controls.Add(Create);
+            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            Name = "CreateOrderForm";
+            Text = "CreateOrderForm";
+            Create.ResumeLayout(false);
+            Create.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
