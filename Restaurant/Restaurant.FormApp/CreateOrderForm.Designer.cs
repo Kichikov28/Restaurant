@@ -69,6 +69,7 @@
             // 
             // ClearBtn
             // 
+            ClearBtn.BackColor = System.Drawing.Color.FloralWhite;
             ClearBtn.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             ClearBtn.Location = new System.Drawing.Point(181, 170);
             ClearBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -76,11 +77,12 @@
             ClearBtn.Size = new System.Drawing.Size(92, 50);
             ClearBtn.TabIndex = 9;
             ClearBtn.Text = "Clear";
-            ClearBtn.UseVisualStyleBackColor = true;
+            ClearBtn.UseVisualStyleBackColor = false;
             ClearBtn.Click += ClearBtn_Click;
             // 
             // AddBtn
             // 
+            AddBtn.BackColor = System.Drawing.Color.FloralWhite;
             AddBtn.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             AddBtn.Location = new System.Drawing.Point(23, 170);
             AddBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -88,7 +90,7 @@
             AddBtn.Size = new System.Drawing.Size(103, 50);
             AddBtn.TabIndex = 2;
             AddBtn.Text = "Add to the order";
-            AddBtn.UseVisualStyleBackColor = true;
+            AddBtn.UseVisualStyleBackColor = false;
             AddBtn.Click += AddBtn_Click;
             // 
             // cuisineTxt
@@ -188,6 +190,7 @@
             // 
             // button4
             // 
+            button4.BackColor = System.Drawing.Color.FloralWhite;
             button4.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             button4.Location = new System.Drawing.Point(585, 290);
             button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -196,11 +199,12 @@
             button4.TabIndex = 7;
             button4.Text = "Next";
             button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
             // PreviousBtn
             // 
+            PreviousBtn.BackColor = System.Drawing.Color.FloralWhite;
             PreviousBtn.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             PreviousBtn.Location = new System.Drawing.Point(416, 290);
             PreviousBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -209,7 +213,7 @@
             PreviousBtn.TabIndex = 8;
             PreviousBtn.Text = "Previous";
             PreviousBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            PreviousBtn.UseVisualStyleBackColor = true;
+            PreviousBtn.UseVisualStyleBackColor = false;
             PreviousBtn.Click += PreviousBtn_Click_1;
             // 
             // CreateOrderForm
