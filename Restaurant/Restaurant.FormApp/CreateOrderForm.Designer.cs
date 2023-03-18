@@ -28,112 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Create = new System.Windows.Forms.GroupBox();
-            this.ClearBtn = new System.Windows.Forms.Button();
-            this.AddBtn = new System.Windows.Forms.Button();
-            this.itemTxt = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Order = new System.Windows.Forms.ListBox();
-            this.labelPages = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.PreviousBtn = new System.Windows.Forms.Button();
-            this.Create.SuspendLayout();
+            this.itemNameTextBox = new System.Windows.Forms.TextBox();
+            this.itemPriceTextBox = new System.Windows.Forms.TextBox();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.labelTotalSum = new System.Windows.Forms.Label();
+            this.orderItemListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // Create
+            // itemNameTextBox
             // 
-            this.Create.Controls.Add(this.ClearBtn);
-            this.Create.Controls.Add(this.AddBtn);
-            this.Create.Controls.Add(this.itemTxt);
-            this.Create.Controls.Add(this.label3);
-            this.Create.Location = new System.Drawing.Point(31, 23);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(360, 344);
-            this.Create.TabIndex = 0;
-            this.Create.TabStop = false;
-            this.Create.Text = "Create order";
+            this.itemNameTextBox.Location = new System.Drawing.Point(60, 83);
+            this.itemNameTextBox.Name = "itemNameTextBox";
+            this.itemNameTextBox.Size = new System.Drawing.Size(125, 27);
+            this.itemNameTextBox.TabIndex = 0;
             // 
-            // ClearBtn
+            // itemPriceTextBox
             // 
-            this.ClearBtn.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClearBtn.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ClearBtn.Location = new System.Drawing.Point(207, 227);
-            this.ClearBtn.Name = "ClearBtn";
-            this.ClearBtn.Size = new System.Drawing.Size(105, 67);
-            this.ClearBtn.TabIndex = 9;
-            this.ClearBtn.Text = "Clear";
-            this.ClearBtn.UseVisualStyleBackColor = false;
+            this.itemPriceTextBox.Location = new System.Drawing.Point(60, 135);
+            this.itemPriceTextBox.Name = "itemPriceTextBox";
+            this.itemPriceTextBox.Size = new System.Drawing.Size(125, 27);
+            this.itemPriceTextBox.TabIndex = 1;
             // 
-            // AddBtn
+            // btnAddItem
             // 
-            this.AddBtn.BackColor = System.Drawing.Color.FloralWhite;
-            this.AddBtn.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AddBtn.Location = new System.Drawing.Point(26, 227);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(118, 67);
-            this.AddBtn.TabIndex = 2;
-            this.AddBtn.Text = "Add to the order";
-            this.AddBtn.UseVisualStyleBackColor = false;
+            this.btnAddItem.Location = new System.Drawing.Point(67, 204);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(94, 29);
+            this.btnAddItem.TabIndex = 2;
+            this.btnAddItem.Text = "Add";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
-            // itemTxt
+            // labelTotalSum
             // 
-            this.itemTxt.FormattingEnabled = true;
-            this.itemTxt.Location = new System.Drawing.Point(161, 34);
-            this.itemTxt.Name = "itemTxt";
-            this.itemTxt.Size = new System.Drawing.Size(151, 28);
-            this.itemTxt.TabIndex = 6;
+            this.labelTotalSum.AutoSize = true;
+            this.labelTotalSum.Location = new System.Drawing.Point(538, 292);
+            this.labelTotalSum.Name = "labelTotalSum";
+            this.labelTotalSum.Size = new System.Drawing.Size(15, 20);
+            this.labelTotalSum.TabIndex = 4;
+            this.labelTotalSum.Text = "-";
             // 
-            // label3
+            // orderItemListBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(26, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Choose item";
-            // 
-            // Order
-            // 
-            this.Order.FormattingEnabled = true;
-            this.Order.ItemHeight = 20;
-            this.Order.Location = new System.Drawing.Point(475, 43);
-            this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(385, 324);
-            this.Order.TabIndex = 2;
-            // 
-            // labelPages
-            // 
-            this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(629, 403);
-            this.labelPages.Name = "labelPages";
-            this.labelPages.Size = new System.Drawing.Size(15, 20);
-            this.labelPages.TabIndex = 6;
-            this.labelPages.Text = "-";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FloralWhite;
-            this.button4.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(669, 387);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 55);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Next";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // PreviousBtn
-            // 
-            this.PreviousBtn.BackColor = System.Drawing.Color.FloralWhite;
-            this.PreviousBtn.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PreviousBtn.Location = new System.Drawing.Point(475, 387);
-            this.PreviousBtn.Name = "PreviousBtn";
-            this.PreviousBtn.Size = new System.Drawing.Size(120, 55);
-            this.PreviousBtn.TabIndex = 8;
-            this.PreviousBtn.Text = "Previous";
-            this.PreviousBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.PreviousBtn.UseVisualStyleBackColor = false;
+            this.orderItemListBox.FormattingEnabled = true;
+            this.orderItemListBox.ItemHeight = 20;
+            this.orderItemListBox.Location = new System.Drawing.Point(392, 35);
+            this.orderItemListBox.Name = "orderItemListBox";
+            this.orderItemListBox.Size = new System.Drawing.Size(336, 224);
+            this.orderItemListBox.TabIndex = 3;
             // 
             // CreateOrderForm
             // 
@@ -141,15 +83,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(909, 465);
-            this.Controls.Add(this.PreviousBtn);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.labelPages);
-            this.Controls.Add(this.Order);
-            this.Controls.Add(this.Create);
+            this.Controls.Add(this.labelTotalSum);
+            this.Controls.Add(this.orderItemListBox);
+            this.Controls.Add(this.btnAddItem);
+            this.Controls.Add(this.itemPriceTextBox);
+            this.Controls.Add(this.itemNameTextBox);
             this.Name = "CreateOrderForm";
             this.Text = "CreateOrderForm";
-            this.Create.ResumeLayout(false);
-            this.Create.PerformLayout();
+            this.Load += new System.EventHandler(this.CreateOrderForm_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,14 +98,10 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox Create;
-        private System.Windows.Forms.ComboBox itemTxt;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button AddBtn;
-        private System.Windows.Forms.Button ClearBtn;
-        private System.Windows.Forms.ListBox Order;
-        private System.Windows.Forms.Label labelPages;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button PreviousBtn;
+        private System.Windows.Forms.TextBox itemNameTextBox;
+        private System.Windows.Forms.TextBox itemPriceTextBox;
+        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.ListBox orderItemListBox;
+        private System.Windows.Forms.Label labelTotalSum;
     }
 }

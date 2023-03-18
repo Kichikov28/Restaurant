@@ -1,4 +1,5 @@
-﻿using Restaurant.Services;
+﻿using Restaurant.Models;
+using Restaurant.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,79 +14,63 @@ namespace Restaurant.FormApp
 {
     public partial class CreateOrderForm : Form
     {
-        private ItemsService itemService;
-        private RestaurantsService restaurantService;
-        private int currentPage = 1;
-        private int itemsPerPage = 10;
-        private int totalPages = 0;
+        private List<OrderItem> orderItems;
+        private decimal total;
         public CreateOrderForm()
         {
             InitializeComponent();
+            orderItems = new List<OrderItem>();
+            total = 0;
         }
-
-        private void CreateOrderForm_Load(object sender, EventArgs e)
+        private void CreateOrderForm_Load_1(object sender, EventArgs e)
         {
 
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void AddItemToOrder(Item item)
         {
-
+            bool itemFound = false;
+            foreach (OrderItem orderItem in orderItems)
+            {
+                if (orderItem.ItemId == item.Id)
+                {
+                    orderItem.Quantity++;
+                    itemFound = true;
+                    break;
+                }
+            }
+            if (!itemFound)
+            {
+                OrderItem orderItem = new OrderItem
+                {
+                    Id = 1,
+                    ItemId = item.Id,
+                    OrderId = 1,
+                    Quantity = 1
+                };
+                orderItems.Add(orderItem);
+            }
+            total += item.Price;
+            labelTotalSum.Text = $"Total Price: {total} leva";
+            foreach (OrderItem orderItem in orderItems)
+            {
+                Item orderItemName = new Item { Id = orderItem.Id, Name = item.Name, Price = item.Price };
+                orderItemListBox.Items.Add($"{orderItemName.Name} x {orderItem.Quantity} = {(double)orderItemName.Price * orderItem.Quantity} leva");
+            }
+           
         }
-        private void Order_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnAddItem_Click(object sender, EventArgs e)
         {
-
-        }
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClearAddGroupBox()
-        {
-         
-        }
-        private void AddBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClearBtn_Click(object sender, EventArgs e)
-        {
-            ClearAddGroupBox();
-        }
-
-        private void PreviousBtn_Click_1(object sender, EventArgs e)
-        {
-            if (currentPage >= totalPages) { return; }
-            Order.Items.Clear();
-            List<string> list = itemService.GetItemsBasicInfo(++currentPage, itemsPerPage);
-            list.ForEach(p => Order.Items.Add(p));
-            labelPages.Text = $"{currentPage} / {totalPages}";
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (currentPage >= totalPages) { return; }
-            Order.Items.Clear();
-            List<string> list = itemService.GetItemsBasicInfo(++currentPage, itemsPerPage);
-            list.ForEach(p => Order.Items.Add(p));
-            labelPages.Text = $"{currentPage} / {totalPages}";
+            string itemName = itemNameTextBox.Text;
+            decimal itemPrice;
+            if (!decimal.TryParse(itemPriceTextBox.Text, out itemPrice))
+            {
+                MessageBox.Show("Please enter a valid item price.");
+                return;
+            }
+            Item item = new Item { Id = 1, Name = itemName, Price = itemPrice };
+            AddItemToOrder(item);
+            itemNameTextBox.Text = "";
+            itemPriceTextBox.Text = "";
         }
     }
 }
