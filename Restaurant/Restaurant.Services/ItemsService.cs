@@ -160,34 +160,6 @@
                 return (int)Math.Ceiling(context.Items.Count() / (double)count);
             }
         }
-        public List<Item> SortItemByPrice(List<Item> items)
-        {
-            using (context = new AppDbContext())
-            {
-                return context.Items.OrderBy(x => x.Price).ToList();
-            }
-        }
-        public List<Item> SortItemsByName()
-        {
-            using (context = new AppDbContext())
-            {
-                return context.Items.OrderBy(x => x.Name).ToList();
-            }
-        }
-        public List<Item> ReverseSortItemByName()
-        {
-            using (context=new AppDbContext())
-            {
-                return context.Items.OrderByDescending(x => x.Name).ToList();
-            }
-        }
-        public List<Item> ReverseSortItemByPrice()
-        {
-            using (context=new AppDbContext())
-            {
-                return context.Items.OrderByDescending(x => x.Price).ToList();
-            } 
-        }
         public string RemoveItemById(int id)
         {
             using (context = new AppDbContext())
@@ -196,7 +168,7 @@
                 if (item == null) { return $"{nameof(Item)} not found!"; }
                 context.Items.Remove(item);
                 context.SaveChanges();
-                return $"{nameof(Restaurant)} {item.Name} was deleted!";
+                return $"{nameof(Item)} {item.Name} was deleted!";
             }
         }
     }

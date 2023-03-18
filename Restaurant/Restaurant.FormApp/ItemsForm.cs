@@ -69,8 +69,6 @@
             }
         }
 
-
-
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -79,14 +77,6 @@
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            int id = int.Parse(btnDelete.Text);
-            string result = service.RemoveItemById(id);
-            MessageBox.Show(result);
-            ClearAddGroupBox();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -132,6 +122,19 @@
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearAddGroupBox();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(textBoxDelete.Text);
+            string result = service.RemoveItemById(id);
+            MessageBox.Show(result);
+            ClearAddGroupBox();
+        }
+
+        private void ItemsForm_Load_2(object sender, EventArgs e)
+        {
+
         }
     }
 }
