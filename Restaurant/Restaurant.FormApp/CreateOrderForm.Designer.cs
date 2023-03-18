@@ -31,14 +31,8 @@
             this.Create = new System.Windows.Forms.GroupBox();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.cuisineTxt = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.itemTxt = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.restaurantTxt = new System.Windows.Forms.ComboBox();
-            this.townTxt = new System.Windows.Forms.ComboBox();
             this.Order = new System.Windows.Forms.ListBox();
             this.labelPages = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -50,14 +44,8 @@
             // 
             this.Create.Controls.Add(this.ClearBtn);
             this.Create.Controls.Add(this.AddBtn);
-            this.Create.Controls.Add(this.cuisineTxt);
-            this.Create.Controls.Add(this.label4);
             this.Create.Controls.Add(this.itemTxt);
             this.Create.Controls.Add(this.label3);
-            this.Create.Controls.Add(this.label2);
-            this.Create.Controls.Add(this.label1);
-            this.Create.Controls.Add(this.restaurantTxt);
-            this.Create.Controls.Add(this.townTxt);
             this.Create.Location = new System.Drawing.Point(31, 23);
             this.Create.Name = "Create";
             this.Create.Size = new System.Drawing.Size(360, 344);
@@ -87,28 +75,10 @@
             this.AddBtn.Text = "Add to the order";
             this.AddBtn.UseVisualStyleBackColor = false;
             // 
-            // cuisineTxt
-            // 
-            this.cuisineTxt.FormattingEnabled = true;
-            this.cuisineTxt.Location = new System.Drawing.Point(171, 34);
-            this.cuisineTxt.Name = "cuisineTxt";
-            this.cuisineTxt.Size = new System.Drawing.Size(151, 28);
-            this.cuisineTxt.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(26, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Choose cuisine";
-            // 
             // itemTxt
             // 
             this.itemTxt.FormattingEnabled = true;
-            this.itemTxt.Location = new System.Drawing.Point(171, 171);
+            this.itemTxt.Location = new System.Drawing.Point(161, 34);
             this.itemTxt.Name = "itemTxt";
             this.itemTxt.Size = new System.Drawing.Size(151, 28);
             this.itemTxt.TabIndex = 6;
@@ -117,47 +87,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(26, 179);
+            this.label3.Location = new System.Drawing.Point(26, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Choose item";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(26, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Choose restaurant";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(26, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Choose town";
-            // 
-            // restaurantTxt
-            // 
-            this.restaurantTxt.FormattingEnabled = true;
-            this.restaurantTxt.Location = new System.Drawing.Point(171, 128);
-            this.restaurantTxt.Name = "restaurantTxt";
-            this.restaurantTxt.Size = new System.Drawing.Size(151, 28);
-            this.restaurantTxt.TabIndex = 2;
-            // 
-            // townTxt
-            // 
-            this.townTxt.FormattingEnabled = true;
-            this.townTxt.Location = new System.Drawing.Point(171, 81);
-            this.townTxt.Name = "townTxt";
-            this.townTxt.Size = new System.Drawing.Size(151, 28);
-            this.townTxt.TabIndex = 1;
             // 
             // Order
             // 
@@ -224,15 +158,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox Create;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox itemTxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox restaurantTxt;
-        private System.Windows.Forms.ComboBox townTxt;
         private System.Windows.Forms.Button AddBtn;
-        private System.Windows.Forms.ComboBox cuisineTxt;
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.ListBox Order;
         private System.Windows.Forms.Label labelPages;

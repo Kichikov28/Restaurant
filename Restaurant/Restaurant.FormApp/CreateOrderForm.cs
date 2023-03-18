@@ -58,10 +58,7 @@ namespace Restaurant.FormApp
 
         private void ClearAddGroupBox()
         {
-            cuisineTxt.Text = string.Empty;
-            townTxt.Text = string.Empty;
-            restaurantTxt.Text = string.Empty;
-            itemTxt.Text = string.Empty;
+         
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
