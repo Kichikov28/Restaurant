@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.listBoxRestaurant = new System.Windows.Forms.ListBox();
-            this.listBoxMenus = new System.Windows.Forms.ListBox();
             this.listBoxItems = new System.Windows.Forms.ListBox();
+            this.listBoxOrder = new System.Windows.Forms.ListBox();
             this.labelInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,25 +44,24 @@
             this.listBoxRestaurant.TabIndex = 0;
             this.listBoxRestaurant.DoubleClick += new System.EventHandler(this.listBoxRestaurant_DoubleClick);
             // 
-            // listBoxMenus
-            // 
-            this.listBoxMenus.FormattingEnabled = true;
-            this.listBoxMenus.ItemHeight = 20;
-            this.listBoxMenus.Location = new System.Drawing.Point(317, 66);
-            this.listBoxMenus.Name = "listBoxMenus";
-            this.listBoxMenus.Size = new System.Drawing.Size(280, 344);
-            this.listBoxMenus.TabIndex = 1;
-            this.listBoxMenus.SelectedIndexChanged += new System.EventHandler(this.listBoxItems_SelectedIndexChanged);
-            this.listBoxMenus.DoubleClick += new System.EventHandler(this.listBoxItems_DoubleClick);
-            // 
             // listBoxItems
             // 
             this.listBoxItems.FormattingEnabled = true;
             this.listBoxItems.ItemHeight = 20;
-            this.listBoxItems.Location = new System.Drawing.Point(637, 66);
+            this.listBoxItems.Location = new System.Drawing.Point(317, 66);
             this.listBoxItems.Name = "listBoxItems";
-            this.listBoxItems.Size = new System.Drawing.Size(285, 344);
-            this.listBoxItems.TabIndex = 2;
+            this.listBoxItems.Size = new System.Drawing.Size(280, 344);
+            this.listBoxItems.TabIndex = 1;
+            this.listBoxItems.DoubleClick += new System.EventHandler(this.listBoxItems_DoubleClick);
+            // 
+            // listBoxOrder
+            // 
+            this.listBoxOrder.FormattingEnabled = true;
+            this.listBoxOrder.ItemHeight = 20;
+            this.listBoxOrder.Location = new System.Drawing.Point(637, 66);
+            this.listBoxOrder.Name = "listBoxOrder";
+            this.listBoxOrder.Size = new System.Drawing.Size(285, 344);
+            this.listBoxOrder.TabIndex = 2;
             // 
             // labelInfo
             // 
@@ -80,8 +79,8 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(964, 531);
             this.Controls.Add(this.labelInfo);
+            this.Controls.Add(this.listBoxOrder);
             this.Controls.Add(this.listBoxItems);
-            this.Controls.Add(this.listBoxMenus);
             this.Controls.Add(this.listBoxRestaurant);
             this.Name = "CreateOrderForm";
             this.Text = "CreateOrderForm";
@@ -94,8 +93,8 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBoxRestaurant;
-        private System.Windows.Forms.ListBox listBoxMenus;
         private System.Windows.Forms.ListBox listBoxItems;
+        private System.Windows.Forms.ListBox listBoxOrder;
         private System.Windows.Forms.Label labelInfo;
     }
 }

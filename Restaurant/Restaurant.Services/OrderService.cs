@@ -2,6 +2,7 @@
 {
     using Restaurant.Data;
     using Restaurant.Models;
+    using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
@@ -10,51 +11,100 @@
     public class OrderService
     {
         private AppDbContext context;
-        public string CreateOrder(int orderId, int itemId, double quantity)
-        {
-            bool itemFound = false;
 
-            OrderItem orderItem = new OrderItem()
+        private static decimal total;
+        public string AddItemToOrder(Item item)
+        {
+            using (var context = new AppDbContext())
             {
-                OrderId = orderId,
-                ItemId = itemId,
-                Quantity = quantity
-            };
-            foreach (var orderItem in orderItem)
-            {
-                if (orderItem.ItemId == item.Id)
+                // Check if the item exists in the database
+                Item existingItem = context.Items
+                    .SingleOrDefault(i => i.Name.Equals(item.Name, StringComparison.OrdinalIgnoreCase));
+
+                if (existingItem == null)
                 {
-                    orderItem.Quantity++;
-                    itemFound = true;
-                    break;
+                    // If the item does not exist, add it to the database
+                    context.Items.Add(item);
+                    context.SaveChanges();
+                    existingItem = item;
                 }
-            }
-            // if the item is not already in the order, add it with quantity 1
-            if (!itemFound)
-            {
-                OrderItem orderItem = new OrderItem
+
+                // Check if the item is already in the order
+                OrderItem existingOrderItem = context.OrderItems
+                    .SingleOrDefault(oi => oi.ItemId == existingItem.Id && oi.OrderId == 1);
+
+                if (existingOrderItem == null)
                 {
-                    Id = orderItems.Count + 1,
-                    ItemId = item.Id,
-                    OrderId = 1,
-                    Quantity = 1
-                };
-                orderItems.Add(orderItem);
+                    // If the item is not already in the order, add it with quantity 1
+                    OrderItem orderItem = new OrderItem
+                    {
+                        ItemId = existingItem.Id,
+                        OrderId = 1,
+                        Quantity = 1
+                    };
+                    context.OrderItems.Add(orderItem);
+                }
+                else
+                {
+                    // If the item is already in the order, increase the quantity
+                    existingOrderItem.Quantity++;
+                }
+
+                context.SaveChanges();
+
+                // Update the total price
+                total += existingItem.Price;
+                return $"Total Price: ${total}";
             }
-            // update the total price
-            total += item.Price;
-            totalPriceLabel.Text = $"Total Price: ${total}";
-            // update the order items list
-            orderItemsListBox.Items.Clear();
-            foreach (OrderItem orderItem in orderItems)
-            {
-                Item orderItemName = new Item { Id = orderItem.Id, Name = item.Name, Price = item.Price };
-                orderItemsListBox.Items.Add($"{orderItemName.Name} x {orderItem.Quantity} = ${orderItemName.Price * orderItem.Quantity}");
-            }
-            context.OrderItems.Add(orderItem);
-            context.SaveChanges();
-            return "Your order is sent!";
         }
+        //    public string CreateOrder(Item item)
+        //{
+        //    //bool itemFound = false;
+
+        //    //OrderItem orderItem = new OrderItem()
+        //    //{
+        //    //    OrderId = orderId,
+        //    //    ItemId = itemId,
+        //    //    Quantity = quantity
+        //    //};
+        //    //context.OrderItems.Add(orderItem);
+        //    //context.SaveChanges();
+        //    //return "Order made!";
+        //    bool itemFound = false;
+        //    foreach (var orderItem in orderItem)
+        //    {
+        //        if (orderItem.ItemId == item.Id)
+        //        {
+        //            orderItem.Quantity++;
+        //            itemFound = true;
+        //            break;
+        //        }
+        //    }
+        //    // if the item is not already in the order, add it with quantity 1
+        //    if (!itemFound)
+        //    {
+        //        OrderItem orderItem = new OrderItem
+        //        {
+        //            Id = orderItem.Count + 1,
+        //            ItemId = item.Id,
+        //            OrderId = 1,
+        //            Quantity = 1
+        //        };
+        //        context.orderItems.Add(orderItem);
+        //    }
+        //    // update the total price
+        //    total += item.Price;
+        //    totalPriceLabel.Text = $"Total Price: ${total}";
+        //    // update the order items list
+        //    orderItemsListBox.Items.Clear();
+        //    foreach (OrderItem orderItem in orderItems)
+        //    {
+        //        Item orderItemName = new Item { Id = orderItem.Id, Name = item.Name, Price = item.Price };
+        //        orderItemsListBox.Items.Add($"{orderItemName.Name} x {orderItem.Quantity} = ${orderItemName.Price * orderItem.Quantity}");
+        //    }
+
+
+        //}
 
         public List<string> GetItems()
         {
@@ -63,7 +113,7 @@
             {
                 itemsInfo = this.context.Items.
                      OrderBy(x => x.Id)
-                     .Select(x => $"{x.Id} - {x.Name}")
+                     .Select(x => $"{x.Id} - {x.Name} - {x.Price}")
                      .ToList();
             }
             return itemsInfo;

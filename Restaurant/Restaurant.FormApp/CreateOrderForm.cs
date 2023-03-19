@@ -34,20 +34,19 @@ namespace Restaurant.FormApp
         private void listBoxRestaurant_DoubleClick(object sender, EventArgs e)
         {
             labelInfo.Text = "Step 2 - Select items";
-            List<string> menus = orderService.GetItems();
-            menus.ForEach(x => listBoxMenus.Items.Add(x));
+            List<string> items = orderService.GetItems();
+            items.ForEach(x => listBoxItems.Items.Add(x));
             listBoxRestaurant.Enabled = false;
         }
 
         private void listBoxItems_DoubleClick(object sender, EventArgs e)
         {
             labelInfo.Text = "Step 3 - Create order";
+            listBoxOrder.Items.Add(listBoxItems.SelectedItem);
+            
            
         }
 
-        private void listBoxItems_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
+       
     }
 }
