@@ -22,24 +22,27 @@
             InitializeComponent();
             service = new ItemsService();
         }
-
-        private void ItemsForm_Load(object sender, EventArgs e)
-        {
-            comboBoxItems.SelectedIndex = 0;
-            labelPages.Text = $"{currentPage} / {totalPages}";
-        }
         private void ClearAddGroupBox()
         {
             txtName.Text = string.Empty;
             txtPrice.Text = string.Empty;
+            textBoxDelete.Text = string.Empty;
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            int id = int.Parse(textBoxDelete.Text);
+            string result = service.RemoveItemById(id);
+            MessageBox.Show(result);
+            ClearAddGroupBox();
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private void ItemsForm_Load_2(object sender, EventArgs e)
+        {
+            comboBoxItems.SelectedIndex = 0;
+            labelPages.Text = $"{currentPage} / {totalPages}";
+        }
+
+        private void btnNext_Click_1(object sender, EventArgs e)
         {
             if (currentPage >= totalPages) { return; }
             Items.Items.Clear();
@@ -48,16 +51,32 @@
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
 
-        private void btnPrevious_Click(object sender, EventArgs e)
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            if (currentPage <= 1) { return; }
+            string name = txtName.Text;
+            decimal price = decimal.Parse(txtPrice.Text);
+            var result = service.AddItem(name, price);
+            MessageBox.Show(result);
+            ClearAddGroupBox();
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            ClearAddGroupBox();
+        }
+
+        private void comboBoxItems_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            itemsPerPage = int.Parse(comboBoxItems.Text);
+            totalPages = service.GetItemsPagesCount(itemsPerPage);
+
             Items.Items.Clear();
-            List<string> list = service.GetItemsBasicInfo(--currentPage, itemsPerPage);
-            list.ForEach(p => Items.Items.Add(p));
+            List<string> list = service.GetItemsBasicInfo(1, itemsPerPage);
+            list.ForEach(i => Items.Items.Add(i));
             labelPages.Text = $"{currentPage} / {totalPages}";
         }
 
-        private void Items_DoubleClick(object sender, EventArgs e)
+        private void Items_DoubleClick_1(object sender, EventArgs e)
         {
             string itemsInfo = Items.Text;
             currentItemId = int.Parse(itemsInfo.Split(' ').First());
@@ -69,72 +88,14 @@
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btnPrevious_Click_1(object sender, EventArgs e)
         {
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            string name = txtName.Text;
-            decimal price = decimal.Parse(txtPrice.Text);
-            var result = service.AddItem(name, price);
-            MessageBox.Show(result);
-            ClearAddGroupBox();
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPrice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ItemsForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxItems_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            itemsPerPage = int.Parse(comboBoxItems.Text);
-            totalPages = service.GetItemsPagesCount(itemsPerPage);
-
+            if (currentPage <= 1) { return; }
             Items.Items.Clear();
-            List<string> list = service.GetItemsBasicInfo(1, itemsPerPage);
-            list.ForEach(i => Items.Items.Add(i));
+            List<string> list = service.GetItemsBasicInfo(--currentPage, itemsPerPage);
+            list.ForEach(p => Items.Items.Add(p));
             labelPages.Text = $"{currentPage} / {totalPages}";
-        }
-
-        private void Items_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ClearAddGroupBox();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(textBoxDelete.Text);
-            string result = service.RemoveItemById(id);
-            MessageBox.Show(result);
-            ClearAddGroupBox();
-        }
-
-        private void ItemsForm_Load_2(object sender, EventArgs e)
-        {
-
         }
     }
 }

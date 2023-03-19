@@ -114,6 +114,7 @@
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
             // btnAdd
             // 
@@ -125,6 +126,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // txtPrice
             // 
@@ -168,6 +170,7 @@
             this.Items.Name = "Items";
             this.Items.Size = new System.Drawing.Size(323, 304);
             this.Items.TabIndex = 1;
+            this.Items.DoubleClick += new System.EventHandler(this.Items_DoubleClick_1);
             // 
             // btnNext
             // 
@@ -179,6 +182,7 @@
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click_1);
             // 
             // btnPrevious
             // 
@@ -190,6 +194,7 @@
             this.btnPrevious.TabIndex = 3;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click_1);
             // 
             // labelPages
             // 
@@ -214,6 +219,7 @@
             this.comboBoxItems.Name = "comboBoxItems";
             this.comboBoxItems.Size = new System.Drawing.Size(92, 28);
             this.comboBoxItems.TabIndex = 8;
+            this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBoxItems_SelectedIndexChanged_1);
             // 
             // ItemsForm
             // 

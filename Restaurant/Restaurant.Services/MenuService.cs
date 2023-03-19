@@ -7,6 +7,21 @@
     public class MenuService
     {
         private AppDbContext context;
+
+        public string CreateMenu(string type, int restaurantId)
+        {
+            using (context = new AppDbContext())
+            {
+                Menu menu = new Menu()
+                {
+                    Type = type,
+                    RestaurantId = restaurantId
+                };
+                context.Menus.Add(menu);
+                context.SaveChanges();
+                return "Menu is added!";
+            }
+        }
         public Menu GetMenuByName(string type)
         {
             if (string.IsNullOrWhiteSpace(type))

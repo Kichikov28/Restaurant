@@ -8,10 +8,12 @@
     {
         private static RestaurantsService restaurantsService = new RestaurantsService();
         private static ItemsService itemsService= new ItemsService();   
+        private static MenuService menuService=new MenuService();
         public static void Main()
         {
-            SeedRestaurants();
-            SeedItems();
+            //SeedRestaurants();
+            //SeedItems();
+            SeedMenus();
         }
         public static void SeedRestaurants()
         {
@@ -37,6 +39,17 @@
                 int itemName = random.Next(0, name.Count);
                 decimal price =(decimal)Math.Round(random.NextDouble()*random.Next(20,30), 2);
                 Console.WriteLine(itemsService.AddItem(name[itemName], price));
+            }
+        }
+        public static void SeedMenus()
+        {
+            List<string> type = new List<string> { "Breakfast", "Lunch", "Dinner" };
+            Random random = new Random();
+            for (int i = 0; i < 3; i++)
+            {
+                int menuType = random.Next(0, type.Count);
+                int restaurantId=random.Next(1, 50);
+                Console.WriteLine(menuService.CreateMenu(type[menuType],restaurantId));
             }
         }
     }
