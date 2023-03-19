@@ -17,30 +17,37 @@ namespace Restaurant.FormApp
     {
         private OrderService orderService;
         private int restaurantid = 0;
+        private int itemId = 0;
         public CreateOrderForm()
         {
             InitializeComponent();
+            orderService = new OrderService();
         }
         private void CreateOrderForm_Load_1(object sender, EventArgs e)
         {
             labelInfo.Text = "Step 1 - Choose Restaurant";
-            List<string> restaurants= orderService.GetFromRestaurant();
-            restaurants.ForEach(x=>listBoxRestaurant.Items.Add(x));
+            List<string> restaurants = orderService.GetFromRestaurant();
+            restaurants.ForEach(x => listBoxRestaurant.Items.Add(x));
 
         }
 
         private void listBoxRestaurant_DoubleClick(object sender, EventArgs e)
         {
-            labelInfo.Text = "Step 2 - Select destination end point";
-            restaurantid = int.Parse(listBoxRestaurant.Text.Split(" - ").FirstOrDefault());
-            List<string> toItems = orderService.GetToRestaurants(restaurantid);
-            toItems.ForEach(x => listBoxItems.Items.Add(x));
+            labelInfo.Text = "Step 2 - Select items";
+            List<string> menus = orderService.GetItems();
+            menus.ForEach(x => listBoxMenus.Items.Add(x));
             listBoxRestaurant.Enabled = false;
         }
 
-        private void listBoxRestaurant_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxItems_DoubleClick(object sender, EventArgs e)
         {
+            labelInfo.Text = "Step 3 - Create order";
+           
+        }
 
+        private void listBoxItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -52,6 +52,10 @@
                 Console.WriteLine(menuService.CreateMenu(type[menuType],restaurantId));
             }
         }
+        public static void SeedCustomers()
+        { 
+        
+        }
     }
 }
 

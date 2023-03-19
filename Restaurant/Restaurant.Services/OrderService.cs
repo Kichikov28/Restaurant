@@ -1,8 +1,7 @@
-﻿using Restaurant.Data;
-using Restaurant.Models;
-using System;
-namespace Restaurant.Services
+﻿namespace Restaurant.Services
 {
+    using Restaurant.Data;
+    using Restaurant.Models;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
@@ -11,61 +10,82 @@ namespace Restaurant.Services
     public class OrderService
     {
         private AppDbContext context;
-        public string CreateOrder(int restaurantId, int itemId, double quantity)
+        public string CreateOrder(int orderId, int itemId, double quantity)
         {
-            // find the item by id
-            Item item = context.Items.Find(itemId);
-            if (item == null)
-            {
-                return "Item not found";
-            }
+            bool itemFound = false;
 
-            // find the restaurant by id
-            var restaurant = context.Restaurants.Find(restaurantId);
-            if (restaurant == null)
-            {
-                return "Restaurant not found";
-            }
-
-            // check if the restaurant has the item in their menu
-            bool itemInMenu = context.MenuItems.Any(mi => mi.Menu.RestaurantId == restaurantId && mi.ItemId == itemId);
-            if (!itemInMenu)
-            {
-                return "Item is not available in this restaurant's menu";
-            }
-
-            // create a new order
-            Order order = new Order()
-            {
-                RestaurantId = restaurantId,
-                Date = DateTime.Now
-            };
-
-            // add the order item to the order
             OrderItem orderItem = new OrderItem()
             {
+                OrderId = orderId,
                 ItemId = itemId,
                 Quantity = quantity
             };
-            order.OrderItems.Add(orderItem);
-
-            // save the changes to the database
-            context.Orders.Add(order);
+            foreach (var orderItem in orderItem)
+            {
+                if (orderItem.ItemId == item.Id)
+                {
+                    orderItem.Quantity++;
+                    itemFound = true;
+                    break;
+                }
+            }
+            // if the item is not already in the order, add it with quantity 1
+            if (!itemFound)
+            {
+                OrderItem orderItem = new OrderItem
+                {
+                    Id = orderItems.Count + 1,
+                    ItemId = item.Id,
+                    OrderId = 1,
+                    Quantity = 1
+                };
+                orderItems.Add(orderItem);
+            }
+            // update the total price
+            total += item.Price;
+            totalPriceLabel.Text = $"Total Price: ${total}";
+            // update the order items list
+            orderItemsListBox.Items.Clear();
+            foreach (OrderItem orderItem in orderItems)
+            {
+                Item orderItemName = new Item { Id = orderItem.Id, Name = item.Name, Price = item.Price };
+                orderItemsListBox.Items.Add($"{orderItemName.Name} x {orderItem.Quantity} = ${orderItemName.Price * orderItem.Quantity}");
+            }
+            context.OrderItems.Add(orderItem);
             context.SaveChanges();
+            return "Your order is sent!";
+        }
 
-            return "Order created!";
+        public List<string> GetItems()
+        {
+            List<string> itemsInfo;
+            using (context = new AppDbContext())
+            {
+                itemsInfo = this.context.Items.
+                     OrderBy(x => x.Id)
+                     .Select(x => $"{x.Id} - {x.Name}")
+                     .ToList();
+            }
+            return itemsInfo;
+
         }
         public List<string> GetFromRestaurant()
         {
-            return this.context.Restaurants.
-                OrderBy(x => x.Id)
-                .Select(x => $"{x.Id} - {x.Name}")
-                .ToList();
+            List<string> restaurantsInfo;
+            using (context = new AppDbContext())
+            {
+                restaurantsInfo = this.context.Restaurants.
+                     OrderBy(x => x.Id)
+                     .Select(x => $"{x.Id} - {x.Name}")
+                     .ToList();
+            }
+            return restaurantsInfo;
+
         }
         public List<string> GetToRestaurants(int restaurantid)
         {
             return this.context.Restaurants
-                .Where(x => x.Id != restaurantid)
+                .Where(x => x.Id == restaurantid)
                  .OrderBy(x => x.Id)
                 .Select(x => $"{x.Id} - {x.Name}").ToList();
         }
