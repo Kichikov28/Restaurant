@@ -82,7 +82,7 @@ namespace Restaurant.Data.Data.Migrations
                     Date = table.Column<DateTime>(nullable: false),
                     RestaurantId = table.Column<int>(nullable: false),
                     TotalPrice = table.Column<decimal>(nullable: false),
-                    CustomerId = table.Column<int>(nullable: true)
+                    CustomerId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -92,7 +92,7 @@ namespace Restaurant.Data.Data.Migrations
                         column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Orders_Restaurants_RestaurantId",
                         column: x => x.RestaurantId,

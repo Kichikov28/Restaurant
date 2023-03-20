@@ -11,8 +11,8 @@
         private static MenuService menuService=new MenuService();
         public static void Main()
         {
-            //SeedRestaurants();
-            //SeedItems();
+            SeedRestaurants();
+            SeedItems();
             SeedMenus();
         }
         public static void SeedRestaurants()

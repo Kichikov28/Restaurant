@@ -10,7 +10,7 @@ using Restaurant.Data;
 namespace Restaurant.Data.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230311103255_Initial")]
+    [Migration("20230320073023_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -113,7 +113,7 @@ namespace Restaurant.Data.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CustomerId")
+                    b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -213,7 +213,9 @@ namespace Restaurant.Data.Data.Migrations
                 {
                     b.HasOne("Restaurant.Models.Customer", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("CustomerId");
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Restaurant.Models.Restaurant", "Restaurant")
                         .WithMany("Orders")

@@ -1,111 +1,119 @@
 ﻿namespace Restaurant.Services
 {
+    using Microsoft.EntityFrameworkCore;
     using Restaurant.Data;
     using Restaurant.Models;
     using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
+    using System.Net;
     using System.Text;
+    using System.Threading;
 
     public class OrderService
     {
         private AppDbContext context;
 
         private static decimal total;
-        public string AddItemToOrder(Item item)
+
+        public int CreateOrder(int restaurantId, int customerId, decimal totalPrice)
         {
-            using (var context = new AppDbContext())
+            using (context = new AppDbContext())
             {
-                // Check if the item exists in the database
-                Item existingItem = context.Items
-                    .SingleOrDefault(i => i.Name.Equals(item.Name, StringComparison.OrdinalIgnoreCase));
-
-                if (existingItem == null)
+                var order = new Order
                 {
-                    // If the item does not exist, add it to the database
-                    context.Items.Add(item);
-                    context.SaveChanges();
-                    existingItem = item;
-                }
+                    Date = DateTime.Now,
+                    RestaurantId = restaurantId,
+                    TotalPrice = totalPrice,
+                    CustomerId = customerId
+                };
 
-                // Check if the item is already in the order
-                OrderItem existingOrderItem = context.OrderItems
-                    .SingleOrDefault(oi => oi.ItemId == existingItem.Id && oi.OrderId == 1);
-
-                if (existingOrderItem == null)
-                {
-                    // If the item is not already in the order, add it with quantity 1
-                    OrderItem orderItem = new OrderItem
-                    {
-                        ItemId = existingItem.Id,
-                        OrderId = 1,
-                        Quantity = 1
-                    };
-                    context.OrderItems.Add(orderItem);
-                }
-                else
-                {
-                    // If the item is already in the order, increase the quantity
-                    existingOrderItem.Quantity++;
-                }
-
+                context.Orders.Add(order);
                 context.SaveChanges();
-
-                // Update the total price
-                total += existingItem.Price;
-                return $"Total Price: ${total}";
+                return order.Id;
             }
         }
-        //    public string CreateOrder(Item item)
-        //{
-        //    //bool itemFound = false;
 
-        //    //OrderItem orderItem = new OrderItem()
-        //    //{
-        //    //    OrderId = orderId,
-        //    //    ItemId = itemId,
-        //    //    Quantity = quantity
-        //    //};
-        //    //context.OrderItems.Add(orderItem);
-        //    //context.SaveChanges();
-        //    //return "Order made!";
-        //    bool itemFound = false;
-        //    foreach (var orderItem in orderItem)
-        //    {
-        //        if (orderItem.ItemId == item.Id)
-        //        {
-        //            orderItem.Quantity++;
-        //            itemFound = true;
-        //            break;
-        //        }
-        //    }
-        //    // if the item is not already in the order, add it with quantity 1
-        //    if (!itemFound)
-        //    {
-        //        OrderItem orderItem = new OrderItem
-        //        {
-        //            Id = orderItem.Count + 1,
-        //            ItemId = item.Id,
-        //            OrderId = 1,
-        //            Quantity = 1
-        //        };
-        //        context.orderItems.Add(orderItem);
-        //    }
-        //    // update the total price
-        //    total += item.Price;
-        //    totalPriceLabel.Text = $"Total Price: ${total}";
-        //    // update the order items list
-        //    orderItemsListBox.Items.Clear();
-        //    foreach (OrderItem orderItem in orderItems)
-        //    {
-        //        Item orderItemName = new Item { Id = orderItem.Id, Name = item.Name, Price = item.Price };
-        //        orderItemsListBox.Items.Add($"{orderItemName.Name} x {orderItem.Quantity} = ${orderItemName.Price * orderItem.Quantity}");
-        //    }
+        public void AddItemToOrder(int itemId, int orderId, int quantity)
+        {
+            using (context = new AppDbContext())
+            {
+                var orderItem = new OrderItem
+                {
+                    ItemId = itemId,
+                    OrderId = orderId,
+                    Quantity = quantity
+                };
 
+                context.OrderItems.Add(orderItem);
+                context.SaveChanges();
+            }
+        }
 
-        //}
+        public string AddOrderItems(int orderId, List<int> itemId)
+        {
+            StringBuilder sb = new StringBuilder();
+            using (context = new AppDbContext())
+            {
+                Order order = context.Orders.Find(orderId);
+                if (order == null)
+                {
+                    sb.AppendLine($"{nameof(Order)} not found!");
+                    return sb.ToString().TrimEnd();
+                };
+                List<Item> items = new List<Item>();
+                foreach (var id in itemId)
+                {
+                    Item item = context.Items.Find(id);
+                    if (item!=null)
+                    {
+                        items.Add(item);
+                    }
+                }
+                if (items.Count==0)
+                {
+                    sb.AppendLine($"{nameof(Item)}s not found!");
+                    return sb.ToString().TrimEnd();
+                }
+                sb.AppendLine($"{orderId} {order.RestaurantId} {order.Date}");
+                foreach (var item in items)
+                {
+                    context.OrderItems.Add(new OrderItem
+                    {
+                        Order = order,
+                        Item = item
+                    });
+                    sb.AppendLine($"\t{item.Name} {item.Price}");
+                }
+                context.SaveChanges();
+                return sb.ToString().TrimEnd();
+            }
+        }
+        public decimal GetItemPrice(int itemId)
+        {
+            var item = context.Items.FirstOrDefault(i => i.Id == itemId);
 
+            if (item == null)
+            {
+                throw new ArgumentException($"Item with ID {itemId} not found.");
+            }
+
+            return item.Price;
+        }
+
+        public void UpdateOrderTotalPrice(int orderId, decimal totalPrice)
+        {
+            var order = context.Orders.FirstOrDefault(o => o.Id == orderId);
+
+            if (order == null)
+            {
+                throw new ArgumentException($"Order with ID {orderId} not found.");
+            }
+
+            order.TotalPrice = totalPrice;
+            context.SaveChanges();
+        }
         public List<string> GetItems()
         {
             List<string> itemsInfo;

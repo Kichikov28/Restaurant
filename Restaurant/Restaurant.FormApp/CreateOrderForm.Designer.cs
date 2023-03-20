@@ -32,6 +32,8 @@
             this.listBoxItems = new System.Windows.Forms.ListBox();
             this.listBoxOrder = new System.Windows.Forms.ListBox();
             this.labelInfo = new System.Windows.Forms.Label();
+            this.btnCreateOrder = new System.Windows.Forms.Button();
+            this.labelOrders = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxRestaurant
@@ -72,12 +74,33 @@
             this.labelInfo.TabIndex = 3;
             this.labelInfo.Text = "Step 1- Choose Restaurant";
             // 
+            // btnCreateOrder
+            // 
+            this.btnCreateOrder.Location = new System.Drawing.Point(704, 458);
+            this.btnCreateOrder.Name = "btnCreateOrder";
+            this.btnCreateOrder.Size = new System.Drawing.Size(116, 29);
+            this.btnCreateOrder.TabIndex = 4;
+            this.btnCreateOrder.Text = "CreateOrder";
+            this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
+            // 
+            // labelOrders
+            // 
+            this.labelOrders.AutoSize = true;
+            this.labelOrders.Location = new System.Drawing.Point(430, 429);
+            this.labelOrders.Name = "labelOrders";
+            this.labelOrders.Size = new System.Drawing.Size(50, 20);
+            this.labelOrders.TabIndex = 5;
+            this.labelOrders.Text = "label1";
+            // 
             // CreateOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(964, 531);
+            this.Controls.Add(this.labelOrders);
+            this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.listBoxOrder);
             this.Controls.Add(this.listBoxItems);
@@ -96,5 +119,7 @@
         private System.Windows.Forms.ListBox listBoxItems;
         private System.Windows.Forms.ListBox listBoxOrder;
         private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Button btnCreateOrder;
+        private System.Windows.Forms.Label labelOrders;
     }
 }
