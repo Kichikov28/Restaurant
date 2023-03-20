@@ -45,17 +45,37 @@ namespace Restaurant.FormApp
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            int order = int.Parse(labelOrders.Text.Split(" - ").FirstOrDefault());
-            List<int> items = new List<int>();
-            foreach (var item in listBoxOrder.Items)
-            {
-                int itemId = int.Parse(item.ToString().Split(" - ").FirstOrDefault());
-                items.Add(itemId);
+            //int order = int.Parse(labelOrders.Text.Split(" - ").FirstOrDefault());
+            //List<int> items = new List<int>();
+            //foreach (var item in listBoxOrder.Items)
+            //{
+            //    int itemId = int.Parse(item.ToString().Split(" - ").FirstOrDefault());
+            //    items.Add(itemId);
 
+            //}
+            //string result = orderService.AddOrderItems(order, items);
+            //MessageBox.Show(result);
+            //this.CreateOrderForm_Load_1(sender, e);
+
+            MessageBox.Show("Order was successfully added and is coming to your address! Thanks for choosing KiDy's Delicious Food and have a nice day!");
+            CreateOrderForm createOrderForm = new CreateOrderForm();
+            MainForm mainForm = new MainForm();
+            listBoxItems.Enabled = false;
+            createOrderForm.Close();
+            mainForm.ShowDialog();
+            
+        }
+
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+            if (listBoxOrder.SelectedIndex > -1)
+            {
+                listBoxOrder.Items.RemoveAt(listBoxOrder.SelectedIndex);
             }
-            string result = orderService.AddOrderItems(order, items);
-            MessageBox.Show(result);
-            this.CreateOrderForm_Load_1(sender, e);
+            else
+            {
+                MessageBox.Show("Select an item in the listbox.");
+            }
         }
     }
 }
