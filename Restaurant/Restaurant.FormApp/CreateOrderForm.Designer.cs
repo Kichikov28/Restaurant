@@ -35,6 +35,7 @@
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.labelOrders = new System.Windows.Forms.Label();
             this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnShowOrder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxRestaurant
@@ -107,12 +108,24 @@
             this.btnRemoveItem.UseVisualStyleBackColor = true;
             this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
+            // btnShowOrder
+            // 
+            this.btnShowOrder.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnShowOrder.Location = new System.Drawing.Point(634, 468);
+            this.btnShowOrder.Name = "btnShowOrder";
+            this.btnShowOrder.Size = new System.Drawing.Size(285, 43);
+            this.btnShowOrder.TabIndex = 7;
+            this.btnShowOrder.Text = "Show order";
+            this.btnShowOrder.UseVisualStyleBackColor = true;
+            this.btnShowOrder.Click += new System.EventHandler(this.btnShowOrder_Click);
+            // 
             // CreateOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(964, 531);
+            this.Controls.Add(this.btnShowOrder);
             this.Controls.Add(this.btnRemoveItem);
             this.Controls.Add(this.labelOrders);
             this.Controls.Add(this.btnCreateOrder);
@@ -137,5 +150,6 @@
         private System.Windows.Forms.Button btnCreateOrder;
         private System.Windows.Forms.Label labelOrders;
         private System.Windows.Forms.Button btnRemoveItem;
+        private System.Windows.Forms.Button btnShowOrder;
     }
 }

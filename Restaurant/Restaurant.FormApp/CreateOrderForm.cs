@@ -1,22 +1,20 @@
-﻿using Restaurant.Models;
-using Restaurant.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Xml.Linq;
-
-namespace Restaurant.FormApp
+﻿namespace Restaurant.FormApp
 {
+    using Restaurant.Models;
+    using Restaurant.Services;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Diagnostics;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+    using System.Xml.Linq;
     public partial class CreateOrderForm : Form
     {
         private OrderService orderService;
-        private int currentOrderId;
         public CreateOrderForm()
         {
             InitializeComponent();
@@ -57,13 +55,14 @@ namespace Restaurant.FormApp
             //MessageBox.Show(result);
             //this.CreateOrderForm_Load_1(sender, e);
 
-            MessageBox.Show("Order was successfully added and is coming to your address! Thanks for choosing KiDy's Delicious Food and have a nice day!");
+
+
+            MessageBox.Show("Order was successfully added and is coming to your address! Thanks for choosing KiDy's Delicious Food!");
             CreateOrderForm createOrderForm = new CreateOrderForm();
             MainForm mainForm = new MainForm();
-            listBoxItems.Enabled = false;
-            createOrderForm.Close();
-            mainForm.ShowDialog();
-            
+            listBoxOrder.Items.Clear();
+            listBoxItems.Items.Clear();
+            listBoxRestaurant.Enabled = true;
         }
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
@@ -76,6 +75,17 @@ namespace Restaurant.FormApp
             {
                 MessageBox.Show("Select an item in the listbox.");
             }
+        }
+
+        private void btnShowOrder_Click(object sender, EventArgs e)
+        {
+            List<string> selectedItems = new List<string>();
+            foreach (var item in listBoxOrder.Items)
+            {
+                selectedItems.Add(item.ToString());
+            }
+            List<string> items = new List<string>(selectedItems);
+            MessageBox.Show(string.Join(", ",items));
         }
     }
 }

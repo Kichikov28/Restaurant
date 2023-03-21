@@ -21,9 +21,7 @@ namespace Restaurant.FormApp
 
         private void btnCreateOrder_Click_1(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
             CreateOrderForm createOrder = new CreateOrderForm();
-            mainForm.Close();
             createOrder.ShowDialog();
         }
 
