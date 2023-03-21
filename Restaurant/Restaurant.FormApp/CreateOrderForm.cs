@@ -73,7 +73,7 @@
             }
             else
             {
-                MessageBox.Show("Select an item in the listbox.");
+                MessageBox.Show("Select an item in the listbox!");
             }
         }
 
