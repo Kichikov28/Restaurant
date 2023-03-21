@@ -6,10 +6,12 @@
     using System.Collections.Generic;
     using System.Text;
     using System.Linq;
+    using Restaurant.ViewModel.Restaurants;
 
     public class RestaurantsService
     {
         private AppDbContext context;
+
         public string AddRestaurant(string name, double rating, string location, string type)
         {
             StringBuilder sb = new StringBuilder();
@@ -167,6 +169,67 @@
             }
             return msg.ToString().TrimEnd();
         }
-        
+        public List<RestaurantIndexViewModel> GetLowestRatedRestaurants()
+        {
+            using (context = new AppDbContext())
+            {
+                return context.Restaurants.OrderBy(x => x.Rating)
+                .Take(9)
+                .Select(x => new RestaurantIndexViewModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Type = x.Type,
+                    Location = x.Location,
+                    Rating = x.Rating
+                })
+                .ToList();
+            }
+            
+        }
+
+        public List<RestaurantIndexViewModel> GetHighestRatedRestaurants()
+        {
+            using (context = new AppDbContext())
+            {
+                return context.Restaurants.OrderByDescending(x => x.Rating)
+                .Take(9)
+                .Select(x => new RestaurantIndexViewModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Type = x.Type,
+                    Location = x.Location,
+                    Rating = x.Rating
+                })
+                .ToList();
+            }
+            
+        }
+
+        public RestaurantsIndexViewModel GetRestaurants(RestaurantsIndexViewModel model)
+        {
+            using (context=new AppDbContext())
+            {
+                model.Restaurants = context.Restaurants
+                .Skip((model.PageNumber - 1) * model.ItemsPerPage)
+                .Take(model.ItemsPerPage)
+                .Select(x => new RestaurantIndexViewModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Type = x.Type,
+                    Location = x.Location,
+                    Rating = x.Rating
+                })
+                .ToList();
+
+                model.ElementsCount = context.Restaurants.Count();
+
+                return model;
+            }
+            
+        }
+
     }
 }

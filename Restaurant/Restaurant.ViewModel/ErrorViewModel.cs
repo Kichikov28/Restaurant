@@ -1,6 +1,8 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Restaurant.WebApp.Models
+namespace Restaurant.ViewModel
 {
     public class ErrorViewModel
     {

@@ -57,7 +57,7 @@
 
 
 
-            MessageBox.Show("Order was successfully added and is coming to your address! Thanks for choosing KiDy's Delicious Food!");
+            MessageBox.Show("Order was successfully added and is coming to your address! Thanks for choosing DiKy's Delicious Food!");
             CreateOrderForm createOrderForm = new CreateOrderForm();
             MainForm mainForm = new MainForm();
             listBoxOrder.Items.Clear();
