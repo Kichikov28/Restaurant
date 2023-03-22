@@ -15,8 +15,7 @@ namespace Restaurant.Data.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
                     PhoneNumber = table.Column<string>(nullable: false),
-                    Address = table.Column<string>(nullable: false),
-                    OrderId = table.Column<int>(nullable: false)
+                    Address = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -81,7 +80,6 @@ namespace Restaurant.Data.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(nullable: false),
                     RestaurantId = table.Column<int>(nullable: false),
-                    TotalPrice = table.Column<decimal>(nullable: false),
                     CustomerId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

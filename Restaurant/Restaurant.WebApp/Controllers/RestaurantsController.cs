@@ -19,13 +19,13 @@
             models = restaurantsService.GetRestaurants(models);
             return View(models);
         }
-        public IActionResult Lowest()
+        public IActionResult LowestRated()
         {
             List<RestaurantIndexViewModel> model = restaurantsService.GetLowestRatedRestaurants();
             return View(model);
         }
 
-        public IActionResult Highest()
+        public IActionResult HighestRated()
         {
             List<RestaurantIndexViewModel> model = restaurantsService.GetHighestRatedRestaurants();
             return View(model);

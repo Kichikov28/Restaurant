@@ -34,9 +34,6 @@ namespace Restaurant.Data.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -119,9 +116,6 @@ namespace Restaurant.Data.Data.Migrations
 
                     b.Property<int>("RestaurantId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -209,7 +203,7 @@ namespace Restaurant.Data.Data.Migrations
 
             modelBuilder.Entity("Restaurant.Models.Order", b =>
                 {
-                    b.HasOne("Restaurant.Models.Customer", "Customer")
+                    b.HasOne("Restaurant.Models.Customer", null)
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)

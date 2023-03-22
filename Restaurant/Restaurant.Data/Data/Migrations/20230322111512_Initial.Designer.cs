@@ -10,8 +10,8 @@ using Restaurant.Data;
 namespace Restaurant.Data.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230320231918_InitialMigration2")]
-    partial class InitialMigration2
+    [Migration("20230322111512_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,9 +35,6 @@ namespace Restaurant.Data.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -121,9 +118,6 @@ namespace Restaurant.Data.Data.Migrations
 
                     b.Property<int>("RestaurantId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -211,7 +205,7 @@ namespace Restaurant.Data.Data.Migrations
 
             modelBuilder.Entity("Restaurant.Models.Order", b =>
                 {
-                    b.HasOne("Restaurant.Models.Customer", "Customer")
+                    b.HasOne("Restaurant.Models.Customer", null)
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)

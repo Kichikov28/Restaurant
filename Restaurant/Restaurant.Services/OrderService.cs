@@ -17,79 +17,34 @@
 
         private static decimal total;
 
-        public int CreateOrder(int restaurantId, int customerId, decimal totalPrice)
+        public void CreateOrder(int restaurantId, int customerId,  List<int> itemId)
+
         {
             using (context = new AppDbContext())
             {
-                var order = new Order
+                Order order = new Order()
                 {
-                    Date = DateTime.Now,
                     RestaurantId = restaurantId,
-                    TotalPrice = totalPrice,
-                    CustomerId = customerId
+                    CustomerId = customerId,
+
+
                 };
+
+                foreach (var item in itemId)
+                {
+                    order.OrderItems.Add(new OrderItem { ItemId = item ,Quantity=1});
+                }
+
+               // order.TotalPrice = order.OrderItems.Sum(x => x.Item.Price*(decimal)x.Quantity);
+
 
                 context.Orders.Add(order);
                 context.SaveChanges();
-                return order.Id;
             }
         }
 
-        public void AddItemToOrder(int itemId, int orderId, int quantity)
-        {
-            using (context = new AppDbContext())
-            {
-                var orderItem = new OrderItem
-                {
-                    ItemId = itemId,
-                    OrderId = orderId,
-                    Quantity = quantity
-                };
 
-                context.OrderItems.Add(orderItem);
-                context.SaveChanges();
-            }
-        }
 
-        public string AddOrderItems(int orderId, List<int> itemId)
-        {
-            StringBuilder sb = new StringBuilder();
-            using (context = new AppDbContext())
-            {
-                Order order = context.Orders.Find(orderId);
-                if (order == null)
-                {
-                    sb.AppendLine($"{nameof(Order)} not found!");
-                    return sb.ToString().TrimEnd();
-                };
-                List<Item> items = new List<Item>();
-                foreach (var id in itemId)
-                {
-                    Item item = context.Items.Find(id);
-                    if (item!=null)
-                    {
-                        items.Add(item);
-                    }
-                }
-                if (items.Count==0)
-                {
-                    sb.AppendLine($"{nameof(Item)}s not found!");
-                    return sb.ToString().TrimEnd();
-                }
-                sb.AppendLine($"{orderId} {order.RestaurantId} {order.Date}");
-                foreach (var item in items)
-                {
-                    context.OrderItems.Add(new OrderItem
-                    {
-                        Order = order,
-                        Item = item
-                    });
-                    sb.AppendLine($"\t{item.Name} {item.Price}");
-                }
-                context.SaveChanges();
-                return sb.ToString().TrimEnd();
-            }
-        }
         public decimal GetItemPrice(int itemId)
         {
             var item = context.Items.FirstOrDefault(i => i.Id == itemId);
@@ -102,18 +57,18 @@
             return item.Price;
         }
 
-        public void UpdateOrderTotalPrice(int orderId, decimal totalPrice)
-        {
-            var order = context.Orders.FirstOrDefault(o => o.Id == orderId);
+        //public void UpdateOrderTotalPrice(int orderId, decimal totalPrice)
+        //{
+        //    var order = context.Orders.FirstOrDefault(o => o.Id == orderId);
 
-            if (order == null)
-            {
-                throw new ArgumentException($"Order with ID {orderId} not found.");
-            }
+        //    if (order == null)
+        //    {
+        //        throw new ArgumentException($"Order with ID {orderId} not found.");
+        //    }
 
-            order.TotalPrice = totalPrice;
-            context.SaveChanges();
-        }
+        //    order.TotalPrice = totalPrice;
+        //    context.SaveChanges();
+        //}
         public List<string> GetItems()
         {
             List<string> itemsInfo;

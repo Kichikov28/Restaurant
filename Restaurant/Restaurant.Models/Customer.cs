@@ -11,7 +11,6 @@
         public string PhoneNumber { get; set; }
         [Required]
         public string Address { get; set; }
-        public int OrderId { get; set; }
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
     }
