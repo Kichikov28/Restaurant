@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Restaurant.Data.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -149,12 +149,6 @@ namespace Restaurant.Data.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Customers_PhoneNumber",
-                table: "Customers",
-                column: "PhoneNumber",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_MenuItems_ItemId",

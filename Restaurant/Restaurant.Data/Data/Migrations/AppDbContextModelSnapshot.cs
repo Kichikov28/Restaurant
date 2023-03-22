@@ -36,12 +36,9 @@ namespace Restaurant.Data.Data.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PhoneNumber")
-                        .IsUnique();
 
                     b.ToTable("Customers");
                 });

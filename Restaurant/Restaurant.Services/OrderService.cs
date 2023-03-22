@@ -14,20 +14,14 @@
     public class OrderService
     {
         private AppDbContext context;
-
-        private static decimal total;
-
-        public void CreateOrder(int restaurantId, int customerId,  List<int> itemId)
-
+        public string CreateOrder(int restaurantId, int customerId,  List<int> itemId)
         {
             using (context = new AppDbContext())
             {
                 Order order = new Order()
                 {
                     RestaurantId = restaurantId,
-                    CustomerId = customerId,
-
-
+                    CustomerId = customerId
                 };
 
                 foreach (var item in itemId)
@@ -37,9 +31,9 @@
 
                // order.TotalPrice = order.OrderItems.Sum(x => x.Item.Price*(decimal)x.Quantity);
 
-
                 context.Orders.Add(order);
                 context.SaveChanges();
+                return $"Your order is on your way.";
             }
         }
 
@@ -82,6 +76,7 @@
             return itemsInfo;
 
         }
+        
         public List<string> GetFromRestaurant()
         {
             List<string> restaurantsInfo;

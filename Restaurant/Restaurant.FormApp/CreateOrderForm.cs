@@ -1,5 +1,6 @@
 ﻿namespace Restaurant.FormApp
 {
+    using Castle.Core.Resource;
     using Restaurant.Models;
     using Restaurant.Services;
     using System;
@@ -15,51 +16,63 @@
     public partial class CreateOrderForm : Form
     {
         private OrderService orderService;
+        private CustomerService customerService;
+        private int total = 0;
         public CreateOrderForm()
         {
             InitializeComponent();
             orderService = new OrderService();
+            customerService = new CustomerService();
         }
         private void CreateOrderForm_Load_1(object sender, EventArgs e)
         {
             labelInfo.Text = "Step 1 - Choose Restaurant";
             List<string> restaurants = orderService.GetFromRestaurant();
             restaurants.ForEach(x => listBoxRestaurant.Items.Add(x));
+
+            List<string> customers = customerService.GetCustomers();
+            customers.ForEach(x => comboBox1.Items.Add(x));
+            comboBox1.SelectedIndex = 0;
+            listBoxItems.Enabled = false;
         }
 
         private void listBoxRestaurant_DoubleClick(object sender, EventArgs e)
         {
-            labelInfo.Text = "Step 2 - Select items";
+
+            labelInfo.Text = "Step 2 - Choose customer ->";
             List<string> items = orderService.GetItems();
             items.ForEach(x => listBoxItems.Items.Add(x));
             listBoxRestaurant.Enabled = false;
+
         }
 
         private void listBoxItems_DoubleClick(object sender, EventArgs e)
         {
-            labelInfo.Text = "Step 3 - Create order";
+            labelInfo.Text = "Step 4 - Create order";
             listBoxOrder.Items.Add(listBoxItems.SelectedItem);
         }
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            //int order = int.Parse(labelOrders.Text.Split(" - ").FirstOrDefault());
-            //List<int> items = new List<int>();
-            //foreach (var item in listBoxOrder.Items)
-            //{
-            //    int itemId = int.Parse(item.ToString().Split(" - ").FirstOrDefault());
-            //    items.Add(itemId);
+            int restaurantId = int.Parse(listBoxRestaurant.Text.Split(" - ").FirstOrDefault());
+            int customerId = int.Parse(comboBox1.Text.Split(" - ").FirstOrDefault());
+            decimal totalItemsPrice = 0;
+            List<int> items = new List<int>();
+            foreach (var item in listBoxOrder.Items)
+            {
+                int itemId = int.Parse(item.ToString().Split(" - ").FirstOrDefault());
+                decimal itemPrice = decimal.Parse(item.ToString().Split(" - ").LastOrDefault().Replace("Leva", ""));
+                items.Add(itemId);
+                totalItemsPrice += itemPrice;
+            }
 
-            //}
-            //string result = orderService.AddOrderItems(order, items);
-            //MessageBox.Show(result);
-            //this.CreateOrderForm_Load_1(sender, e);
+            string result = orderService.CreateOrder(restaurantId, customerId, items);
+            MessageBox.Show(result + $"\nTotal items price: {totalItemsPrice:f2}");
 
+            this.CreateOrderForm_Load_1(sender, e);
 
-
-            MessageBox.Show("Order was successfully added and is coming to your address! Thanks for choosing DiKy's Delicious Food!");
-            CreateOrderForm createOrderForm = new CreateOrderForm();
-            MainForm mainForm = new MainForm();
+            //CreateOrderForm createOrderForm = new CreateOrderForm();
+            //MainForm mainForm = new MainForm();
             listBoxOrder.Items.Clear();
             listBoxItems.Items.Clear();
             listBoxRestaurant.Enabled = true;
@@ -85,7 +98,13 @@
                 selectedItems.Add(item.ToString());
             }
             List<string> items = new List<string>(selectedItems);
-            MessageBox.Show(string.Join(", ",items));
+            MessageBox.Show(string.Join(", ", items));
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            labelInfo.Text = "Step 3 - Select items";
+            listBoxItems.Enabled = true;
         }
     }
 }

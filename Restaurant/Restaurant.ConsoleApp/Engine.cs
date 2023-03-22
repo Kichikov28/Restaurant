@@ -1,16 +1,20 @@
 ﻿namespace Restaurant.ConsoleApp
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
     using Services;
     public class Engine
     {
-        private RestaurantsService restaurantService = new RestaurantsService();
-        private ItemsService itemsService = new ItemsService();
+        private RestaurantsService restaurantService;
+        private ItemsService itemsService;
+        private OrderService orderService;
         public Engine()
         {
             restaurantService = new RestaurantsService();
             itemsService = new ItemsService();
+            orderService = new OrderService();
             Run();
         }
         public void Run()
@@ -41,27 +45,30 @@
                             AddRestaurant();
                             break;
                         case "5":
-                            AllRestaurantsInfo();
+                            CreateOrder();
                             break;
                         case "6":
-                            AllItemsInfo();
+                            AllRestaurantsInfo();
                             break;
                         case "7":
-                            AddItem();
+                            AllItemsInfo();
                             break;
                         case "8":
-                            GetItemById();
+                            AddItem();
                             break;
                         case "9":
-                            GetItemByName();
+                            GetItemById();
                             break;
                         case "10":
-                            UpdateItemPrice();
+                            GetItemByName();
                             break;
                         case "11":
-                            RemoveItemByName();
+                            UpdateItemPrice();
                             break;
                         case "12":
+                            RemoveItemByName();
+                            break;
+                        case "13":
                             Environment.Exit(0);
                             break;
                         default:
@@ -100,6 +107,17 @@
             string itemNameToSearch = Console.ReadLine();
             var itemName = itemsService.GetItemByName(itemNameToSearch);
             Console.WriteLine($"Item {itemName.Name} has price {itemName.Price}");
+            PressKey();
+        }
+        private void CreateOrder()
+        {
+            Console.Write("Enter restaurant Id in the range 1-50: ");
+            int restaurantId=int.Parse(Console.ReadLine());
+            Console.Write("Enter customer id int the range 1-20: ");
+            int customerId = int.Parse(Console.ReadLine());
+            Console.Write("Enter item id's in the range 1-100 separated by interval: ");
+            List<int> items=Console.ReadLine().Split(" ").Select(int.Parse).ToList();
+            Console.WriteLine(orderService.CreateOrder(restaurantId, customerId, items));
             PressKey();
         }
         private void GetItemById()
@@ -222,14 +240,15 @@
             sb.AppendLine($"\t2: Get Restaurant by ID");
             sb.AppendLine($"\t3: Get Restaurant by Location");
             sb.AppendLine($"\t4: Add Restaurant");
-            sb.AppendLine($"\t5: Get All Restaurants Info");
-            sb.AppendLine($"\t6: Get All Items Info");
-            sb.AppendLine($"\t7: Add Item");
-            sb.AppendLine($"\t8: Get Item by ID");
-            sb.AppendLine($"\t9: Get Item by Name");
-            sb.AppendLine($"\t10: Update Item Price");
-            sb.AppendLine($"\t11: Remove Item by Name");
-            sb.AppendLine($"\t12: Exit");
+            sb.AppendLine($"\t5: Create Order");
+            sb.AppendLine($"\t6: Get All Restaurants Info");
+            sb.AppendLine($"\t7: Get All Items Info");
+            sb.AppendLine($"\t8: Add Item");
+            sb.AppendLine($"\t9: Get Item by ID");
+            sb.AppendLine($"\t10: Get Item by Name");
+            sb.AppendLine($"\t11: Update Item Price");
+            sb.AppendLine($"\t12: Remove Item by Name");
+            sb.AppendLine($"\t13: Exit");
             Console.WriteLine(sb.ToString().TrimEnd());
         }
     }

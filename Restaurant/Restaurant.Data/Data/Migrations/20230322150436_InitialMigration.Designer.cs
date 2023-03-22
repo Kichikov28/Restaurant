@@ -10,8 +10,8 @@ using Restaurant.Data;
 namespace Restaurant.Data.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230322111512_Initial")]
-    partial class Initial
+    [Migration("20230322150436_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,12 +38,9 @@ namespace Restaurant.Data.Data.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PhoneNumber")
-                        .IsUnique();
 
                     b.ToTable("Customers");
                 });
