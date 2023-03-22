@@ -55,7 +55,7 @@
         public static void SeedCustomers(string name,string phoneNumber,string adress)
         { 
         List<string>names=new List<string>() { "Ethan Larson", "Olivia Kim", "Lucas Chen", "Ava Patel", "Benjamin Wright", "Charlotte Nguyen", "Jameson Kim", "Madison Singh", "Noah Davis", "Sophia Garcia", "Alexander Johnson", "Isabella Lee", "William Rodriguez", "Mia Hernandez", "Michael Thompson", "Emma Martinez", "Elijah Brown", "Abigail Wilson", "Gabriel Gonzalez", "Emily Anderson"};
-            List<string> addresses;
+            List<string> addreses=new List<string>();
         }
     }
 }
