@@ -4,7 +4,7 @@
     using Microsoft.EntityFrameworkCore;
     public class AppDbContext : DbContext
     {
-        private const string connectionString = @"Server=DESKTOP-40P9254\MSSQLSERVER01; Initial Catalog=RestaurantEfNew; Integrated Security=true; Trusted_Connection =true";
+        private const string connectionString = @"Server=DESKTOP-TAARGOA; Initial Catalog=RestaurantEfNew; Integrated Security=true; Trusted_Connection =true";
         public virtual DbSet<Restaurant> Restaurants { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }

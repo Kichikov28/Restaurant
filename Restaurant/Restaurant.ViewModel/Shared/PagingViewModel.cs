@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Restaurant.ViewModel.Shared
+﻿namespace Restaurant.ViewModel.Shared
 {
+    using System;
     public class PagingViewModel
     {
         public PagingViewModel(int itemsPerPage = 5, string action = "Index")

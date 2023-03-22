@@ -33,7 +33,6 @@
             this.listBoxOrder = new System.Windows.Forms.ListBox();
             this.labelInfo = new System.Windows.Forms.Label();
             this.btnCreateOrder = new System.Windows.Forms.Button();
-            this.labelOrders = new System.Windows.Forms.Label();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.btnShowOrder = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -89,15 +88,6 @@
             this.btnCreateOrder.UseVisualStyleBackColor = true;
             this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
-            // labelOrders
-            // 
-            this.labelOrders.AutoSize = true;
-            this.labelOrders.Location = new System.Drawing.Point(430, 429);
-            this.labelOrders.Name = "labelOrders";
-            this.labelOrders.Size = new System.Drawing.Size(50, 20);
-            this.labelOrders.TabIndex = 5;
-            this.labelOrders.Text = "label1";
-            // 
             // btnRemoveItem
             // 
             this.btnRemoveItem.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -138,7 +128,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnShowOrder);
             this.Controls.Add(this.btnRemoveItem);
-            this.Controls.Add(this.labelOrders);
             this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.listBoxOrder);
@@ -159,7 +148,6 @@
         private System.Windows.Forms.ListBox listBoxOrder;
         private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.Button btnCreateOrder;
-        private System.Windows.Forms.Label labelOrders;
         private System.Windows.Forms.Button btnRemoveItem;
         private System.Windows.Forms.Button btnShowOrder;
         private System.Windows.Forms.ComboBox comboBox1;
