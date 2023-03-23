@@ -19,7 +19,7 @@
         }
         public void Run()
         {
-            Console.WriteLine("Welcome to the Restaurant App!");
+            Console.WriteLine("Welcome to the DiKy's App!");
             while (true)
             {
                 try

@@ -29,8 +29,6 @@
                     order.OrderItems.Add(new OrderItem { ItemId = item ,Quantity=1});
                 }
 
-               // order.TotalPrice = order.OrderItems.Sum(x => x.Item.Price*(decimal)x.Quantity);
-
                 context.Orders.Add(order);
                 context.SaveChanges();
                 return $"Your order is on your way.";
