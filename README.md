@@ -1,7 +1,7 @@
 # Restaurant
-First of all you have to make an istance of the project on your laptop(desktop);
+If you want to try this project follow these steps:
 
-Start the project and go to the AppDbContext and in the connection string replace the server name with the name of your own SSMS server.
+Download the project and load the solution then go to the AppDbContext and in the connection string replace the server name with the name of your own SSMS server.
 
 Then you have to do some migrations (paste in the Package Manage Console the following command: "Add-Migration InitialMigration -OutputDir Data/Migrations -Project Restaurant.Data -StartupProject Restaurant.Data"). After successfully adding the migration, paste this command: "Update-Database -Project Restaurant.Data -StartupProject Restaurant.Data".
 
