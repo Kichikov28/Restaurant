@@ -49,18 +49,6 @@
             return item.Price;
         }
 
-        //public void UpdateOrderTotalPrice(int orderId, decimal totalPrice)
-        //{
-        //    var order = context.Orders.FirstOrDefault(o => o.Id == orderId);
-
-        //    if (order == null)
-        //    {
-        //        throw new ArgumentException($"Order with ID {orderId} not found.");
-        //    }
-
-        //    order.TotalPrice = totalPrice;
-        //    context.SaveChanges();
-        //}
         public List<string> GetItems()
         {
             List<string> itemsInfo;

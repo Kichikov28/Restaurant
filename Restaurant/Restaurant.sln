@@ -11,15 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Services", "Rest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.FormApp", "Restaurant.FormApp\Restaurant.FormApp.csproj", "{69C660B8-B299-4FFC-8B4F-CDCE48CB7666}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Tests", "Restaurant.Tests\Restaurant.Tests.csproj", "{CCE3B40F-F2E3-4EEA-8ED3-6351C260B785}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.ConsoleApp", "Restaurant.ConsoleApp\Restaurant.ConsoleApp.csproj", "{52FB683E-8AEC-48D2-BA59-21E2A3EA4E39}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.WebApp", "Restaurant.WebApp\Restaurant.WebApp.csproj", "{B85F425D-FCFD-4B93-A053-EB59AD3D4DFA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Seeder", "Restaurant.Seeder\Restaurant.Seeder.csproj", "{F4C8D1E4-707F-4840-AD69-DA1984C96797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.ViewModel", "Restaurant.ViewModel\Restaurant.ViewModel.csproj", "{6E57BE03-A9C1-4C43-82AA-35BB05620561}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.ViewModel", "Restaurant.ViewModel\Restaurant.ViewModel.csproj", "{6E57BE03-A9C1-4C43-82AA-35BB05620561}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +41,6 @@ Global
 		{69C660B8-B299-4FFC-8B4F-CDCE48CB7666}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69C660B8-B299-4FFC-8B4F-CDCE48CB7666}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69C660B8-B299-4FFC-8B4F-CDCE48CB7666}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CCE3B40F-F2E3-4EEA-8ED3-6351C260B785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CCE3B40F-F2E3-4EEA-8ED3-6351C260B785}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CCE3B40F-F2E3-4EEA-8ED3-6351C260B785}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CCE3B40F-F2E3-4EEA-8ED3-6351C260B785}.Release|Any CPU.Build.0 = Release|Any CPU
 		{52FB683E-8AEC-48D2-BA59-21E2A3EA4E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{52FB683E-8AEC-48D2-BA59-21E2A3EA4E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52FB683E-8AEC-48D2-BA59-21E2A3EA4E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
